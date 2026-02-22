@@ -10,7 +10,7 @@ function normalize(text) {
 export async function loadSnapIndex() {
   // If the CSV isn't present in /public, don't break the app.
   // Tip: you can ship a tiny empty CSV (headers only) to avoid noisy 404s in dev.
-  const response = await fetch("snap_retailers_MA_2005_2025.csv");
+  const response = await fetch("/snap_retailers_MA_2005_2025.csv");
   if (!response.ok) {
     console.warn(
       "SNAP CSV not available (", response.status, ") - continuing without SNAP matching."
