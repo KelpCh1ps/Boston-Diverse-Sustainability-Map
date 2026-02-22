@@ -21,7 +21,7 @@
       ◀
     </button>
     <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
-      <img src="/icons/BDSM_Logo.png" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
+      <img src="/icons/BDSM_Logo.png" alt="Logo" style="height:80px; margin-bottom:1.5rem;">
     </div>
     <div class="sidebar-content" style="flex:1;overflow-y:auto;padding:1.5rem;">
       <div id="restaurantList"></div>
@@ -35,17 +35,18 @@
       <div id="searchResults" class="search-results" role="listbox" aria-label="Search suggestions"></div>
     </div>
     <!-- Horizontal Category Bar -->
-    <div class="filter-bar" style="display:flex;gap:1rem;justify-content:space-between;position:absolute;top:5rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;width:min(760px,calc(100% - 3rem));">
-      <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+    <div class="filter-bar" id="filterBar" style="display:flex;gap:1rem;justify-content:space-between;position:absolute;top:5rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;width:min(760px,calc(100% - 3rem));">
+      <div class="filter-active-pill" id="filterActivePill" aria-hidden="true"></div>
+      <button class="filter-tab" data-category="food" onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
         Restaurant
       </button>
-      <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+      <button class="filter-tab" data-category="retail" onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
         Grocers
       </button>
-      <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+      <button class="filter-tab" data-category="wholesale" onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
         Wholesale
       </button>
-      <button onclick="filterCategory('pantry')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+      <button class="filter-tab" data-category="pantry" onclick="filterCategory('pantry')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
         Food Banks & Pantries
       </button>
     </div>
@@ -79,6 +80,7 @@
   const placeDetailsCache = new Map();
   const bostonPlaceMatchCache = new Map();
   let sidebarDetailsLocked = false;
+  let activeCategory = "food";
 
   // Boston dataset objects + google.maps.Marker instances
   let bostonRestaurants = [];
@@ -187,13 +189,14 @@
         // Also fetch Google Places (but do NOT render by default)
         fetchFoodPlaces(userLocation);
 
-        // ✅ Default view: Boston restaurants first
-        mode = "food";
-        document.getElementById("searchBar").value = "";
-        renderBostonRestaurants(bostonFiltered);
+      // ✅ Default view: Boston restaurants first
+      mode = "food";
+      document.getElementById("searchBar").value = "";
+      renderBostonRestaurants(bostonFiltered);
+      setActiveFilterTab("food");
 
-        // Enable search bar
-        setupSearchBar();
+      // Enable search bar
+      setupSearchBar();
 
       }, () => {
         alert("Location permission denied.");
@@ -408,6 +411,8 @@
 
   /* ---------------- CATEGORY SWITCHING ---------------- */
   window.filterCategory = function filterCategory(category) {
+    activeCategory = category;
+    setActiveFilterTab(category);
     const input = document.getElementById("searchBar");
     if (input) input.value = "";
     closeSearchResults();
@@ -440,6 +445,34 @@
     renderAll();
   };
 
+  function setActiveFilterTab(category) {
+    const tabs = Array.from(document.querySelectorAll(".filter-tab"));
+    const target = tabs.find((tab) => tab.dataset.category === category);
+    const pill = document.getElementById("filterActivePill");
+    if (!target || !pill) return;
+
+    pill.classList.remove(
+      "filter-pill-food",
+      "filter-pill-retail",
+      "filter-pill-wholesale",
+      "filter-pill-pantry"
+    );
+
+    const pillClassByCategory = {
+      food: "filter-pill-food",
+      retail: "filter-pill-retail",
+      wholesale: "filter-pill-wholesale",
+      pantry: "filter-pill-pantry"
+    };
+    pill.classList.add(pillClassByCategory[category] || "filter-pill-wholesale");
+
+    tabs.forEach((tab) => tab.classList.toggle("is-active", tab === target));
+    pill.style.width = `${target.offsetWidth}px`;
+    pill.style.left = `${target.offsetLeft}px`;
+  }
+
+  window.addEventListener("resize", () => setActiveFilterTab(activeCategory));
+
   /* ---------------- GOOGLE PLACES RENDER ---------------- */
   function renderAll() {
     renderMarkers(filteredPlaces);
@@ -468,16 +501,15 @@
     setSidebarDetailsHtml("");
   }
 
-  function buildSidebarDetailsCard({
-                                     title,
-                                     photoUrl = "",
-                                     address = "",
-                                     phone = "",
-                                     rating = "",
-                                     price = "",
-                                     website = "",
-                                     source = ""
-                                   }) {
+function buildSidebarDetailsCard({
+  title,
+  photoUrl = "",
+  address = "",
+  phone = "",
+  rating = "",
+  website = "",
+  source = ""
+}) {
     const safeWebsite = website ? website.replace(/"/g, "&quot;") : "";
     return `
     ${photoUrl ? `<img class="place-details-photo" src="${photoUrl}" alt="${title ?? "Location photo"}">` : ""}
@@ -485,11 +517,10 @@
     ${source ? `<div class="place-details-meta"><strong>Source:</strong> ${source}</div>` : ""}
     ${address ? `<div class="place-details-meta"><strong>Address:</strong> ${address}</div>` : ""}
     ${phone ? `<div class="place-details-meta"><strong>Phone:</strong> ${phone}</div>` : ""}
-    ${price ? `<div class="place-details-meta"><strong>Price:</strong> ${price}</div>` : ""}
     ${rating ? `<div class="place-details-meta"><strong>Rating:</strong> ${rating}</div>` : ""}
     ${website ? `<div class="place-details-meta"><strong>Website:</strong> <a class="place-details-link" href="${safeWebsite}" target="_blank" rel="noopener noreferrer">${website}</a></div>` : ""}
   `;
-  }
+}
 
   function getPlaceDetails(placeId) {
     if (!placeId) return Promise.resolve(null);
@@ -621,16 +652,17 @@
     const bubble = document.createElement("span");
     bubble.className = "food-pin__bubble";
 
-    const image = document.createElement("img");
-    image.className = "food-pin__image";
-    const name = (place.name ?? "").toLowerCase();
-    if (name.includes("food bank") || name.includes("pantry")) {
-      image.src = "/icons/Food_Pantry_Logo.png";
-    } else if (isGrocerPlace(place)) {
-      image.src = "/icons/Market_Logo.png";
-    } else {
-      image.src = "/icons/restaurant_logo.png";
-    }
+  const image = document.createElement("img");
+  image.className = "food-pin__image";
+  const name = (place.name ?? "").toLowerCase();
+  if (name.includes("food bank") || name.includes("pantry")) {
+    image.src = "/icons/Food_Pantry_Logo.png";
+  } else if (isGrocerPlace(place)) {
+    image.src = "/icons/Market_Logo.png";
+  } else {
+    image.src = "/icons/restaurant_logo.png";
+    image.classList.add("food-pin__image--restaurant");
+  }
     image.alt = "";
     image.setAttribute("aria-hidden", "true");
 
