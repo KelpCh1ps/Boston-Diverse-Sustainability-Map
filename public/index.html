@@ -1,151 +1,1110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Supply Map</title>
+  <link rel="icon" href="/icons/restaurant_logo.png" type="image/png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="map.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/map.css">
 </head>
 
 <body>
-  <div style="display:flex; height:100vh;">
-    <!-- Sidebar -->
-    <aside style="width:370px; min-width:300px; max-width:420px; background:#fff; border-right:1px solid #e0e0e0; display:flex; flex-direction:column;">
-      <div style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
-        <img src="icons/BDSM_Logo.png" alt="BDSM Logo" style="height:48px; margin-bottom:1rem;" />
-        <input class="search-input" id="searchBar" type="text" placeholder="Search places" />
+<div style="display:flex; height:100vh;">
+  <aside id="sidebarPane" class="sidebar-pane" style="width:370px; min-width:300px; max-width:420px; background:#fff; border-right:1px solid #e0e0e0; display:flex; flex-direction:column;">
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" onclick="toggleSidebar()" aria-label="Collapse sidebar" aria-expanded="true">◀</button>
+    <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
+      <img src="/icons/BDSM_Logo.png" alt="Logo" style="height:80px; margin-bottom:1.5rem;">
+    </div>
+    <div class="sidebar-content" style="flex:1;overflow-y:auto;padding:1.5rem;">
+      <div id="restaurantList"></div>
+    </div>
+  </aside>
 
-        <!-- AI summary card (optional; only shows if present + you click a marker/list item) -->
-        <div id="ai-summary-card" style="display:none; margin-top:1rem; padding:0.9rem 1rem; border:1px solid #eee; border-radius:14px; background:#fafafa;">
-          <div id="ai-summary-content" style="font-size:0.95rem; line-height:1.3;"></div>
-        </div>
+  <main style="flex:1;display:flex;flex-direction:column;position:relative;background:#f5f5f5;">
+    <div id="searchBox" class="search-box" style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:12;width:min(760px,calc(100% - 3rem));">
+      <input class="search-input animated-search-input" id="searchBar" type="text" placeholder="Search restaurant names">
+      <div id="searchResults" class="search-results" role="listbox" aria-label="Search suggestions"></div>
+    </div>
+
+    <div class="filter-bar" id="filterBar" style="display:flex;gap:1rem;justify-content:space-between;position:absolute;top:5rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;width:min(760px,calc(100% - 3rem));">
+      <div class="filter-active-pill" id="filterActivePill" aria-hidden="true"></div>
+
+      <button class="filter-tab" data-category="food" onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">Restaurant</button>
+
+      <button id="grocerTabToggle" class="filter-tab" data-category="retail" onclick="toggleGrocerMenu(event)" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">Grocers <span id="grocerChevron" class="grocer-chevron">▾</span></button>
+
+      <button class="filter-tab" data-category="wholesale" onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">Wholesale</button>
+
+      <button class="filter-tab" data-category="pantry" onclick="filterCategory('pantry')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">Food Banks & Pantries</button>
+
+      <div id="grocerMenu" class="grocer-menu" aria-hidden="true">
+        <button class="grocer-subtab" data-category="retail" onclick="selectGrocerOption('retail')">Grocers</button>
+        <button class="grocer-subtab" data-category="snap" onclick="selectGrocerOption('snap')">Food Stamps / EBT</button>
       </div>
+    </div>
 
-      <div style="flex:1; overflow-y:auto; padding:1.5rem;">
-        <h2 style="font-size:1.1rem; margin-bottom:1rem;">Food-Related Places</h2>
-        <div id="restaurantList"></div>
-      </div>
-    </aside>
+    <div class="map-container" style="flex:1;width:100%;height:100%;">
+      <div id="map" style="height:100%;width:100%;"></div>
+    </div>
+  </main>
+</div>
 
-    <!-- Main Map Area -->
-    <main style="flex:1; display:flex; flex-direction:column; position:relative; background:#f5f5f5;">
-      <!-- Horizontal Category Bar -->
-      <div style="display:flex; gap:1rem; position:absolute; top:2rem; left:50%; transform:translateX(-50%); z-index:10; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:0.5rem 1.5rem;">
-        <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
-          <span>🍽️</span> Food
-        </button>
-        <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
-          <img src="icons/Market_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;" /> Grocery
-        </button>
-        <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
-          <span>🏬</span> Wholesale
-        </button>
-        <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
-          <img src="icons/Food_Pantry_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;" /> Farms
-        </button>
-      </div>
+<script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
+  });
+</script>
 
-      <div class="map-container" style="flex:1; width:100%; height:100%;">
-        <div id="map" style="height:100%; width:100%;"></div>
-      </div>
+<script type="module">
+  import { Restaurants } from "/markers.js";
 
-      <!-- Sort bar (kept) -->
-      <div style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:0.5rem 2rem; display:flex; gap:1.5rem; align-items:center; z-index:10;">
-        <span>Sort by Price:</span>
-        <button onclick="sortPlaces('price','asc')">Low → High</button>
-        <button onclick="sortPlaces('price','desc')">High → Low</button>
-        <span>Sort by Rating:</span>
-        <button onclick="sortPlaces('rating','desc')">High → Low</button>
-        <button onclick="sortPlaces('rating','asc')">Low → High</button>
-      </div>
-    </main>
-  </div>
+  let map;
+  let placesService;
+  let currentUserLocation = null;
+  let allPlaces = [];
+  let filteredPlaces = [];
+  let markers = [];
+  let infoWindow;
 
-  <!-- Google Maps loader -->
-  <script>
-    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-      key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
+  let isSidebarCollapsed = false;
+  let isGrocerMenuOpen = false;
+  let activeCategory = "food";
+  let mode = "food"; // food | places
+
+  let bostonRestaurants = [];
+  let bostonRestaurantMarkers = [];
+  let bostonFiltered = [];
+
+  let searchItems = [];
+  let hideSearchResultsTimer = null;
+
+  const SIDEBAR_DEFAULT_MESSAGE = "Click on any pin to view data";
+  let sidebarHoverToken = 0;
+  let sidebarDetailsLocked = false;
+
+  const placeDetailsCache = new Map();
+  const bostonPlaceMatchCache = new Map();
+  const placeSummaryCache = new Map();
+
+  const BOSTON_CENTER = { lat: 42.3601, lng: -71.0589 };
+  const BOSTON_RADIUS_METERS = 12000;
+
+  // SNAP lookup by ZIP -> normalized names
+  const snapNameByZip = new Map();
+  const snapRecordsBoston = [];
+  const snapNameGlobal = new Set();
+  const ebtSupportCache = new Map();
+
+  const BOSTON_URL =
+    "https://data.boston.gov/api/3/action/datastore_search?resource_id=f1e13724-284d-478c-b8bc-ef042aa5b70b&limit=5000";
+
+  function normalizeName(text) {
+    return (text || "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]/g, "");
+  }
+
+  function normalizeNameLoose(text) {
+    return normalizeName(text).replace(/\d/g, "");
+  }
+
+  function isNameMatch(placeNameNorm, placeNameLoose, storeNameNorm, storeNameLoose) {
+    if (!placeNameNorm || !storeNameNorm) return false;
+    if (placeNameNorm === storeNameNorm) return true;
+    if (placeNameNorm.includes(storeNameNorm) || storeNameNorm.includes(placeNameNorm)) return true;
+    if (!placeNameLoose || !storeNameLoose) return false;
+    return (
+      placeNameLoose === storeNameLoose ||
+      placeNameLoose.includes(storeNameLoose) ||
+      storeNameLoose.includes(placeNameLoose)
+    );
+  }
+
+  function parseCsvLine(line) {
+    const out = [];
+    let current = "";
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      const next = line[i + 1];
+      if (ch === '"' && inQuotes && next === '"') {
+        current += '"';
+        i++;
+      } else if (ch === '"') {
+        inQuotes = !inQuotes;
+      } else if (ch === "," && !inQuotes) {
+        out.push(current);
+        current = "";
+      } else {
+        current += ch;
+      }
+    }
+    out.push(current);
+    return out;
+  }
+
+  function getDistanceMeters(lat1, lng1, lat2, lng2) {
+    const toRad = (d) => (d * Math.PI) / 180;
+    const R = 6371000;
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  function isInBostonRadius(lat, lng) {
+    return getDistanceMeters(lat, lng, BOSTON_CENTER.lat, BOSTON_CENTER.lng) <= BOSTON_RADIUS_METERS;
+  }
+
+  function extractLatLng(location) {
+    if (!location) return null;
+    const lat = typeof location.lat === "function" ? location.lat() : location.lat;
+    const lng = typeof location.lng === "function" ? location.lng() : location.lng;
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+    return { lat, lng };
+  }
+
+  function extractZip(text) {
+    const m = (text || "").match(/\b(\d{5})(?:-\d{4})?\b/);
+    return m ? m[1] : "";
+  }
+
+  function isGrocerPlace(place) {
+    const types = place.types ?? [];
+    const name = (place.name ?? "").toLowerCase();
+    return (
+      types.includes("supermarket") ||
+      types.includes("grocery_or_supermarket") ||
+      types.includes("convenience_store")
+    ) && !name.includes("brewery");
+  }
+
+  function isWholesalePlace(place) {
+    const name = (place.name ?? "").toLowerCase();
+    const types = place.types ?? [];
+    return (
+      name.includes("distributor") ||
+      name.includes("wholesale") ||
+      name.includes("factory") ||
+      name.includes("brewery") ||
+      types.includes("liquor_store")
+    );
+  }
+
+  function hasEbtSupport(place) {
+    const cacheKey = place.place_id || `${place.name}|${place.vicinity}`;
+    if (ebtSupportCache.has(cacheKey)) return ebtSupportCache.get(cacheKey);
+    if (!isGrocerPlace(place)) return false;
+    const nameNorm = normalizeName(place.name);
+    const nameLoose = normalizeNameLoose(place.name);
+    if (!nameNorm) return false;
+    const zip = extractZip(place.vicinity || "");
+    const point = extractLatLng(place.geometry?.location);
+
+    const matchesList = (list) => {
+      if (!list || !list.length) return false;
+      return list.some((storeNorm) => isNameMatch(nameNorm, nameLoose, storeNorm, storeNorm.replace(/\d/g, "")));
+    };
+
+    if (zip && snapNameByZip.has(zip) && matchesList(snapNameByZip.get(zip))) {
+      ebtSupportCache.set(cacheKey, true);
+      return true;
+    }
+
+    if (point) {
+      const nearbyNames = [];
+      for (let i = 0; i < snapRecordsBoston.length; i++) {
+        const rec = snapRecordsBoston[i];
+        if (getDistanceMeters(point.lat, point.lng, rec.lat, rec.lng) <= 500) {
+          nearbyNames.push(rec.nameNorm);
+        }
+      }
+      if (matchesList(nearbyNames)) {
+        ebtSupportCache.set(cacheKey, true);
+        return true;
+      }
+    }
+
+    for (const storeNorm of snapNameGlobal) {
+      if (isNameMatch(nameNorm, nameLoose, storeNorm, storeNorm.replace(/\d/g, ""))) {
+        ebtSupportCache.set(cacheKey, true);
+        return true;
+      }
+    }
+
+    ebtSupportCache.set(cacheKey, false);
+    return false;
+  }
+
+  async function loadSnapIndex() {
+    try {
+      const response = await fetch("/snap_retailers_MA_2005_2025.csv");
+      if (!response.ok) return;
+      const csv = await response.text();
+      const rows = csv.split(/\r?\n/).filter(Boolean);
+      if (rows.length < 2) return;
+
+      const headers = parseCsvLine(rows[0]);
+      const nameIdx = headers.indexOf("Store Name");
+      const zipIdx = headers.indexOf("Zip Code");
+      const latIdx = headers.indexOf("Latitude");
+      const lngIdx = headers.indexOf("Longitude");
+      if (nameIdx === -1 || zipIdx === -1) return;
+
+      for (let i = 1; i < rows.length; i++) {
+        const cols = parseCsvLine(rows[i]);
+        const zip = (cols[zipIdx] || "").trim();
+        const nameNorm = normalizeName(cols[nameIdx]);
+        if (!zip || !nameNorm) continue;
+        snapNameGlobal.add(nameNorm);
+        if (!snapNameByZip.has(zip)) snapNameByZip.set(zip, []);
+        snapNameByZip.get(zip).push(nameNorm);
+
+        const lat = latIdx === -1 ? NaN : Number(cols[latIdx]);
+        const lng = lngIdx === -1 ? NaN : Number(cols[lngIdx]);
+        if (Number.isFinite(lat) && Number.isFinite(lng) && isInBostonRadius(lat, lng)) {
+          snapRecordsBoston.push({ nameNorm, lat, lng, zip });
+        }
+      }
+    } catch (err) {
+      console.warn("Unable to load SNAP CSV index", err);
+    }
+  }
+
+  function buildBostonAddress(place) {
+    return `${place.address ?? ""} ${place.city ?? ""}, ${place.state ?? ""} ${place.zip ?? ""}`.trim();
+  }
+
+  async function loadBostonRestaurants() {
+    const res = await fetch(BOSTON_URL);
+    const data = await res.json();
+    const records = data?.result?.records ?? [];
+
+    bostonRestaurants = records
+      .map((place) => {
+        const lat = Number(place.latitude);
+        const lng = Number(place.longitude);
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+        if (!isInBostonRadius(lat, lng)) return null;
+
+        return new Restaurants({
+          name: place.businessname ?? "Restaurant",
+          lat,
+          lng,
+          address: buildBostonAddress(place),
+          number: place.dayphn_cleaned ?? "N/A",
+          rating: 0,
+          review: place.descript ?? "No description",
+          hours: "Hours not listed",
+          meta: {
+            licstatus: place.licstatus,
+            licensecat: place.licensecat,
+            property_id: place.property_id,
+          },
+        });
+      })
+      .filter(Boolean);
+
+    bostonFiltered = [...bostonRestaurants];
+  }
+
+  function fetchFoodPlaces(location) {
+    const types = [
+      "restaurant",
+      "cafe",
+      "bakery",
+      "meal_takeaway",
+      "meal_delivery",
+      "supermarket",
+      "grocery_or_supermarket",
+      "convenience_store",
+      "liquor_store"
+    ];
+
+    const keywords = [
+      "food pantry",
+      "food bank",
+      "food factory",
+      "food distributor",
+      "wholesale food",
+      "brewery"
+    ];
+
+    allPlaces = [];
+
+    types.forEach(type => {
+      placesService.nearbySearch({ location, radius: 30000, type }, handleResults);
     });
-  </script>
 
-  <script type="module">
-    import * as MapData from "./mapdata.js";
+    keywords.forEach(keyword => {
+      placesService.nearbySearch({ location, radius: 30000, keyword }, handleResults);
+    });
+  }
 
-    let map;
-    let infoWindow;
+  function handleResults(results, status) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) return;
 
-    function setupSearchBar() {
-      const input = document.getElementById("searchBar");
-      if (!input) return;
-      input.addEventListener("input", async () => {
-        await MapData.applySearch(input.value.trim());
+    results.forEach(place => {
+      const point = extractLatLng(place.geometry?.location);
+      if (!point || !isInBostonRadius(point.lat, point.lng)) return;
+      if (!allPlaces.some(p => p.place_id === place.place_id)) {
+        allPlaces.push(place);
+      }
+    });
+
+    if (mode === "places" && activeCategory !== "food") {
+      filteredPlaces = categoryPlaces(activeCategory);
+      renderAll();
+      showNearestCategoryInSidebar(activeCategory);
+    }
+  }
+
+  function filterBoston(q) {
+    if (!q) return [...bostonRestaurants];
+    return bostonRestaurants.filter(r => {
+      const hay = `${r.name} ${r.address} ${r.number}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function filterPlacesByQuery(source, q) {
+    if (!q) return [...source];
+    return source.filter(p => {
+      const hay = `${p.name ?? ""} ${p.vicinity ?? ""} ${(p.types ?? []).join(" ")}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function categoryPlaces(category) {
+    if (category === "retail") return allPlaces.filter(isGrocerPlace);
+    if (category === "snap") return allPlaces.filter(p => isGrocerPlace(p) && hasEbtSupport(p));
+    if (category === "wholesale") return allPlaces.filter(isWholesalePlace);
+    if (category === "pantry") return allPlaces.filter(p => {
+      const n = (p.name ?? "").toLowerCase();
+      return n.includes("food bank") || n.includes("pantry");
+    });
+    return [...allPlaces];
+  }
+
+  function getReferenceLocation() {
+    if (currentUserLocation) return currentUserLocation;
+    const center = map?.getCenter?.();
+    if (!center) return BOSTON_CENTER;
+    return {
+      lat: typeof center.lat === "function" ? center.lat() : center.lat,
+      lng: typeof center.lng === "function" ? center.lng() : center.lng
+    };
+  }
+
+  function sidebarTitleForCategory(category) {
+    if (category === "food") return "Nearest Restaurants";
+    if (category === "retail") return "Nearest Grocers";
+    if (category === "snap") return "Nearest EBT Grocers";
+    if (category === "wholesale") return "Nearest Wholesale";
+    return "Nearest Food Banks & Pantries";
+  }
+
+  function nearestEmptyMessageForCategory(category) {
+    if (category === "food") return "No nearby restaurant locations found yet.";
+    if (category === "retail") return "No nearby grocer locations found yet.";
+    if (category === "snap") return "No nearby EBT grocer locations found yet.";
+    if (category === "wholesale") return "No nearby wholesale locations found yet.";
+    return "No nearby food bank or pantry locations found yet.";
+  }
+
+  function sourceItemsForCategory(category) {
+    if (category === "food") {
+      return bostonRestaurants.map((r) => ({
+        id: `${r.name}-${r.lat}-${r.lng}`,
+        title: r.name ?? "Unknown restaurant",
+        subtitle: r.address ?? "",
+        lat: r.lat,
+        lng: r.lng,
+        kind: "food",
+        payload: r
+      }));
+    }
+
+    return categoryPlaces(category).map((place) => {
+      const point = extractLatLng(place.geometry?.location);
+      if (!point) return null;
+      return {
+        id: place.place_id || `${place.name}-${point.lat}-${point.lng}`,
+        title: place.name ?? "Unknown place",
+        subtitle: place.vicinity ?? "",
+        lat: point.lat,
+        lng: point.lng,
+        kind: "place",
+        payload: place
+      };
+    }).filter(Boolean);
+  }
+
+  function showNearestCategoryInSidebar(category) {
+    const source = sourceItemsForCategory(category);
+    const ref = getReferenceLocation();
+    const nearest = source
+      .map((item) => ({
+        item,
+        distanceMeters: getDistanceMeters(ref.lat, ref.lng, item.lat, item.lng)
+      }))
+      .sort((a, b) => a.distanceMeters - b.distanceMeters)
+      .slice(0, 5);
+
+    if (!nearest.length) {
+      setSidebarDetailsHtml(`<div class="place-details-meta">${nearestEmptyMessageForCategory(category)}</div>`);
+      return;
+    }
+
+    const html = `
+      <div class="place-details-title">${sidebarTitleForCategory(category)}</div>
+      <div class="place-details-meta">Based on your location.</div>
+      ${nearest.map((entry, index) => `
+        <button type="button" class="search-result-item nearest-category-item" data-index="${index}" style="width:100%;margin-top:0.6rem;text-align:left;">
+          <span class="search-result-title">${entry.item.title}</span>
+          <span class="search-result-subtitle">${entry.item.subtitle}</span>
+          <span class="search-result-subtitle">${(entry.distanceMeters / 1609.344).toFixed(1)} mi away</span>
+        </button>
+      `).join("")}
+    `;
+    setSidebarDetailsHtml(html);
+
+    const sidebar = document.getElementById("restaurantList");
+    if (!sidebar) return;
+    sidebar.querySelectorAll(".nearest-category-item").forEach((button) => {
+      button.addEventListener("click", () => {
+        const idx = Number(button.dataset.index);
+        const target = nearest[idx]?.item;
+        if (!target) return;
+        map.panTo({ lat: target.lat, lng: target.lng });
+        map.setZoom(15);
+        sidebarDetailsLocked = true;
+        if (target.kind === "food") {
+          showSidebarForBostonPlace(target.payload);
+        } else {
+          showSidebarForGooglePlace(target.payload);
+        }
+      });
+    });
+  }
+
+  function updateSearchResults(query) {
+    const q = query ?? "";
+    let source = [];
+    if (mode === "food") {
+      source = q ? bostonFiltered : bostonRestaurants;
+      searchItems = source.slice(0, 8).map(item => ({
+        key: `${item.name}-${item.lat}-${item.lng}`,
+        title: item.name,
+        subtitle: item.address,
+        payload: item
+      }));
+    } else {
+      source = q ? filteredPlaces : categoryPlaces(activeCategory);
+      searchItems = source.slice(0, 8).map(item => ({
+        key: item.place_id,
+        title: item.name ?? "Unknown place",
+        subtitle: item.vicinity ?? "",
+        payload: item
+      }));
+    }
+    renderSearchResults();
+  }
+
+  function renderSearchResults() {
+    const container = document.getElementById("searchResults");
+    if (!container) return;
+
+    if (!searchItems.length) {
+      container.classList.remove("is-open");
+      return;
+    }
+
+    container.innerHTML = searchItems.map((item, index) => `
+      <button type="button" class="search-result-item" data-index="${index}" role="option" aria-selected="false">
+        <span class="search-result-title">${item.title}</span>
+        ${item.subtitle ? `<span class="search-result-subtitle">${item.subtitle}</span>` : ""}
+      </button>
+    `).join("");
+
+    container.classList.add("is-open");
+
+    container.querySelectorAll(".search-result-item").forEach(button => {
+      button.addEventListener("click", () => selectSearchResult(Number(button.dataset.index)));
+    });
+  }
+
+  function closeSearchResults() {
+    const container = document.getElementById("searchResults");
+    if (!container) return;
+    container.classList.remove("is-open");
+  }
+
+  function selectSearchResult(index) {
+    const selected = searchItems[index];
+    if (!selected) return;
+    if (hideSearchResultsTimer) clearTimeout(hideSearchResultsTimer);
+
+    const input = document.getElementById("searchBar");
+    if (input) input.value = selected.title;
+
+    if (mode === "food") {
+      const target = selected.payload;
+      bostonFiltered = filterBoston(selected.title.toLowerCase());
+      renderBostonRestaurants(bostonFiltered);
+      map.panTo({ lat: target.lat, lng: target.lng });
+      map.setZoom(15);
+    } else {
+      const target = selected.payload;
+      filteredPlaces = filterPlacesByQuery(categoryPlaces(activeCategory), selected.title.toLowerCase());
+      renderAll();
+      if (target.geometry?.location) {
+        map.panTo(target.geometry.location);
+        map.setZoom(15);
+      }
+    }
+
+    closeSearchResults();
+  }
+
+  function setupSearchBar() {
+    const input = document.getElementById("searchBar");
+    const results = document.getElementById("searchResults");
+    if (!input) return;
+
+    input.addEventListener("input", () => {
+      const q = input.value.trim().toLowerCase();
+      if (mode === "food") {
+        bostonFiltered = filterBoston(q);
+        renderBostonRestaurants(bostonFiltered);
+      } else {
+        filteredPlaces = filterPlacesByQuery(categoryPlaces(activeCategory), q);
+        renderAll();
+      }
+      updateSearchResults(q);
+    });
+
+    input.addEventListener("focus", () => {
+      const q = input.value.trim().toLowerCase();
+      updateSearchResults(q);
+    });
+
+    input.addEventListener("blur", () => {
+      hideSearchResultsTimer = setTimeout(() => closeSearchResults(), 120);
+    });
+
+    if (results) {
+      results.addEventListener("mousedown", (event) => event.preventDefault());
+    }
+  }
+
+  function positionGrocerMenu() {
+    const menu = document.getElementById("grocerMenu");
+    const toggle = document.getElementById("grocerTabToggle");
+    if (!menu || !toggle) return;
+    menu.style.left = `${toggle.offsetLeft + (toggle.offsetWidth / 2)}px`;
+  }
+
+  function setGrocerMenuOpen(open) {
+    isGrocerMenuOpen = open;
+    const menu = document.getElementById("grocerMenu");
+    const chevron = document.getElementById("grocerChevron");
+    if (menu) {
+      menu.classList.toggle("is-open", open);
+      menu.setAttribute("aria-hidden", String(!open));
+      if (open) positionGrocerMenu();
+    }
+    if (chevron) chevron.classList.toggle("is-open", open);
+  }
+
+  window.toggleGrocerMenu = function toggleGrocerMenu(event) {
+    if (event) event.stopPropagation();
+    setGrocerMenuOpen(!isGrocerMenuOpen);
+  };
+
+  window.selectGrocerOption = function selectGrocerOption(category) {
+    setGrocerMenuOpen(false);
+    filterCategory(category);
+  };
+
+  function setActiveFilterTab(category) {
+    const tabs = Array.from(document.querySelectorAll(".filter-tab"));
+    const tabCategory = category === "snap" ? "retail" : category;
+    const target = tabs.find((tab) => tab.dataset.category === tabCategory);
+    const pill = document.getElementById("filterActivePill");
+    if (!target || !pill) return;
+
+    pill.classList.remove("filter-pill-food", "filter-pill-retail", "filter-pill-wholesale", "filter-pill-pantry", "filter-pill-snap");
+    const pillClassByCategory = {
+      food: "filter-pill-food",
+      retail: "filter-pill-retail",
+      wholesale: "filter-pill-wholesale",
+      pantry: "filter-pill-pantry",
+      snap: "filter-pill-snap"
+    };
+    pill.classList.add(pillClassByCategory[category] || "filter-pill-wholesale");
+
+    tabs.forEach((tab) => tab.classList.toggle("is-active", tab === target));
+    const subTabs = Array.from(document.querySelectorAll(".grocer-subtab"));
+    subTabs.forEach((tab) => tab.classList.toggle("is-active", tab.dataset.category === category));
+
+    pill.style.width = `${target.offsetWidth}px`;
+    pill.style.left = `${target.offsetLeft}px`;
+  }
+
+  window.filterCategory = function filterCategory(category) {
+    activeCategory = category;
+    setActiveFilterTab(category);
+    setGrocerMenuOpen(false);
+
+    const input = document.getElementById("searchBar");
+    if (input) input.value = "";
+    closeSearchResults();
+
+    if (category === "food") {
+      mode = "food";
+      clearGooglePlaceMarkers();
+      bostonFiltered = [...bostonRestaurants];
+      renderBostonRestaurants(bostonFiltered);
+      showNearestCategoryInSidebar("food");
+      return;
+    }
+
+    mode = "places";
+    clearBostonRestaurantMarkers();
+    filteredPlaces = categoryPlaces(category);
+    renderAll();
+    showNearestCategoryInSidebar(category);
+  };
+
+  function buildPlaceInfoContent(place) {
+    const rating = place.rating ?? "N/A";
+    const ebt = isGrocerPlace(place) ? (hasEbtSupport(place) ? "Yes" : "No") : "N/A";
+    return `
+      <div style="min-width:200px;">
+        <strong>${place.name}</strong><br>
+        Rating: ${rating}<br>
+        ${isGrocerPlace(place) ? `EBT: ${ebt}<br>` : ""}
+      </div>
+    `;
+  }
+
+  function buildBostonInfoContent(r) {
+    return `
+      <div style="min-width:220px;">
+        <strong>${r.name}</strong><br>
+        ${r.address}<br>
+        Phone: ${r.number}
+      </div>
+    `;
+  }
+
+  function setSidebarDetailsHtml(html) {
+    const sidebar = document.getElementById("restaurantList");
+    if (!sidebar) return;
+    sidebar.innerHTML = html;
+  }
+
+  function clearSidebarDetails() {
+    setSidebarDetailsHtml(`<div class="place-details-meta">${SIDEBAR_DEFAULT_MESSAGE}</div>`);
+  }
+
+  async function getLocationSummary(name, address) {
+    const cacheKey = `${name || ""}|${address || ""}`.trim();
+    if (!cacheKey) return "";
+    if (placeSummaryCache.has(cacheKey)) return placeSummaryCache.get(cacheKey);
+
+    const summaryPromise = fetch("/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        source: typeof mode === "string" ? mode : "food",
+        restaurantName: name || "",
+        address: address || ""
+      })
+    })
+      .then(async (response) => {
+        let payload = {};
+        try {
+          payload = await response.json();
+        } catch (_) {
+          payload = {};
+        }
+        const analysis = (payload?.analysis || "").trim();
+        if (payload?.error) {
+          console.warn("Summary fallback reason:", payload.error);
+        }
+        if (analysis) return analysis;
+        if (!response.ok) {
+          if (payload?.debug) {
+            console.warn("Summary debug:", payload.debug);
+          }
+          return payload?.error ? `Summary unavailable: ${payload.error}` : "Summary unavailable.";
+        }
+        if (payload?.debug) {
+          console.log("Summary debug:", payload.debug);
+        }
+        if (payload?.error) {
+          console.warn("Summary fallback reason:", payload.error);
+        }
+        return (payload?.analysis || "").trim() || "Summary unavailable.";
+      })
+      .catch(() => "Summary unavailable: network error.");
+
+    placeSummaryCache.set(cacheKey, summaryPromise);
+    return summaryPromise;
+  }
+
+  function buildSidebarDetailsCard({ title, photoUrl = "", address = "", phone = "", rating = "", ebt = "", summary = "", source = "" }) {
+    return `
+      ${photoUrl ? `<img class="place-details-photo" src="${photoUrl}" alt="${title ?? "Location photo"}">` : ""}
+      <div class="place-details-title">${title ?? "Unknown place"}</div>
+      ${source ? `<div class="place-details-meta"><strong>Source:</strong> ${source}</div>` : ""}
+      ${address ? `<div class="place-details-meta"><strong>Address:</strong> ${address}</div>` : ""}
+      ${phone ? `<div class="place-details-meta"><strong>Phone:</strong> ${phone}</div>` : ""}
+      ${rating ? `<div class="place-details-meta"><strong>Rating:</strong> ${rating}</div>` : ""}
+      ${ebt ? `<div class="place-details-meta"><strong>EBT:</strong> ${ebt}</div>` : ""}
+      <div class="place-details-meta"><strong>Summary:</strong> ${summary || "Loading summary..."}</div>
+    `;
+  }
+
+  function getPlaceDetails(placeId) {
+    if (!placeId) return Promise.resolve(null);
+    if (placeDetailsCache.has(placeId)) return placeDetailsCache.get(placeId);
+
+    const detailsPromise = new Promise((resolve) => {
+      placesService.getDetails({
+        placeId,
+        fields: ["name", "formatted_address", "formatted_phone_number", "photos"]
+      }, (result, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) resolve(result);
+        else resolve(null);
+      });
+    });
+
+    placeDetailsCache.set(placeId, detailsPromise);
+    return detailsPromise;
+  }
+
+  function getBostonPlaceMatch(r) {
+    const cacheKey = `${r.name}|${r.address}`;
+    if (bostonPlaceMatchCache.has(cacheKey)) return bostonPlaceMatchCache.get(cacheKey);
+
+    const placeMatchPromise = new Promise((resolve) => {
+      placesService.findPlaceFromQuery({
+        query: `${r.name} ${r.address}`.trim(),
+        fields: ["place_id", "name", "formatted_address", "photos"]
+      }, (results, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK && Array.isArray(results) && results.length > 0) {
+          resolve(results[0]);
+        } else {
+          resolve(null);
+        }
+      });
+    });
+
+    bostonPlaceMatchCache.set(cacheKey, placeMatchPromise);
+    return placeMatchPromise;
+  }
+
+  async function showSidebarForGooglePlace(place) {
+    const currentToken = ++sidebarHoverToken;
+    const ratingDisplay = place.rating ?? "N/A";
+    const baseAddress = place.vicinity ?? "";
+    const quickPhotoUrl = place.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ?? "";
+    const ebt = isGrocerPlace(place) ? (hasEbtSupport(place) ? "Yes" : "No") : "";
+
+    setSidebarDetailsHtml(buildSidebarDetailsCard({
+      title: place.name,
+      photoUrl: quickPhotoUrl,
+      source: "Google Places",
+      address: baseAddress,
+      rating: String(ratingDisplay),
+      ebt,
+      summary: ""
+    }));
+
+    const details = await getPlaceDetails(place.place_id);
+    if (currentToken !== sidebarHoverToken) return;
+
+    const address = details?.formatted_address || baseAddress;
+    const phone = details?.formatted_phone_number || "";
+    const photoUrl = details?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) || quickPhotoUrl;
+    const summary = await getLocationSummary(place.name, address);
+    if (currentToken !== sidebarHoverToken) return;
+
+    setSidebarDetailsHtml(buildSidebarDetailsCard({
+      title: place.name,
+      photoUrl,
+      source: "Google Places",
+      address,
+      phone,
+      rating: String(ratingDisplay),
+      ebt,
+      summary
+    }));
+  }
+
+  async function showSidebarForBostonPlace(r) {
+    const currentToken = ++sidebarHoverToken;
+
+    setSidebarDetailsHtml(buildSidebarDetailsCard({
+      title: r.name,
+      source: "Boston Open Data",
+      address: r.address,
+      phone: r.number,
+      summary: ""
+    }));
+
+    const match = await getBostonPlaceMatch(r);
+    if (currentToken !== sidebarHoverToken) return;
+
+    let details = null;
+    if (match?.place_id) {
+      details = await getPlaceDetails(match.place_id);
+      if (currentToken !== sidebarHoverToken) return;
+    }
+
+    const photoUrl =
+      details?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ||
+      match?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ||
+      "";
+    const address = details?.formatted_address || match?.formatted_address || r.address;
+    const phone = details?.formatted_phone_number || r.number;
+    const summary = await getLocationSummary(r.name, address);
+    if (currentToken !== sidebarHoverToken) return;
+
+    setSidebarDetailsHtml(buildSidebarDetailsCard({
+      title: r.name,
+      photoUrl,
+      source: "Boston Open Data",
+      address,
+      phone,
+      summary
+    }));
+  }
+
+  function createFoodPinContent(place) {
+    const pin = document.createElement("button");
+    pin.type = "button";
+    pin.className = "food-pin";
+    pin.setAttribute("aria-label", place.name);
+
+    const bubble = document.createElement("span");
+    bubble.className = "food-pin__bubble";
+
+    const image = document.createElement("img");
+    image.className = "food-pin__image";
+    const name = (place.name ?? "").toLowerCase();
+    if (name.includes("food bank") || name.includes("pantry")) {
+      image.src = "/icons/Food_Pantry_Logo.png";
+    } else if (isGrocerPlace(place)) {
+      image.src = "/icons/Market_Logo.png";
+    } else {
+      image.src = "/icons/restaurant_logo.png";
+      image.classList.add("food-pin__image--restaurant");
+    }
+    image.alt = "";
+    image.setAttribute("aria-hidden", "true");
+
+    const pulse = document.createElement("span");
+    pulse.className = "food-pin__pulse";
+    pulse.setAttribute("aria-hidden", "true");
+
+    bubble.appendChild(image);
+    pin.appendChild(bubble);
+    pin.appendChild(pulse);
+    return pin;
+  }
+
+  function clearGooglePlaceMarkers() {
+    markers.forEach(marker => marker.map = null);
+    markers = [];
+    if (infoWindow) infoWindow.close();
+    sidebarDetailsLocked = false;
+    clearSidebarDetails();
+  }
+
+  function renderMarkers(data) {
+    const { AdvancedMarkerElement } = google.maps.marker;
+    clearGooglePlaceMarkers();
+
+    data.forEach(place => {
+      const pinContent = createFoodPinContent(place);
+      const marker = new AdvancedMarkerElement({
+        map,
+        position: place.geometry.location,
+        title: place.name,
+        gmpClickable: true,
+        content: pinContent
+      });
+
+      const openInfoWindow = () => {
+        infoWindow.setContent(buildPlaceInfoContent(place));
+        infoWindow.open({ map, anchor: marker });
+        showSidebarForGooglePlace(place);
+      };
+
+      const closeInfoWindow = () => {
+        if (sidebarDetailsLocked) return;
+        sidebarHoverToken++;
+        infoWindow.close();
+        clearSidebarDetails();
+      };
+
+      pinContent.addEventListener("mouseenter", openInfoWindow);
+      pinContent.addEventListener("mouseleave", closeInfoWindow);
+      pinContent.addEventListener("focus", openInfoWindow);
+      pinContent.addEventListener("blur", closeInfoWindow);
+      pinContent.addEventListener("click", () => {
+        sidebarDetailsLocked = true;
+        openInfoWindow();
+      });
+
+      markers.push(marker);
+    });
+  }
+
+  function clearBostonRestaurantMarkers() {
+    bostonRestaurantMarkers.forEach(m => m.setMap(null));
+    bostonRestaurantMarkers = [];
+    if (infoWindow) infoWindow.close();
+    sidebarDetailsLocked = false;
+    clearSidebarDetails();
+  }
+
+  function renderBostonRestaurants(list) {
+    clearBostonRestaurantMarkers();
+
+    list.forEach((r) => {
+      const gm = r.toGoogleMarker(map);
+
+      gm.addListener("mouseover", () => {
+        infoWindow.setContent(buildBostonInfoContent(r));
+        infoWindow.open(map, gm);
+        showSidebarForBostonPlace(r);
+      });
+
+      gm.addListener("mouseout", () => {
+        if (sidebarDetailsLocked) return;
+        sidebarHoverToken++;
+        infoWindow.close();
+        clearSidebarDetails();
+      });
+
+      gm.addListener("click", () => {
+        sidebarDetailsLocked = true;
+        infoWindow.setContent(buildBostonInfoContent(r));
+        infoWindow.open(map, gm);
+        showSidebarForBostonPlace(r);
+      });
+
+      bostonRestaurantMarkers.push(gm);
+    });
+
+    clearSidebarDetails();
+  }
+
+  window.toggleSidebar = function toggleSidebar() {
+    isSidebarCollapsed = !isSidebarCollapsed;
+    document.body.classList.toggle("sidebar-collapsed", isSidebarCollapsed);
+
+    const toggleButton = document.getElementById("sidebarToggle");
+    if (toggleButton) {
+      toggleButton.textContent = isSidebarCollapsed ? "▶" : "◀";
+      toggleButton.setAttribute("aria-expanded", String(!isSidebarCollapsed));
+      toggleButton.setAttribute("aria-label", isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar");
+    }
+
+    if (map) {
+      const center = map.getCenter();
+      setTimeout(() => {
+        google.maps.event.trigger(map, "resize");
+        if (center) map.setCenter(center);
+      }, 280);
+    }
+  };
+
+  function renderAll() {
+    renderMarkers(filteredPlaces);
+  }
+
+  async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+    await google.maps.importLibrary("places");
+    await google.maps.importLibrary("marker");
+
+    infoWindow = new google.maps.InfoWindow();
+
+    map = new Map(document.getElementById("map"), {
+      zoom: 13,
+      center: BOSTON_CENTER,
+      mapId: "1907e1268c94d0034153c21a",
+      mapTypeId: "terrain",
+      mapTypeControl: false,
+    });
+
+    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        currentUserLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        const currentLocationPin = new PinElement({
+          background: "#1d4ed8",
+          borderColor: "#1e3a8a",
+          glyphColor: "#ffffff",
+        });
+        new AdvancedMarkerElement({
+          map,
+          position: currentUserLocation,
+          title: "You are here",
+          content: currentLocationPin.element
+        });
       });
     }
 
-    window.filterCategory = async function filterCategory(category) {
-      const input = document.getElementById("searchBar");
-      if (input) input.value = "";
-      await MapData.setCategory(category);
-    };
+    placesService = new google.maps.places.PlacesService(map);
 
-    window.sortPlaces = async function sortPlaces(type, order) {
-      await MapData.sortCurrent(type, order);
-    };
+    await Promise.all([
+      loadBostonRestaurants(),
+      loadSnapIndex()
+    ]);
 
-    async function initMap() {
-      // Wait until the Google loader attaches importLibrary
-      const start = Date.now();
-      while (!(window.google && google.maps && typeof google.maps.importLibrary === "function")) {
-        if (Date.now() - start > 10000) {
-          alert("Google Maps failed to load.");
-          return;
-        }
-        await new Promise((r) => setTimeout(r, 50));
-      }
+    fetchFoodPlaces(BOSTON_CENTER);
 
-      const { Map } = await google.maps.importLibrary("maps");
-      await google.maps.importLibrary("marker");
+    mode = "food";
+    document.getElementById("searchBar").value = "";
+    renderBostonRestaurants(bostonFiltered);
+    setActiveFilterTab("food");
+    setupSearchBar();
+    showNearestCategoryInSidebar("food");
+    positionGrocerMenu();
+  }
 
-      infoWindow = new google.maps.InfoWindow();
+  window.addEventListener("resize", () => {
+    setActiveFilterTab(activeCategory);
+    positionGrocerMenu();
+  });
 
-      const fallback = { lat: 42.3601, lng: -71.0589 };
+  document.addEventListener("click", (event) => {
+    const menu = document.getElementById("grocerMenu");
+    const toggle = document.getElementById("grocerTabToggle");
+    if (!menu || !toggle) return;
+    if (menu.contains(event.target) || toggle.contains(event.target)) return;
+    setGrocerMenuOpen(false);
+  });
 
-      const create = async (center) => {
-        map = new Map(document.getElementById("map"), {
-          zoom: 13,
-          center,
-          mapId: "1907e1268c94d0034153c21a",
-        });
-
-        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-        new AdvancedMarkerElement({ map, position: center, title: "Center" });
-
-        MapData.attachMap(map, infoWindow);
-        await MapData.setCategory("food");
-        setupSearchBar();
-      };
-
-      if (!navigator.geolocation) {
-        await create(fallback);
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        async (pos) => {
-          await create({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        },
-        async () => {
-          await create(fallback);
-        },
-        { enableHighAccuracy: true, timeout: 7000, maximumAge: 300000 }
-      );
-    }
-
-    initMap();
-  </script>
+  initMap();
+</script>
 </body>
 </html>
