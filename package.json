@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "start": "node server.mjs",
   "type": "module",
   "dependencies": {
     "@google/genai": "^1.42.0",
