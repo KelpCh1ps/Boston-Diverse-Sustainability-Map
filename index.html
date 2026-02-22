@@ -27,9 +27,7 @@
     <main style="flex:1;display:flex;flex-direction:column;position:relative;background:#f5f5f5;">
         <!-- Horizontal Category Bar -->
         <div style="display:flex;gap:1rem;position:absolute;top:2rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;">
-            <button onclick="filterCategory('restaurant')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
-                <span>☕</span> Coffee
-            </button>
+            
             <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
                 <span>🍽️</span> Food
             </button>
@@ -165,12 +163,17 @@ function filterCategory(category) {
         filteredPlaces = [...allPlaces];
     }
 
-    else if (category === "restaurant") {
+
+    else if (category === "food") {
         filteredPlaces = allPlaces.filter(p =>
             p.types.includes("restaurant") ||
             p.types.includes("cafe") ||
             p.types.includes("bakery") ||
-            p.types.includes("meal_takeaway")
+            p.types.includes("meal_takeaway") ||
+            p.types.includes("meal_delivery") ||
+            p.types.includes("bar") ||
+            p.types.includes("night_club") ||
+            p.types.includes("pub")
         );
     }
 
