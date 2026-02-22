@@ -723,7 +723,6 @@ function renderBostonRestaurants(list) {
     const gm = r.toGoogleMarker(map);
 
     gm.addListener("mouseover", () => {
-      if (sidebarDetailsLocked) return;
       infoWindow.setContent(buildBostonInfoContent(r));
       infoWindow.open(map, gm);
       showSidebarForBostonPlace(r);
