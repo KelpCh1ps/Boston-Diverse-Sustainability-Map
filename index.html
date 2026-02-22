@@ -67,6 +67,7 @@ let placesService;
 let allPlaces = [];
 let filteredPlaces = [];
 let markers = [];
+let infoWindow;
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
@@ -94,6 +95,7 @@ async function initMap() {
             });
 
             placesService = new google.maps.places.PlacesService(map);
+            infoWindow = new google.maps.InfoWindow();
             fetchFoodPlaces(userLocation);
 
         }, () => {
@@ -215,8 +217,30 @@ function renderMarkers(data) {
         const marker = new AdvancedMarkerElement({
             map: map,
             position: place.geometry.location,
-            title: place.name
+            title: place.name,
+            gmpClickable: true
         });
+
+        marker.addListener("click", () => {
+            const rating = place.rating ?? "N/A";
+            const priceLevel = place.price_level;
+            const priceDisplay = typeof priceLevel === "number"
+                ? "$".repeat(priceLevel)
+                : "N/A";
+
+            infoWindow.setContent(`
+                <div style="min-width:180px;">
+                    <strong>${place.name}</strong><br>
+                    Price: ${priceDisplay}<br>
+                    Rating: ${rating}
+                </div>
+            `);
+            infoWindow.open({
+                map,
+                anchor: marker
+            });
+        });
+
         markers.push(marker);
     });
 }
