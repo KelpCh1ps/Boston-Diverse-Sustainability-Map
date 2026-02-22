@@ -1,3 +1,5 @@
+import { loadSnapIndex } from "./snapMatcher.js";
+
 let map;
 let markers = [];
 
@@ -13,6 +15,9 @@ const bostonBounds = {
 };
 
 async function initMap() {
+
+    await loadSnapIndex();
+
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 

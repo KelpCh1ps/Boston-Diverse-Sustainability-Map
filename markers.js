@@ -11,6 +11,7 @@ export class Marker {
   }
 
   toGoogleMarker(map) {
+    <p><strong>EBT:</strong> ${this.takeEbt ? "Accepts SNAP" : "No SNAP"}</p>
     const icon = this.getIcon();
 
     return new google.maps.Marker({
@@ -38,6 +39,7 @@ export class Restaurants extends Marker {
     review = "No reviews",
     hours = "Hours not listed",
     meta = {}, // optional: store extra Boston fields
+     takeEbt = false,
   } = {}) {
     super({ name, lat, lng });
     this.address = address;
@@ -45,6 +47,7 @@ export class Restaurants extends Marker {
     this.rating = rating;
     this.review = review;
     this.hours = hours;
+    this.takeEbt = takeEbt;
     this.meta = meta;
   }
 
