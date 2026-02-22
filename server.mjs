@@ -20,7 +20,7 @@ Restaurant Name - Address (newline):
 1. Overall sentiment (Positive, Negative, Mixed, Neutral) (newline)
 2. Key themes or typical reviews (newline)
 3. Any important notes or events (like discounts) (newline)
-Give your response in short, clear sentences. Do not use any formatting except for newline return br in < brackets
+Give your response in short, clear sentences. Do not use any formatting except for newline return br in brackets for formatting newline in html
 `;
 
   try {
