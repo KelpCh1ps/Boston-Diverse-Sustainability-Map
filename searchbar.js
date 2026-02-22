@@ -1,77 +1,78 @@
-// This example adds a search box to a map, using the Google Place Autocomplete
-// feature. People can enter geographical searches. The search box will return a
-// pick list containing a mix of places and predicted search terms.
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-function initAutocomplete() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.8688, lng: 151.2195 },
-    zoom: 13,
-    mapTypeId: "roadmap",
-  });
-  // Create the search box and link it to the UI element.
-  const input = document.getElementById("pac-input");
-  const searchBox = new google.maps.places.SearchBox(input);
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener("bounds_changed", () => {
-    searchBox.setBounds(map.getBounds());
-  });
-
-  let markers = [];
-
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener("places_changed", () => {
-    const places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
+// Search functionality with Places API
+async function initSearch() {
+    // Wait for map to be initialized
+    let attempts = 0;
+    while (!window.map && attempts < 10) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        attempts++;
     }
 
-    // Clear out the old markers.
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
-    const bounds = new google.maps.LatLngBounds();
-
-    places.forEach((place) => {
-      if (!place.geometry || !place.geometry.location) {
-        console.log("Returned place contains no geometry");
+    if (!window.map) {
+        console.error("Map not initialized");
         return;
-      }
+    }
 
-      const icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25),
-      };
-
-      // Create a marker for each place.
-      markers.push(
-        new google.maps.Marker({
-          map,
-          icon,
-          title: place.name,
-          position: place.geometry.location,
-        }),
-      );
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
+    const { PlacesService } = await google.maps.importLibrary("places");
+    const input = document.getElementById("pac-input");
+    
+    // Define Boston area bounds for search
+    const bostonBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(42.2, -71.3), // southwest
+        new google.maps.LatLng(42.5, -70.8)  // northeast
+    );
+    
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ["establishment", "geocode"],
+        bounds: bostonBounds,
+        strictBounds: true,
+        componentRestrictions: { country: "us" },
     });
-    map.fitBounds(bounds);
-  });
+
+    autocomplete.bindTo("bounds", window.map);
+
+    let searchMarkers = [];
+
+    autocomplete.addListener("place_changed", () => {
+        const place = autocomplete.getPlace();
+
+        if (!place.geometry || !place.geometry.location) {
+            console.log("Place has no geometry");
+            return;
+        }
+
+        // Verify location is within Boston bounds
+        const location = place.geometry.location;
+        const lat = location.lat();
+        const lng = location.lng();
+        
+        if (lat < 42.2 || lat > 42.5 || lng < -71.3 || lng > -70.8) {
+            input.value = "";
+            alert("Please search for locations within the Boston area.");
+            return;
+        }
+
+        // Clear previous search markers
+        searchMarkers.forEach(marker => marker.setMap(null));
+        searchMarkers = [];
+
+        // Create marker for search result
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        const marker = new AdvancedMarkerElement({
+            map: window.map,
+            position: place.geometry.location,
+            title: place.name
+        });
+
+        searchMarkers.push(marker);
+
+        // Center and zoom to location
+        window.map.setCenter(place.geometry.location);
+        window.map.setZoom(16);
+
+        // Clear input after selection
+        input.blur();
+    });
 }
 
-window.initAutocomplete = initAutocomplete;
+// Initialize search when page loads
+document.addEventListener("DOMContentLoaded", initSearch);
