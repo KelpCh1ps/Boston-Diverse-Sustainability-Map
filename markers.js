@@ -1,3 +1,4 @@
+// markers.js
 export class Marker {
   constructor({ name = "Marker", lat = 0, lng = 0 } = {}) {
     this.name = name;
@@ -11,7 +12,6 @@ export class Marker {
   }
 
   toGoogleMarker(map) {
-    <p><strong>EBT:</strong> ${this.takeEbt ? "Accepts SNAP" : "No SNAP"}</p>
     const icon = this.getIcon();
 
     return new google.maps.Marker({
@@ -38,8 +38,8 @@ export class Restaurants extends Marker {
     rating = 0,
     review = "No reviews",
     hours = "Hours not listed",
-    meta = {}, // optional: store extra Boston fields
-     takeEbt = false,
+    takeEbt = false,
+    meta = {},
   } = {}) {
     super({ name, lat, lng });
     this.address = address;
