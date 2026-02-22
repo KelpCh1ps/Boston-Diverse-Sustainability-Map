@@ -20,18 +20,12 @@ async function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: bostonCenter,
         zoom: 13,
-        mapId: "DEMO_MAP_ID",
+        mapId: "1907e1268c94d0034153c21a",
         disableDefaultUI: false,
         zoomControl: true,
         mapTypeControl: false,
         streetViewControl: false,
         fullscreenControl: true,
-        styles: [
-            {
-                featureType: "poi",
-                stylers: [{ visibility: "off" }]
-            }
-        ],
         restriction: {
             latLngBounds: bostonBounds,
             strictBounds: false
