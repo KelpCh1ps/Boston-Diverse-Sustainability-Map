@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Supply Map</title>
+<title>Boston DSM</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,10 @@
             ◀
         </button>
         <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
-            <img src="https://assets.mapquest.com/img/logo.svg" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
+            <div style="display:flex; align-items:center; gap:0rem; margin-bottom:1.5rem;">
+                <img src="./icons/BDSM_Logo.png" alt="Boston DSM Logo" class="boston-dsm-logo" style="height:80px; margin-bottom:0;">
+                <span style="font-size:2rem; font-weight:700; color:#222; font-family:'DynaPuff',system-ui;">Boston DSM</span>
+            </div>
             <input class="search-input" id="searchBar" type="text" placeholder="Search places or paste a link" list="searchSuggestions" autocomplete="off">
             <datalist id="searchSuggestions"></datalist>
         </div>
