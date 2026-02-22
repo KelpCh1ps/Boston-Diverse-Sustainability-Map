@@ -52,7 +52,7 @@ export class Restaurants extends Marker {
   }
 
   getIcon() {
-    return "./icons/restaurant_logo.png";
+    return new URL("./icons/restaurant_logo.png", import.meta.url).href;
   }
 }
 
@@ -80,7 +80,7 @@ export class Market extends Marker {
   }
 
   getIcon() {
-    return "./icons/Market_Logo.png";
+    return new URL("./icons/Market_Logo.png", import.meta.url).href;
   }
 }
 
@@ -102,6 +102,6 @@ export class Pantry extends Restaurants {
   }
 
   getIcon() {
-    return "./icons/Food_Pantry_Logo.png";
+    return new URL("./icons/Food_Pantry_Logo.png", import.meta.url).href;
   }
 }

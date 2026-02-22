@@ -8,39 +8,44 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="map.css">
+<link rel="stylesheet" href="public/map.css">
 </head>
 
 <body>
 
 <div style="display:flex; height:100vh;">
     <!-- Sidebar -->
-    <aside style="width:370px; min-width:300px; max-width:420px; background:#fff; border-right:1px solid #e0e0e0; display:flex; flex-direction:column;">
-        <div style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
+    <aside id="sidebarPane" class="sidebar-pane" style="width:370px; min-width:300px; max-width:420px; background:#fff; border-right:1px solid #e0e0e0; display:flex; flex-direction:column;">
+        <button id="sidebarToggle" class="sidebar-toggle" type="button" onclick="toggleSidebar()" aria-label="Collapse sidebar" aria-expanded="true">
+            ◀
+        </button>
+        <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
             <img src="https://assets.mapquest.com/img/logo.svg" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
-            <input class="search-input" id="searchBar" type="text" placeholder="Search places or paste a link">
         </div>
-        <div style="flex:1;overflow-y:auto;padding:1.5rem;">
-            <h2 style="font-size:1.1rem;margin-bottom:1rem;">Food-Related Places</h2>
+        <div class="sidebar-content" style="flex:1;overflow-y:auto;padding:1.5rem;">
             <div id="restaurantList"></div>
         </div>
     </aside>
 
     <!-- Main Map Area -->
     <main style="flex:1;display:flex;flex-direction:column;position:relative;background:#f5f5f5;">
+        <div id="searchBox" class="search-box" style="position:absolute;top:1rem;left:50%;transform:translateX(-50%);z-index:12;width:min(760px,calc(100% - 3rem));">
+            <input class="search-input animated-search-input" id="searchBar" type="text" placeholder="Search restaurant names">
+            <div id="searchResults" class="search-results" role="listbox" aria-label="Search suggestions"></div>
+        </div>
         <!-- Horizontal Category Bar -->
-        <div style="display:flex;gap:1rem;position:absolute;top:2rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;">
+        <div class="filter-bar" style="display:flex;gap:1rem;justify-content:space-between;position:absolute;top:5rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;width:min(760px,calc(100% - 3rem));">
             <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🍽️</span> Food
+                Restaurant
             </button>
             <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <img src="icons/Market_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Grocery
+                Grocers
             </button>
             <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🏬</span> Wholesale
+                Wholesale
             </button>
-            <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <img src="icons/Food_Pantry_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Farms
+            <button onclick="filterCategory('pantry')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+                Food Banks & Pantries
             </button>
         </div>
 
@@ -48,14 +53,6 @@
             <div id="map" style="height:100%;width:100%;"></div>
         </div>
 
-        <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 2rem;display:flex;gap:1.5rem;align-items:center;z-index:10;">
-            <span>Sort by Price:</span>
-            <button onclick="sortPlaces('price','asc')">Low → High</button>
-            <button onclick="sortPlaces('price','desc')">High → Low</button>
-            <span>Sort by Rating:</span>
-            <button onclick="sortPlaces('rating','desc')">High → Low</button>
-            <button onclick="sortPlaces('rating','asc')">Low → High</button>
-        </div>
     </main>
 </div>
 
@@ -66,7 +63,7 @@
 </script>
 
 <script type="module">
-import { Restaurants } from "./markers.js";
+import { Restaurants } from "./public/markers.js";
 
 let map;
 let placesService;
@@ -74,6 +71,13 @@ let allPlaces = [];
 let filteredPlaces = [];
 let markers = [];          // Google Places AdvancedMarkerElement markers
 let infoWindow;
+let isSidebarCollapsed = false;
+let searchItems = [];
+let hideSearchResultsTimer = null;
+let sidebarHoverToken = 0;
+const placeDetailsCache = new Map();
+const bostonPlaceMatchCache = new Map();
+let sidebarDetailsLocked = false;
 
 // Boston dataset objects + google.maps.Marker instances
 let bostonRestaurants = [];
@@ -84,6 +88,26 @@ let bostonFiltered = [];
 // "food" = Boston dataset
 // "places" = Google Places dataset
 let mode = "food";
+
+window.toggleSidebar = function toggleSidebar() {
+  isSidebarCollapsed = !isSidebarCollapsed;
+  document.body.classList.toggle("sidebar-collapsed", isSidebarCollapsed);
+
+  const toggleButton = document.getElementById("sidebarToggle");
+  if (toggleButton) {
+    toggleButton.textContent = isSidebarCollapsed ? "▶" : "◀";
+    toggleButton.setAttribute("aria-expanded", String(!isSidebarCollapsed));
+    toggleButton.setAttribute("aria-label", isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar");
+  }
+
+  if (map) {
+    const center = map.getCenter();
+    setTimeout(() => {
+      google.maps.event.trigger(map, "resize");
+      if (center) map.setCenter(center);
+    }, 280);
+  }
+};
 
 const BOSTON_URL =
   "https://data.boston.gov/api/3/action/datastore_search?resource_id=f1e13724-284d-478c-b8bc-ef042aa5b70b&limit=5000";
@@ -142,6 +166,8 @@ async function initMap() {
         zoom: 13,
         center: userLocation,
         mapId: "1907e1268c94d0034153c21a",
+        mapTypeId: "terrain",
+        mapTypeControl: false,
       });
 
       // Keep your "You are here" marker (Google marker system)
@@ -188,10 +214,12 @@ function fetchFoodPlaces(location) {
   ];
 
   const keywords = [
-    "farm",
+    "food pantry",
+    "food bank",
     "food factory",
     "food distributor",
-    "wholesale food"
+    "wholesale food",
+    "brewery"
   ];
 
   allPlaces = [];
@@ -219,6 +247,7 @@ function handleResults(results, status) {
 /* ---------------- SEARCH BAR ---------------- */
 function setupSearchBar() {
   const input = document.getElementById("searchBar");
+  const results = document.getElementById("searchResults");
   if (!input) return;
 
   input.addEventListener("input", () => {
@@ -231,6 +260,23 @@ function setupSearchBar() {
       filteredPlaces = filterPlaces(q);
       renderAll();
     }
+
+    updateSearchResults(q);
+  });
+
+  input.addEventListener("focus", () => {
+    const q = input.value.trim().toLowerCase();
+    updateSearchResults(q);
+  });
+
+  input.addEventListener("blur", () => {
+    hideSearchResultsTimer = setTimeout(() => {
+      closeSearchResults();
+    }, 120);
+  });
+
+  results.addEventListener("mousedown", (event) => {
+    event.preventDefault();
   });
 }
 
@@ -253,10 +299,117 @@ function filterPlaces(q) {
   });
 }
 
+function updateSearchResults(query) {
+  const q = query ?? "";
+  let sourceItems = [];
+
+  if (mode === "food") {
+    sourceItems = q ? bostonFiltered : bostonRestaurants;
+    searchItems = sourceItems.slice(0, 8).map(item => ({
+      key: `${item.name}-${item.lat}-${item.lng}`,
+      title: item.name,
+      subtitle: item.address,
+      payload: item
+    }));
+  } else {
+    sourceItems = q ? filteredPlaces : allPlaces;
+    searchItems = sourceItems.slice(0, 8).map(item => ({
+      key: item.place_id,
+      title: item.name ?? "Unknown place",
+      subtitle: item.vicinity ?? "",
+      payload: item
+    }));
+  }
+
+  renderSearchResults();
+}
+
+function renderSearchResults() {
+  const container = document.getElementById("searchResults");
+  if (!container) return;
+
+  if (!searchItems.length) {
+    closeSearchResults();
+    return;
+  }
+
+  container.innerHTML = searchItems.map((item, index) => `
+    <button type="button" class="search-result-item" data-index="${index}" role="option" aria-selected="false">
+      <span class="search-result-title">${item.title}</span>
+      ${item.subtitle ? `<span class="search-result-subtitle">${item.subtitle}</span>` : ""}
+    </button>
+  `).join("");
+
+  container.classList.add("is-open");
+
+  container.querySelectorAll(".search-result-item").forEach(button => {
+    button.addEventListener("click", () => {
+      const index = Number(button.dataset.index);
+      selectSearchResult(index);
+    });
+  });
+}
+
+function closeSearchResults() {
+  const container = document.getElementById("searchResults");
+  if (!container) return;
+  container.classList.remove("is-open");
+}
+
+function selectSearchResult(index) {
+  const selected = searchItems[index];
+  if (!selected) return;
+  if (hideSearchResultsTimer) clearTimeout(hideSearchResultsTimer);
+
+  const input = document.getElementById("searchBar");
+  if (input) input.value = selected.title;
+
+  if (mode === "food") {
+    const target = selected.payload;
+    bostonFiltered = filterBoston(selected.title.toLowerCase());
+    renderBostonRestaurants(bostonFiltered);
+    map.panTo({ lat: target.lat, lng: target.lng });
+    map.setZoom(15);
+  } else {
+    const target = selected.payload;
+    filteredPlaces = filterPlaces(selected.title.toLowerCase());
+    renderAll();
+    if (target.geometry?.location) {
+      map.panTo(target.geometry.location);
+      map.setZoom(15);
+    }
+  }
+
+  closeSearchResults();
+}
+
+function isGrocerPlace(place) {
+  const types = place.types ?? [];
+  const name = (place.name ?? "").toLowerCase();
+  return (
+    types.includes("supermarket") ||
+    types.includes("grocery_or_supermarket") ||
+    types.includes("convenience_store")
+  ) && !name.includes("brewery");
+}
+
+function isWholesalePlace(place) {
+  const name = (place.name ?? "").toLowerCase();
+  const types = place.types ?? [];
+  return (
+    name.includes("distributor") ||
+    name.includes("wholesale") ||
+    name.includes("factory") ||
+    name.includes("brewery") ||
+    types.includes("liquor_store")
+  );
+}
+
 /* ---------------- CATEGORY SWITCHING ---------------- */
 window.filterCategory = function filterCategory(category) {
   const input = document.getElementById("searchBar");
   if (input) input.value = "";
+  closeSearchResults();
 
   if (category === "food") {
     mode = "food";
@@ -271,21 +424,13 @@ window.filterCategory = function filterCategory(category) {
   clearBostonRestaurantMarkers();
 
   if (category === "retail") {
-    filteredPlaces = allPlaces.filter(p =>
-      p.types.includes("supermarket") ||
-      p.types.includes("grocery_or_supermarket") ||
-      p.types.includes("convenience_store") ||
-      p.types.includes("liquor_store")
-    );
+    filteredPlaces = allPlaces.filter(isGrocerPlace);
   } else if (category === "wholesale") {
+    filteredPlaces = allPlaces.filter(isWholesalePlace);
+  } else if (category === "pantry") {
     filteredPlaces = allPlaces.filter(p =>
-      (p.name ?? "").toLowerCase().includes("distributor") ||
-      (p.name ?? "").toLowerCase().includes("wholesale") ||
-      (p.name ?? "").toLowerCase().includes("factory")
-    );
-  } else if (category === "farm") {
-    filteredPlaces = allPlaces.filter(p =>
-      (p.name ?? "").toLowerCase().includes("farm")
+      (p.name ?? "").toLowerCase().includes("food bank") ||
+      (p.name ?? "").toLowerCase().includes("pantry")
     );
   } else {
     filteredPlaces = [...allPlaces];
@@ -297,7 +442,6 @@ window.filterCategory = function filterCategory(category) {
 /* ---------------- GOOGLE PLACES RENDER ---------------- */
 function renderAll() {
   renderMarkers(filteredPlaces);
-  renderList(filteredPlaces);
 }
 
 function buildPlaceInfoContent(place) {
@@ -313,6 +457,160 @@ function buildPlaceInfoContent(place) {
   `;
 }
 
+function setSidebarDetailsHtml(html) {
+  const sidebar = document.getElementById("restaurantList");
+  if (!sidebar) return;
+  sidebar.innerHTML = html;
+}
+
+function clearSidebarDetails() {
+  setSidebarDetailsHtml("");
+}
+
+function buildSidebarDetailsCard({
+  title,
+  photoUrl = "",
+  address = "",
+  phone = "",
+  rating = "",
+  price = "",
+  website = "",
+  source = ""
+}) {
+  const safeWebsite = website ? website.replace(/"/g, "&quot;") : "";
+  return `
+    ${photoUrl ? `<img class="place-details-photo" src="${photoUrl}" alt="${title ?? "Location photo"}">` : ""}
+    <div class="place-details-title">${title ?? "Unknown place"}</div>
+    ${source ? `<div class="place-details-meta"><strong>Source:</strong> ${source}</div>` : ""}
+    ${address ? `<div class="place-details-meta"><strong>Address:</strong> ${address}</div>` : ""}
+    ${phone ? `<div class="place-details-meta"><strong>Phone:</strong> ${phone}</div>` : ""}
+    ${price ? `<div class="place-details-meta"><strong>Price:</strong> ${price}</div>` : ""}
+    ${rating ? `<div class="place-details-meta"><strong>Rating:</strong> ${rating}</div>` : ""}
+    ${website ? `<div class="place-details-meta"><strong>Website:</strong> <a class="place-details-link" href="${safeWebsite}" target="_blank" rel="noopener noreferrer">${website}</a></div>` : ""}
+  `;
+}
+
+function getPlaceDetails(placeId) {
+  if (!placeId) return Promise.resolve(null);
+  if (placeDetailsCache.has(placeId)) return placeDetailsCache.get(placeId);
+
+  const detailsPromise = new Promise((resolve) => {
+    placesService.getDetails({
+      placeId,
+      fields: ["name", "formatted_address", "formatted_phone_number", "website", "url", "photos"]
+    }, (result, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        resolve(result);
+      } else {
+        resolve(null);
+      }
+    });
+  });
+
+  placeDetailsCache.set(placeId, detailsPromise);
+  return detailsPromise;
+}
+
+function getBostonPlaceMatch(r) {
+  const cacheKey = `${r.name}|${r.address}`;
+  if (bostonPlaceMatchCache.has(cacheKey)) return bostonPlaceMatchCache.get(cacheKey);
+
+  const placeMatchPromise = new Promise((resolve) => {
+    placesService.findPlaceFromQuery({
+      query: `${r.name} ${r.address}`.trim(),
+      fields: ["place_id", "name", "formatted_address", "photos"]
+    }, (results, status) => {
+      if (
+        status === google.maps.places.PlacesServiceStatus.OK &&
+        Array.isArray(results) &&
+        results.length > 0
+      ) {
+        resolve(results[0]);
+      } else {
+        resolve(null);
+      }
+    });
+  });
+
+  bostonPlaceMatchCache.set(cacheKey, placeMatchPromise);
+  return placeMatchPromise;
+}
+
+async function showSidebarForGooglePlace(place) {
+  const currentToken = ++sidebarHoverToken;
+  const priceDisplay = typeof place.price_level === "number" ? "$".repeat(place.price_level) : "N/A";
+  const ratingDisplay = place.rating ?? "N/A";
+  const baseAddress = place.vicinity ?? "";
+  const quickPhotoUrl = place.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ?? "";
+
+  setSidebarDetailsHtml(buildSidebarDetailsCard({
+    title: place.name,
+    photoUrl: quickPhotoUrl,
+    source: "Google Places",
+    address: baseAddress,
+    price: priceDisplay,
+    rating: String(ratingDisplay),
+    website: ""
+  }));
+
+  const details = await getPlaceDetails(place.place_id);
+  if (currentToken !== sidebarHoverToken) return;
+
+  const website = details?.website || details?.url || "";
+  const address = details?.formatted_address || baseAddress;
+  const phone = details?.formatted_phone_number || "";
+  const photoUrl = details?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) || quickPhotoUrl;
+
+  setSidebarDetailsHtml(buildSidebarDetailsCard({
+    title: place.name,
+    photoUrl,
+    source: "Google Places",
+    address,
+    phone,
+    price: priceDisplay,
+    rating: String(ratingDisplay),
+    website
+  }));
+}
+
+async function showSidebarForBostonPlace(r) {
+  const currentToken = ++sidebarHoverToken;
+
+  setSidebarDetailsHtml(buildSidebarDetailsCard({
+    title: r.name,
+    source: "Boston Open Data",
+    address: r.address,
+    phone: r.number,
+    website: ""
+  }));
+
+  const match = await getBostonPlaceMatch(r);
+  if (currentToken !== sidebarHoverToken) return;
+
+  let details = null;
+  if (match?.place_id) {
+    details = await getPlaceDetails(match.place_id);
+    if (currentToken !== sidebarHoverToken) return;
+  }
+
+  const photoUrl =
+    details?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ||
+    match?.photos?.[0]?.getUrl?.({ maxWidth: 640, maxHeight: 420 }) ||
+    "";
+  const website = details?.website || details?.url || "";
+  const address = details?.formatted_address || match?.formatted_address || r.address;
+  const phone = details?.formatted_phone_number || r.number;
+
+  setSidebarDetailsHtml(buildSidebarDetailsCard({
+    title: r.name,
+    photoUrl,
+    source: "Boston Open Data",
+    address,
+    phone,
+    website
+  }));
+}
+
 function createFoodPinContent(place) {
   const pin = document.createElement("button");
   pin.type = "button";
@@ -324,7 +622,14 @@ function createFoodPinContent(place) {
 
   const image = document.createElement("img");
   image.className = "food-pin__image";
-  image.src = "icons/restaurant_logo.png";
+  const name = (place.name ?? "").toLowerCase();
+  if (name.includes("food bank") || name.includes("pantry")) {
+    image.src = "public/icons/Food_Pantry_Logo.png";
+  } else if (isGrocerPlace(place)) {
+    image.src = "public/icons/Market_Logo.png";
+  } else {
+    image.src = "public/icons/restaurant_logo.png";
+  }
   image.alt = "";
   image.setAttribute("aria-hidden", "true");
 
@@ -342,6 +647,8 @@ function clearGooglePlaceMarkers() {
   markers.forEach(marker => marker.map = null);
   markers = [];
   if (infoWindow) infoWindow.close();
+  sidebarDetailsLocked = false;
+  clearSidebarDetails();
 }
 
 function renderMarkers(data) {
@@ -363,38 +670,30 @@ function renderMarkers(data) {
     const openInfoWindow = () => {
       infoWindow.setContent(buildPlaceInfoContent(place));
       infoWindow.open({ map, anchor: marker });
+      showSidebarForGooglePlace(place);
     };
-    const closeInfoWindow = () => infoWindow.close();
+    const closeInfoWindow = () => {
+      if (sidebarDetailsLocked) return;
+      sidebarHoverToken++;
+      infoWindow.close();
+      clearSidebarDetails();
+    };
 
     pinContent.addEventListener("mouseenter", openInfoWindow);
     pinContent.addEventListener("mouseleave", closeInfoWindow);
     pinContent.addEventListener("focus", openInfoWindow);
     pinContent.addEventListener("blur", closeInfoWindow);
+    pinContent.addEventListener("click", () => {
+      sidebarDetailsLocked = true;
+      openInfoWindow();
+    });
 
     markers.push(marker);
   });
 }
 
 function renderList(data) {
-  const list = document.getElementById("restaurantList");
-  list.innerHTML = "";
-
-  data.forEach(place => {
-    const div = document.createElement("div");
-    div.className = "restaurant-item";
-
-    const priceLevel = place.price_level ?? "N/A";
-    const priceDisplay = typeof priceLevel === "number" ? "$".repeat(priceLevel) : "N/A";
-    const rating = place.rating ?? "N/A";
-
-    div.innerHTML = `
-      <strong>${place.name}</strong><br>
-      Price: ${priceDisplay}<br>
-      Rating: ${rating}
-    `;
-
-    list.appendChild(div);
-  });
+  void data;
 }
 
 /* ---------------- BOSTON RESTAURANT RENDER ---------------- */
@@ -413,6 +712,8 @@ function clearBostonRestaurantMarkers() {
   bostonRestaurantMarkers.forEach(m => m.setMap(null));
   bostonRestaurantMarkers = [];
   if (infoWindow) infoWindow.close();
+  sidebarDetailsLocked = false;
+  clearSidebarDetails();
 }
 
 function renderBostonRestaurants(list) {
@@ -422,30 +723,28 @@ function renderBostonRestaurants(list) {
     const gm = r.toGoogleMarker(map);
 
     gm.addListener("mouseover", () => {
+      if (sidebarDetailsLocked) return;
       infoWindow.setContent(buildBostonInfoContent(r));
       infoWindow.open(map, gm);
+      showSidebarForBostonPlace(r);
     });
-    gm.addListener("mouseout", () => infoWindow.close());
+    gm.addListener("mouseout", () => {
+      if (sidebarDetailsLocked) return;
+      sidebarHoverToken++;
+      infoWindow.close();
+      clearSidebarDetails();
+    });
     gm.addListener("click", () => {
+      sidebarDetailsLocked = true;
       infoWindow.setContent(buildBostonInfoContent(r));
       infoWindow.open(map, gm);
+      showSidebarForBostonPlace(r);
     });
 
     bostonRestaurantMarkers.push(gm);
   });
 
-  const sidebar = document.getElementById("restaurantList");
-  sidebar.innerHTML = "";
-  list.forEach((r) => {
-    const div = document.createElement("div");
-    div.className = "restaurant-item";
-    div.innerHTML = `
-      <strong>${r.name}</strong><br>
-      ${r.address}<br>
-      Phone: ${r.number}
-    `;
-    sidebar.appendChild(div);
-  });
+  clearSidebarDetails();
 }
 
 /* ---------------- SORTING ---------------- */
