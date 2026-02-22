@@ -1,34 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boston Diverse Sustainability Map</title>
-    <link rel="stylesheet" href="map.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Boston Diverse Sustainability Map</h1>
-            <input 
-                type="text" 
-                id="pac-input" 
-                class="search-input" 
-                placeholder="Search locations..."
-            />
-        </div>
-        <div id="map" class="map-container"></div>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Supply Map</title>
 
-    <script>
-        // Google Maps Bootstrap Loader
-        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-            key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
-            libraries: ["places", "marker", "maps"]
+<style>
+#map {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+button {
+    margin: 5px 5px 5px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.restaurant-item {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Food Supply Map</h1>
+
+<!-- Category Filters -->
+<button onclick="filterCategory('all')">Show All</button>
+<button onclick="filterCategory('restaurant')">Restaurants</button>
+<button onclick="filterCategory('retail')">Retail</button>
+<button onclick="filterCategory('wholesale')">Wholesale</button>
+<button onclick="filterCategory('farm')">Farms</button>
+
+<br><br>
+
+<!-- Sorting Buttons -->
+Sort by Price: 
+<button onclick="sortPlaces('price','asc')">Low → High</button>
+<button onclick="sortPlaces('price','desc')">High → Low</button>
+
+Sort by Rating: 
+<button onclick="sortPlaces('rating','desc')">High → Low</button>
+<button onclick="sortPlaces('rating','asc')">Low → High</button>
+
+<div id="map"></div>
+
+<h2>Food-Related Places</h2>
+<div id="restaurantList"></div>
+
+<script>
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
+});
+
+let map;
+let placesService;
+let allPlaces = [];
+let filteredPlaces = [];
+let markers = [];
+
+async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    await google.maps.importLibrary("places");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+
+            const userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            map = new Map(document.getElementById("map"), {
+                zoom: 13,
+                center: userLocation,
+                mapId: "DEMO_MAP_ID",
+            });
+
+            new AdvancedMarkerElement({
+                map: map,
+                position: userLocation,
+                title: "You are here"
+            });
+
+            placesService = new google.maps.places.PlacesService(map);
+            fetchFoodPlaces(userLocation);
+
+        }, () => {
+            alert("Location permission denied.");
         });
-    </script>
-    <script src="map.js"></script>
-    <script src="searchbar.js"></script>
-    
+    }
+}
+
+function fetchFoodPlaces(location) {
+
+    const types = [
+        "restaurant",
+        "cafe",
+        "bakery",
+        "meal_takeaway",
+        "meal_delivery",
+        "supermarket",
+        "grocery_or_supermarket",
+        "convenience_store",
+        "liquor_store"
+    ];
+
+    const keywords = [
+        "farm",
+        "food factory",
+        "food distributor",
+        "wholesale food"
+    ];
+
+    allPlaces = [];
+
+    types.forEach(type => {
+        placesService.nearbySearch({
+            location,
+            radius: 3000,
+            type
+        }, handleResults);
+    });
+
+    keywords.forEach(keyword => {
+        placesService.nearbySearch({
+            location,
+            radius: 3000,
+            keyword
+        }, handleResults);
+    });
+}
+
+function handleResults(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+        results.forEach(place => {
+            if (!allPlaces.some(p => p.place_id === place.place_id)) {
+                allPlaces.push(place);
+            }
+        });
+
+        filteredPlaces = [...allPlaces];
+        renderAll();
+    }
+}
+
+// 🔹 Filter by category
+function filterCategory(category) {
+
+    if (category === "all") {
+        filteredPlaces = [...allPlaces];
+    }
+
+    else if (category === "restaurant") {
+        filteredPlaces = allPlaces.filter(p =>
+            p.types.includes("restaurant") ||
+            p.types.includes("cafe") ||
+            p.types.includes("bakery") ||
+            p.types.includes("meal_takeaway")
+        );
+    }
+
+    else if (category === "retail") {
+        filteredPlaces = allPlaces.filter(p =>
+            p.types.includes("supermarket") ||
+            p.types.includes("grocery_or_supermarket") ||
+            p.types.includes("convenience_store") ||
+            p.types.includes("liquor_store")
+        );
+    }
+
+    else if (category === "wholesale") {
+        filteredPlaces = allPlaces.filter(p =>
+            p.name.toLowerCase().includes("distributor") ||
+            p.name.toLowerCase().includes("wholesale") ||
+            p.name.toLowerCase().includes("factory")
+        );
+    }
+
+    else if (category === "farm") {
+        filteredPlaces = allPlaces.filter(p =>
+            p.name.toLowerCase().includes("farm")
+        );
+    }
+
+    renderAll();
+}
+
+// 🔹 General render
+function renderAll() {
+    renderMarkers(filteredPlaces);
+    renderList(filteredPlaces);
+}
+
+// 🔹 Render map markers
+function renderMarkers(data) {
+    const { AdvancedMarkerElement } = google.maps.marker;
+
+    markers.forEach(marker => marker.map = null);
+    markers = [];
+
+    data.forEach(place => {
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position: place.geometry.location,
+            title: place.name
+        });
+        markers.push(marker);
+    });
+}
+
+// 🔹 Render list
+function renderList(data) {
+    const list = document.getElementById("restaurantList");
+    list.innerHTML = "";
+
+    data.forEach(place => {
+        const div = document.createElement("div");
+        div.className = "restaurant-item";
+
+        const priceLevel = place.price_level ?? "N/A";
+        const priceDisplay = typeof priceLevel === "number"
+            ? "$".repeat(priceLevel)
+            : "N/A";
+
+        const rating = place.rating ?? "N/A";
+
+        div.innerHTML = `
+            <strong>${place.name}</strong><br>
+            Price: ${priceDisplay}<br>
+            Rating: ${rating}
+        `;
+
+        list.appendChild(div);
+    });
+}
+
+// 🔹 General sorting: type = 'price' or 'rating'
+function sortPlaces(type, order) {
+    filteredPlaces.sort((a, b) => {
+        let valA, valB;
+
+        if (type === "price") {
+            valA = a.price_level ?? 0;
+            valB = b.price_level ?? 0;
+        } else if (type === "rating") {
+            valA = a.rating ?? 0;
+            valB = b.rating ?? 0;
+        }
+
+        return order === "asc" ? valA - valB : valB - valA;
+    });
+
+    renderAll();
+}
+
+initMap();
+</script>
+
 </body>
 </html>
