@@ -1,0 +1,5729 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-02-22T07:52:27Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/2838626",
+        "addr:city": "Canton",
+        "addr:housenumber": "100;104",
+        "addr:postcode": "02021",
+        "addr:state": "MA",
+        "addr:street": "Royall Street",
+        "brewery": "Trillium Brewing",
+        "building": "brewery",
+        "check_date": "2025-05-26",
+        "craft": "brewery",
+        "name": "Trillium Brewing",
+        "opening_hours": "Mo-Sa 11:00-23:00, Su 11:00-22:00;Mo-Th 11:00-19:30;Fr-Sa 11:00-22:00;Su 12:00-17:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1 781-562-0073",
+        "type": "multipolygon",
+        "website": "https://trilliumbrewing.com/pages/canton;https://www.trilliumbrewing.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1225924,
+          42.205196
+        ]
+      },
+      "id": "relation/2838626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/5813978",
+        "landuse": "farmland",
+        "name": "Clark Farm",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3419749,
+          42.5277234
+        ]
+      },
+      "id": "relation/5813978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/6607267",
+        "access": "yes",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Hornstra Farm",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8458061,
+          42.1735175
+        ]
+      },
+      "id": "relation/6607267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/7351895",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Northeast Correctional Center Land",
+        "owner": "Department Of Corrections",
+        "ownership": "state",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4034628,
+          42.4695559
+        ]
+      },
+      "id": "relation/7351895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/11145239",
+        "landuse": "farmland",
+        "name": "The Food Project",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3333233,
+          42.4298464
+        ]
+      },
+      "id": "relation/11145239"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/11909818",
+        "access": "permissive",
+        "landuse": "farmland",
+        "leisure": "nature_reserve",
+        "name": "Old Concord Road Site",
+        "owner": "Town of Lincoln",
+        "ownership": "municipal",
+        "protected": "limited",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.339215,
+          42.4284325
+        ]
+      },
+      "id": "relation/11909818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/11918358",
+        "landuse": "farmland",
+        "name": "The Farm at Walden Woods",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3587936,
+          42.4458417
+        ]
+      },
+      "id": "relation/11918358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/11952567",
+        "landuse": "farmland",
+        "name": "Flint Fields",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2984424,
+          42.4286461
+        ]
+      },
+      "id": "relation/11952567"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/12007032",
+        "landuse": "farmland",
+        "name": "Umbrello Hay Field",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3196918,
+          42.4054732
+        ]
+      },
+      "id": "relation/12007032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/12007097",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3303068,
+          42.4032846
+        ]
+      },
+      "id": "relation/12007097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/12033875",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3067787,
+          42.3797179
+        ]
+      },
+      "id": "relation/12033875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13056904",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1999/01/07",
+        "massgis:BASE_MAP": "APRMID",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "O",
+        "massgis:FEE_OWNER": "MFCLT/BARTON",
+        "massgis:FY_FUNDING": "0",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "288-281",
+        "massgis:OWNER_TYPE": "O",
+        "massgis:POLY_ID": "281",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DFA357",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "288",
+        "operator": "Barton Farm",
+        "owner": "Mfclt/Barton",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4085463,
+          42.407779
+        ]
+      },
+      "id": "relation/13056904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13056905",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "13.00000000;0.00000000;30.50000000",
+        "massgis:ASSESS_BLK": "3466;3441",
+        "massgis:ASSESS_MAP": "E14;F15",
+        "massgis:ATT_DATE": "2008/10/31",
+        "massgis:BASE_MAP": "APRMID",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "O;P",
+        "massgis:FEE_OWNER": "MFCLT / VERRILL STEPHEN B;VERRILL STEPHEN B",
+        "massgis:FY_FUNDING": "0",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "67-74;67-266;67-267",
+        "massgis:OWNER_TYPE": "O;P",
+        "massgis:POLY_ID": "74;266;267",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DFA348;DFA349",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "MFCLT/VERRILL;MFCLT / VERRILL;VERRILL",
+        "massgis:SOURCE_TYP": "NP",
+        "massgis:TOWN_ID": "67",
+        "operator": "Verrill Farm",
+        "owner": "Mfclt / Verrill Stephen B;Verrill Stephen B",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3764367,
+          42.4235608
+        ]
+      },
+      "id": "relation/13056905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13106135",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "0",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_LOT": "54",
+        "massgis:ASSESS_MAP": "55",
+        "massgis:ATT_DATE": "2005/07/25",
+        "massgis:CAL_DATE_R": "1/30/1997;2/14/2000",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "19.57000000;5.88000000",
+        "massgis:EOEAINVOLV": "5",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "Hunnewell Land Trust;Hunnewell, Luisa B. & Palmer, Morgan",
+        "massgis:FY_FUNDING": "1997;2000",
+        "massgis:INTSYM": "CR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "TTOR",
+        "massgis:OLI_1_INT": "CR",
+        "massgis:OLI_1_ORG": "The Trustees of Reservations",
+        "massgis:OLI_1_TYPE": "L",
+        "massgis:OS_DEED_BO": "11734;0",
+        "massgis:OS_DEED_PA": "95;0",
+        "massgis:OS_ID": "198-6705;317-2901",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "6705;2901",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DCS-CR15;DCS-CR21",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "Hunnewell Farm;Hunnewell Farm Annex",
+        "massgis:SOURCE_MAP": "DCS;TTOR",
+        "massgis:SOURCE_TYP": "NP;SV",
+        "massgis:TOWN_ID": "198;317",
+        "name": "Hunnewell Farm",
+        "operator": "Trustees of Reservations",
+        "owner": "Hunnewell Land Trust;Hunnewell, Luisa B. & Palmer, Morgan",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1997-01-30;2000-02-14",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3120308,
+          42.2784832
+        ]
+      },
+      "id": "relation/13106135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13400246",
+        "landuse": "farmyard",
+        "name": "Lexington Community Farm",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1890256,
+          42.4325036
+        ]
+      },
+      "id": "relation/13400246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/14001156",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3450729,
+          42.3533992
+        ]
+      },
+      "id": "relation/14001156"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/15026500",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1994/08/08",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "C",
+        "massgis:FEE_OWNER": "NORFOLK COUNTY",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "307-3440",
+        "massgis:OWNER_TYPE": "C",
+        "massgis:POLY_ID": "3440",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "X",
+        "massgis:SITE_NAME": "NORFOLK COUNTY FARM",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "307",
+        "name": "Norfolk County Farm",
+        "owner": "Norfolk County",
+        "ownership": "county",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2460174,
+          42.1974204
+        ]
+      },
+      "id": "relation/15026500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/15026501",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmyard",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1994/08/08",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "C",
+        "massgis:FEE_OWNER": "NORFOLK COUNTY",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "307-3439",
+        "massgis:OWNER_TYPE": "C",
+        "massgis:POLY_ID": "3439",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "X",
+        "massgis:SITE_NAME": "NORFOLK COUNTY FARM",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "307",
+        "name": "Norfolk County Farm",
+        "owner": "Norfolk County",
+        "ownership": "county",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2510666,
+          42.1965888
+        ]
+      },
+      "id": "relation/15026501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/15026521",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1994/08/08",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "C",
+        "massgis:FEE_OWNER": "NORFOLK COUNTY",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "307-3439",
+        "massgis:OWNER_TYPE": "C",
+        "massgis:POLY_ID": "3439",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "X",
+        "massgis:SITE_NAME": "NORFOLK COUNTY FARM",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "307",
+        "name": "Norfolk County Farm",
+        "owner": "Norfolk County",
+        "ownership": "county",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.254341,
+          42.1963792
+        ]
+      },
+      "id": "relation/15026521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/18112784",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1378735,
+          42.2023564
+        ]
+      },
+      "id": "relation/18112784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/20201868",
+        "landuse": "farmland",
+        "name": "Brookwood Farm",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1097102,
+          42.2059747
+        ]
+      },
+      "id": "relation/20201868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/20246378",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.10538,
+          42.2295298
+        ]
+      },
+      "id": "relation/20246378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/20246383",
+        "landuse": "farmland",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1014914,
+          42.228731
+        ]
+      },
+      "id": "relation/20246383"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/27470221",
+        "landuse": "farmland",
+        "name": "Wilson Farms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2059655,
+          42.4255867
+        ]
+      },
+      "id": "way/27470221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/27711983",
+        "landuse": "farmland",
+        "name": "Waltham Street Farms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2336735,
+          42.4302736
+        ]
+      },
+      "id": "way/27711983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/27712057",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2330746,
+          42.4267131
+        ]
+      },
+      "id": "way/27712057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29551457",
+        "addr:city": "Woburn",
+        "addr:housenumber": "5",
+        "addr:postcode": "01801",
+        "addr:street": "Draper Street",
+        "building": "yes",
+        "craft": "brewery",
+        "name": "Lord Hobo Brewing Company",
+        "phone": "+1 781 281 0809",
+        "website": "https://lordhobobrewing.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1289113,
+          42.4760936
+        ]
+      },
+      "id": "way/29551457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29585846",
+        "addr:city": "Jamaica Plain",
+        "addr:housenumber": "30",
+        "addr:postcode": "02130",
+        "addr:state": "MA",
+        "addr:street": "Germania Street",
+        "building": "yes",
+        "craft": "brewery",
+        "name": "Samuel Adams Brewery",
+        "operator": "Boston Beer Company",
+        "wikidata": "Q894558",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1026135,
+          42.3145632
+        ]
+      },
+      "id": "way/29585846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29691285",
+        "landuse": "farmland",
+        "name": "Essex North Shore Agricultural & Technical School District",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9762909,
+          42.5957237
+        ]
+      },
+      "id": "way/29691285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29696661",
+        "access": "private",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ALT_SITE_N": "BRWON",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "20.30000000",
+        "massgis:ASSESS_LOT": "106",
+        "massgis:ASSESS_MAP": "19",
+        "massgis:ATT_DATE": "2008/11/11",
+        "massgis:CAL_DATE_R": "03/25/1996",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "19.20000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "BROWN, ROBERT & KATHLEEN",
+        "massgis:FY_FUNDING": "1996",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "13470",
+        "massgis:OS_DEED_PA": "199",
+        "massgis:OS_ID": "184-1680",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "1680",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DAR_032596184BRO",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "FARMER BROWNS",
+        "massgis:SOURCE_TYP": "DARB",
+        "massgis:TOWN_ID": "184",
+        "name": "Farmer Browns",
+        "owner": "Brown, Robert & Kathleen",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1996-03-25",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9947671,
+          42.5978776
+        ]
+      },
+      "id": "way/29696661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29696828",
+        "access": "private",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ALT_SITE_N": "BROWN",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "20.30000000",
+        "massgis:ASSESS_LOT": "106",
+        "massgis:ASSESS_MAP": "19",
+        "massgis:ATT_DATE": "2008/11/11",
+        "massgis:CAL_DATE_R": "03/25/1996",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "BROWN, ROBERT & KATHLEEN",
+        "massgis:FY_FUNDING": "1996",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "13470",
+        "massgis:OS_DEED_PA": "199",
+        "massgis:OS_ID": "184-1",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "1",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DAR_032596184BRO",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "FARMER BROWNS",
+        "massgis:SOURCE_TYP": "DARB",
+        "massgis:TOWN_ID": "184",
+        "name": "Farmer Browns",
+        "owner": "Brown, Robert & Kathleen",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1996-03-25",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9948765,
+          42.5961379
+        ]
+      },
+      "id": "way/29696828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29697089",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "12.01000000",
+        "massgis:ASSESS_LOT": "107",
+        "massgis:ASSESS_MAP": "41",
+        "massgis:ATT_DATE": "2008/11/10",
+        "massgis:CAL_DATE_R": "07/01/1996",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "11.55000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "CLARK, WILLIAM H JR & SANDRA P",
+        "massgis:FY_FUNDING": "1996",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "9375",
+        "massgis:OS_DEED_PA": "503",
+        "massgis:OS_ID": "71-1383",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "1383",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DAR_070196074CLA",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "CLARK FARM",
+        "massgis:SOURCE_TYP": "DARB",
+        "massgis:TOWN_ID": "71",
+        "name": "Clark Farm",
+        "owner": "Clark, William H Jr & Sandra P",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1996-07-01",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9563763,
+          42.5679315
+        ]
+      },
+      "id": "way/29697089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29718823",
+        "addr:housenumber": "328",
+        "addr:street": "Broadway",
+        "amenity": "pub",
+        "building": "yes",
+        "building:levels": "1",
+        "check_date": "2024-10-03",
+        "craft": "brewery",
+        "internet_access": "wlan",
+        "microbrewery": "yes",
+        "name": "Winter Hill Brewery",
+        "opening_hours": "Su 09:00-15:00; We 12:00-20:00; Th 12:00-21:00; Fr-Sa 09:00-21:00",
+        "outdoor_seating": "yes",
+        "smoking": "no",
+        "website": "https://winterhillbrewing.com",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0940039,
+          42.3926403
+        ]
+      },
+      "id": "way/29718823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29776828",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1999/01/07",
+        "massgis:BASE_MAP": "APRMID",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "O",
+        "massgis:FY_FUNDING": "0",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "288-278",
+        "massgis:OWNER_TYPE": "O",
+        "massgis:POLY_ID": "278",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DFA359",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "288",
+        "operator": "MFCLT/CARUSO",
+        "owner": "Mfclt/Caruso",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4007413,
+          42.4088126
+        ]
+      },
+      "id": "way/29776828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29777707",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "owner": "Mfclt/Garder",
+        "protected": "perpetuity",
+        "source": "MassGIS Parcels",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3921156,
+          42.414764
+        ]
+      },
+      "id": "way/29777707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29783289",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "owner": "Mfclt/Sperry Rand",
+        "protected": "perpetuity",
+        "source": "MassGIS Parcels",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3946692,
+          42.4169794
+        ]
+      },
+      "id": "way/29783289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29795511",
+        "access": "restricted",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_BLK": "1819",
+        "massgis:ASSESS_MAP": "E8",
+        "massgis:ATT_DATE": "2008/11/21",
+        "massgis:CAL_DATE_R": "12/6/1979",
+        "massgis:COMMENTS": "DCS SPREADSHEET.",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "7.60000000",
+        "massgis:EOEAINVOLV": "5",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "KAZMAIER PATRICIA H",
+        "massgis:FY_FUNDING": "1980",
+        "massgis:INTSYM": "CR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "CLCT",
+        "massgis:OLI_1_INT": "CR",
+        "massgis:OLI_1_ORG": "Concord Land Conservation Trust",
+        "massgis:OLI_1_TYPE": "L",
+        "massgis:OS_DEED_BO": "13889",
+        "massgis:OS_DEED_PA": "549",
+        "massgis:OS_ID": "67-374",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "374",
+        "massgis:PRIM_PURP": "C",
+        "massgis:PROJ_ID1": "DCS-CR38",
+        "massgis:PUB_ACCESS": "L",
+        "massgis:SITE_NAME": "ADAMS RD / KAZMAIER CR",
+        "massgis:SOURCE_MAP": "SCANNED DCS MATERIALS",
+        "massgis:SOURCE_TYP": "OS",
+        "massgis:TOWN_ID": "67",
+        "name": "Adams Rd / Kazmaier Cr",
+        "owner": "Kazmaier Patricia H",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1979-12-06",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3802726,
+          42.4677178
+        ]
+      },
+      "id": "way/29795511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29795528",
+        "addr:city": "Concord",
+        "addr:postcode": "01742",
+        "addr:state": "MA",
+        "addr:street": "Barretts Mill Road",
+        "amenity": "prison",
+        "attribution": "Office of Geographic and Environmental Information (MassGIS), Commonwealth of Massachusetts Executive Office of Environmental Affairs",
+        "ele": "55",
+        "gnis:feature_id": "1973403",
+        "inmate_capcity": "150",
+        "inmate_count": "266",
+        "landuse": "farmland",
+        "massgis:id": "31",
+        "name": "Northeastern Correctional Center",
+        "owner": "Department Of Corrections",
+        "ownership": "state",
+        "protected": "perpetuity",
+        "security": "Minimum,Pre-release",
+        "sex": "male",
+        "source": "USGS Geonames",
+        "source_url": "http://mass.gov/mgis/prisons.htm",
+        "type": "State",
+        "wikidata": "Q7058012",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3981366,
+          42.4719267
+        ]
+      },
+      "id": "way/29795528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29815515",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_LOT": "3477",
+        "massgis:ASSESS_MAP": "F15",
+        "massgis:ASSESS_SUB": "2",
+        "massgis:ATT_DATE": "2008/10/31",
+        "massgis:BASE_MAP": "APRMID",
+        "massgis:COMMENTS": "ELIZABETH POUTASSE ORIGINAL FEE OWNER.",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "L",
+        "massgis:FEE_OWNER": "Concord Land Conservation Trust",
+        "massgis:FY_FUNDING": "0",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "67-265",
+        "massgis:OWNER_ABRV": "CLCT",
+        "massgis:OWNER_TYPE": "L",
+        "massgis:POLY_ID": "265",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DFA350",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "MILLER FARM APR",
+        "massgis:SOURCE_TYP": "NP",
+        "massgis:TOWN_ID": "67",
+        "operator": "Miller Farm APR",
+        "owner": "Concord Land Conservation Trust",
+        "ownership": "land_trust",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.376378,
+          42.4268622
+        ]
+      },
+      "id": "way/29815515"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29815659",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "1",
+        "massgis:ASSESS_ACR": "7.90000000",
+        "massgis:ASSESS_BLK": "3424",
+        "massgis:ASSESS_MAP": "E15",
+        "massgis:ATT_DATE": "2008/10/31",
+        "massgis:BASE_MAP": "APRMID",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "1",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "MARGOLSKEE JUSTIN M ETAL",
+        "massgis:FY_FUNDING": "0",
+        "massgis:INTSYM": "APR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "DAR",
+        "massgis:OLI_1_INT": "APR",
+        "massgis:OLI_1_ORG": "Department of Agricultural Resources",
+        "massgis:OLI_1_TYPE": "S",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "67-269",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "269",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PROJ_ID1": "DFA347",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "MARGOLSKEE",
+        "massgis:SOURCE_MAP": "NON-STANDARD DIGITAL PARCELS",
+        "massgis:SOURCE_TYP": "NP",
+        "massgis:TOWN_ID": "67",
+        "operator": "Verrill Farm",
+        "owner": "Margolskee Justin M Etal",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.379721,
+          42.4206653
+        ]
+      },
+      "id": "way/29815659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29815772",
+        "access": "private",
+        "boundary": "protected_area",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "0",
+        "massgis:ASSESS_ACR": "17.42000000",
+        "massgis:ASSESS_LOT": "16 &",
+        "massgis:ASSESS_MAP": "H09",
+        "massgis:ATT_DATE": "2002/01/11",
+        "massgis:BASE_MAP": "USGSOQ",
+        "massgis:CAL_DATE_R": "1/1/2000",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "5",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "EMMONS B",
+        "massgis:FY_FUNDING": "2001",
+        "massgis:INTSYM": "CR",
+        "massgis:LEV_PROT": "P",
+        "massgis:OLI_1_ABRV": "SVT",
+        "massgis:OLI_1_INT": "CR",
+        "massgis:OLI_1_ORG": "Sudbury Valley Trustees",
+        "massgis:OLI_1_TYPE": "L",
+        "massgis:OS_DEED_BO": "32086",
+        "massgis:OS_DEED_PA": "593",
+        "massgis:OS_ID": "288-1671",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "1671",
+        "massgis:PRIM_PURP": "C",
+        "massgis:PROJ_ID1": "DCS-CR34",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SOURCE_MAP": "DCS",
+        "massgis:TOWN_ID": "288",
+        "name": "Penny Meadow Farm",
+        "owner": "Emmons B",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "2000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4160994,
+          42.3775777
+        ]
+      },
+      "id": "way/29815772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29816221",
+        "access": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "0",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_BLK": "1893",
+        "massgis:ATT_DATE": "2008/11/28",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "L",
+        "massgis:FEE_OWNER": "Concord Land Conservation Trust",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "P",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "67-337",
+        "massgis:OWNER_ABRV": "CLCT",
+        "massgis:OWNER_TYPE": "L",
+        "massgis:POLY_ID": "337",
+        "massgis:PRIM_PURP": "C",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "KAZMAIER LAND",
+        "massgis:SOURCE_TYP": "NP",
+        "massgis:TOWN_ID": "67",
+        "name": "Kazmaier Land",
+        "owner": "Concord Land Conservation Trust",
+        "ownership": "land_trust",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3832228,
+          42.4662302
+        ]
+      },
+      "id": "way/29816221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29816259",
+        "access": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "0",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_BLK": "1893",
+        "massgis:ASSESS_LOT": "3",
+        "massgis:ATT_DATE": "2008/11/06",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "L",
+        "massgis:FEE_OWNER": "Concord Land Conservation Trust",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "P",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "67-102",
+        "massgis:OWNER_ABRV": "CLCT",
+        "massgis:OWNER_TYPE": "L",
+        "massgis:POLY_ID": "102",
+        "massgis:PRIM_PURP": "C",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "ADAMS ROAD",
+        "massgis:SOURCE_TYP": "NP",
+        "massgis:TOWN_ID": "67",
+        "owner": "Concord Land Conservation Trust",
+        "ownership": "land_trust",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3792476,
+          42.4668096
+        ]
+      },
+      "id": "way/29816259"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29817958",
+        "access": "yes",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1994/08/08",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "C",
+        "massgis:FEE_OWNER": "NORFOLK COUNTY",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "307-3463",
+        "massgis:OWNER_TYPE": "C",
+        "massgis:POLY_ID": "3463",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "NORFOLK COUNTY AGRICULTURE SCH",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "307",
+        "name": "Norfolk County Agriculture Sch",
+        "owner": "Norfolk County",
+        "ownership": "county",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2652104,
+          42.1853005
+        ]
+      },
+      "id": "way/29817958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29818768",
+        "access": "private",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "7.02000000",
+        "massgis:ASSESS_LOT": "3",
+        "massgis:ASSESS_MAP": "63",
+        "massgis:ATT_DATE": "1901/01/01",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "M",
+        "massgis:FEE_OWNER": "Town of Natick",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "198-1406",
+        "massgis:OWNER_ABRV": "M198",
+        "massgis:OWNER_TYPE": "M",
+        "massgis:POLY_ID": "1406",
+        "massgis:PRIM_PURP": "C",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SITE_NAME": "COMMUNITY GARDEN FARM",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "198",
+        "name": "Natick Community Farm",
+        "note": "extent adjusted",
+        "owner": "Town Of Natick",
+        "ownership": "municipal",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3240915,
+          42.2685911
+        ]
+      },
+      "id": "way/29818768"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29830275",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Lookout Farm",
+        "owner": "Lookout Farm Trust",
+        "ownership": "private",
+        "produce": "apple",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1981-03-05",
+        "website": "https://www.lookoutfarm.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3103372,
+          42.258167
+        ]
+      },
+      "id": "way/29830275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29835642",
+        "access": "yes",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1994/08/08",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "C",
+        "massgis:FEE_OWNER": "NORFOLK COUNTY",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "307-3462",
+        "massgis:OWNER_TYPE": "C",
+        "massgis:POLY_ID": "3462",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "NORFOLK COUNTY AGRICULTURE SCH",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "307",
+        "owner": "Norfolk County",
+        "ownership": "county",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2683871,
+          42.1853873
+        ]
+      },
+      "id": "way/29835642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29835951",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ATT_DATE": "1993/09/27",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "M",
+        "massgis:FEE_OWNER": "Town of Weston",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "L",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "333-5913",
+        "massgis:OWNER_ABRV": "M333",
+        "massgis:OWNER_TYPE": "M",
+        "massgis:POLY_ID": "5913",
+        "massgis:PRIM_PURP": "X",
+        "massgis:PUB_ACCESS": "X",
+        "massgis:TOWN_ID": "333",
+        "name": "Land's Sake 40 Acre Field",
+        "owner": "Town Of Weston",
+        "ownership": "municipal",
+        "protected": "limited",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2911092,
+          42.3582476
+        ]
+      },
+      "id": "way/29835951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29836842",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "0",
+        "massgis:ASSESS_ACR": "30.00000000",
+        "massgis:ASSESS_LOT": "24 25",
+        "massgis:ASSESS_MAP": "11",
+        "massgis:ATT_DATE": "1994/01/11",
+        "massgis:BASE_MAP": "23-2",
+        "massgis:CAL_DATE_R": "1/1/1971",
+        "massgis:COMMENTS": "TWO SECTIONS OF ONE PARCEL",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "P",
+        "massgis:FEE_OWNER": "O\"Connor, Mary",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "N",
+        "massgis:OS_DEED_BO": "12088",
+        "massgis:OS_DEED_PA": "520",
+        "massgis:OS_ID": "23-6250",
+        "massgis:OWNER_TYPE": "P",
+        "massgis:POLY_ID": "6250",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "N",
+        "massgis:SOURCE_MAP": "4",
+        "massgis:TOWN_ID": "23",
+        "owner": "O\"Connor, Mary",
+        "ownership": "private",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1971",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2614034,
+          42.5223836
+        ]
+      },
+      "id": "way/29836842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29858996",
+        "access": "yes",
+        "agricultural": "yes",
+        "area": "yes",
+        "landuse": "farmland",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_BLK": "3",
+        "massgis:ASSESS_LOT": "1",
+        "massgis:ASSESS_MAP": "53",
+        "massgis:ATT_DATE": "1995/08/23",
+        "massgis:BASE_MAP": "308-5",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "COM",
+        "massgis:FEE_OWNER": "Commonwealth of Massachusetts",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "P",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "308-5072",
+        "massgis:OWNER_ABRV": "COM",
+        "massgis:OWNER_TYPE": "S",
+        "massgis:POLY_ID": "5072",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "WALTHAM FIELD STATION",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "308",
+        "name": "Waltham Field Station",
+        "owner": "Commonwealth Of Massachusetts",
+        "ownership": "state",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2149034,
+          42.3833058
+        ]
+      },
+      "id": "way/29858996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29862086",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "massgis:COMMENTS": "HORSE FARM",
+        "name": "Eleazer Davis homestead",
+        "owner": "Samoylenko Sergei",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3121977,
+          42.4930162
+        ]
+      },
+      "id": "way/29862086"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29883216",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Griggs Farm",
+        "owner": "Griggs Farm Limited Partnership",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1997-05-08",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.253444,
+          42.5432882
+        ]
+      },
+      "id": "way/29883216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29883780",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Griggs Farm",
+        "owner": "Griggs Farm Limited Partnership",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "start_date": "1997-05-08",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2559184,
+          42.5420762
+        ]
+      },
+      "id": "way/29883780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29897462",
+        "access": "private",
+        "agricultural": "yes",
+        "landuse": "farmland",
+        "name": "Hutchins Farm",
+        "owner": "Hutchins Realty Trust",
+        "ownership": "private",
+        "protected": "perpetuity",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3398209,
+          42.4788464
+        ]
+      },
+      "id": "way/29897462"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29962849",
+        "building": "yes",
+        "craft": "distillery",
+        "name": "Boston Harbor Distillery",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0408868,
+          42.2919413
+        ]
+      },
+      "id": "way/29962849"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/47344381",
+        "landuse": "farmland",
+        "name": "Lindentree Farm",
+        "website": "http://www.lindentreefarm.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3415591,
+          42.4229021
+        ]
+      },
+      "id": "way/47344381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/47346113",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3251593,
+          42.4625958
+        ]
+      },
+      "id": "way/47346113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/54327129",
+        "addr:city": "Winchester",
+        "addr:country": "US",
+        "addr:housenumber": "78",
+        "addr:postcode": "01890",
+        "addr:state": "MA",
+        "addr:street": "Ridge Street",
+        "landuse": "farmland",
+        "name": "Wright-Locke Farm",
+        "wikidata": "Q7183027",
+        "wikipedia": "en:Philemon Wright/Asa Locke Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.175465,
+          42.4412276
+        ]
+      },
+      "id": "way/54327129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/85892680",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3210682,
+          42.3688283
+        ]
+      },
+      "id": "way/85892680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/94152519",
+        "addr:city": "Concord",
+        "addr:housenumber": "82",
+        "addr:postcode": "01742",
+        "addr:state": "MA",
+        "addr:street": "Fitchburg Turnpike",
+        "building": "yes",
+        "name": "Brigham Farm Stand",
+        "shop": "farm",
+        "source": "Bing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3669998,
+          42.4210093
+        ]
+      },
+      "id": "way/94152519"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/144943228",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2589809,
+          42.2906635
+        ]
+      },
+      "id": "way/144943228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/158098518",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3149729,
+          42.3787364
+        ]
+      },
+      "id": "way/158098518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/160063413",
+        "landuse": "farmyard",
+        "name": "Weir River Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8586589,
+          42.2410626
+        ]
+      },
+      "id": "way/160063413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/160063414",
+        "landuse": "farmyard",
+        "name": "Weir River Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8582237,
+          42.2400532
+        ]
+      },
+      "id": "way/160063414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/185790650",
+        "landuse": "farmland",
+        "name": "Upper Gardens",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2099324,
+          42.3005144
+        ]
+      },
+      "id": "way/185790650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/185790654",
+        "landuse": "farmland",
+        "name": "Lower Gardens",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2082357,
+          42.3017366
+        ]
+      },
+      "id": "way/185790654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/185804209",
+        "landuse": "farmland",
+        "name": "Newton Community Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2009494,
+          42.2975913
+        ]
+      },
+      "id": "way/185804209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/211984804",
+        "addr:housenumber": "201",
+        "addr:street": "Hartwell Road",
+        "building": "yes",
+        "name": "Chip-In-Farm",
+        "shop": "farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2977637,
+          42.4807018
+        ]
+      },
+      "id": "way/211984804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/212312894",
+        "addr:city": "Carlisle",
+        "addr:housenumber": "201",
+        "addr:street": "Bedford Road",
+        "building": "yes",
+        "name": "Clark Farm Market",
+        "opening_hours": "Tu-Sa 8:00-18:00 Su 8:00-17:00",
+        "operator": "Clark Farm",
+        "organic": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+1-978-254-5427",
+        "shop": "farm",
+        "website": "https://www.clarkfarmmarket.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3423401,
+          42.5276876
+        ]
+      },
+      "id": "way/212312894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/212582165",
+        "addr:city": "Concord",
+        "addr:country": "US",
+        "addr:postcode": "01742",
+        "addr:state": "MA",
+        "building": "yes",
+        "name": "Scimone's",
+        "name:en": "Frank Scimone Farm",
+        "shop": "farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3224178,
+          42.4718438
+        ]
+      },
+      "id": "way/212582165"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/212586146",
+        "addr:city": "Concord",
+        "addr:country": "US",
+        "addr:housenumber": "449",
+        "addr:postcode": "01742",
+        "addr:state": "MA",
+        "addr:street": "Barretts Mill Road",
+        "building": "yes",
+        "name": "Barrett's Mill Farm Stand",
+        "shop": "farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3805257,
+          42.4724797
+        ]
+      },
+      "id": "way/212586146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/213250619",
+        "addr:housenumber": "81",
+        "addr:postcode": "01702",
+        "addr:street": "Morton Street",
+        "building": "yes",
+        "craft": "brewery",
+        "name": "Exhibit 'A' Brewing Company",
+        "opening_hours": "We-Th 15:00-21:00; Fr-Sa 12:00-23:00; Su 12:00-18:00",
+        "phone": "+15082029297",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4016682,
+          42.278922
+        ]
+      },
+      "id": "way/213250619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/214070326",
+        "addr:housenumber": "95",
+        "addr:street": "Woodrock Road",
+        "building": "yes",
+        "craft": "brewery",
+        "name": "Barrel House Z",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9278187,
+          42.1925248
+        ]
+      },
+      "id": "way/214070326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/214275878",
+        "addr:city": "Lexington",
+        "addr:country": "US",
+        "addr:housenumber": "52",
+        "addr:state": "MA",
+        "addr:street": "Lowell Street",
+        "building": "yes",
+        "contact:facebook": "https://www.facebook.com/lexfarm",
+        "contact:instagram": "https://www.instagram.com/lexingtoncommunityfarm/",
+        "name": "Lexington Community Farm",
+        "shop": "farm",
+        "website": "https://lexfarm.org/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1884852,
+          42.433065
+        ]
+      },
+      "id": "way/214275878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/214524451",
+        "addr:housenumber": "45",
+        "addr:street": "West Street",
+        "building": "yes",
+        "craft": "distillery",
+        "distillery": "rum;gin;vodka",
+        "name": "AstraLuna Brands",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3207458,
+          42.194531
+        ]
+      },
+      "id": "way/214524451"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/214912451",
+        "addr:housenumber": "31",
+        "addr:street": "Astor Avenue",
+        "building": "yes",
+        "craft": "brewery",
+        "name": "Castle Island Brewing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1922712,
+          42.1688699
+        ]
+      },
+      "id": "way/214912451"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/215140195",
+        "addr:housenumber": "58",
+        "addr:street": "Codman Road",
+        "building": "yes",
+        "name": "Codman Community Farms",
+        "shop": "farm",
+        "website": "https://codmancommunityfarms.org/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.32924,
+          42.4148429
+        ]
+      },
+      "id": "way/215140195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/220685002",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3630304,
+          42.4790212
+        ]
+      },
+      "id": "way/220685002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/242948098",
+        "addr:city": "Concord",
+        "addr:housenumber": "11",
+        "addr:postcode": "01742",
+        "addr:state": "MA",
+        "addr:street": "Wheeler Road",
+        "building": "yes",
+        "name": "Verrill Farm",
+        "shop": "farm",
+        "source": "Bing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3741975,
+          42.4246002
+        ]
+      },
+      "id": "way/242948098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/252050633",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9823064,
+          42.5974462
+        ]
+      },
+      "id": "way/252050633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/252050634",
+        "landuse": "farmland",
+        "operator": "Essex North Shore Agricultural & Technical School District",
+        "service": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9841213,
+          42.595459
+        ]
+      },
+      "id": "way/252050634"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/252050635",
+        "landuse": "farmland",
+        "service": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9725469,
+          42.5910636
+        ]
+      },
+      "id": "way/252050635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/257124450",
+        "access": "private",
+        "description": "Private Farmland",
+        "landuse": "farmland",
+        "name": "Hall Farm",
+        "operator": "Hall Family",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0917236,
+          42.5672919
+        ]
+      },
+      "id": "way/257124450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/318121298",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3388813,
+          42.5237986
+        ]
+      },
+      "id": "way/318121298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/318121299",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3377819,
+          42.523295
+        ]
+      },
+      "id": "way/318121299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/332346816",
+        "addr:city": "Reading",
+        "addr:housenumber": "100",
+        "addr:postcode": "01867",
+        "addr:state": "MA",
+        "addr:street": "Main Street",
+        "building": "yes",
+        "name": "Calareso's Farm Stand",
+        "shop": "farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1039363,
+          42.5060454
+        ]
+      },
+      "id": "way/332346816"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/363001710",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.261916,
+          42.1879492
+        ]
+      },
+      "id": "way/363001710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/374691498",
+        "LAST_EDIT": "20110518",
+        "LOC_ID": "F_710870_3000151",
+        "MAP_NO": "069",
+        "MAP_PAR_ID": "069-0012",
+        "NO_MATCH": "N",
+        "PLAN_ID": "PA-1223",
+        "POLY_TYPE": "FEE",
+        "TOWN_ID": "23",
+        "landuse": "farmland",
+        "name": "Chip-In-Farm",
+        "source": "ANR",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.297208,
+          42.4802543
+        ]
+      },
+      "id": "way/374691498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/374691499",
+        "landuse": "farmland",
+        "name": "Scimone Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3234059,
+          42.4723757
+        ]
+      },
+      "id": "way/374691499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/374692089",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3221631,
+          42.4530948
+        ]
+      },
+      "id": "way/374692089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/374693892",
+        "barrier": "fence",
+        "landuse": "farmland",
+        "name": "Gaining Ground Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3112713,
+          42.4700141
+        ]
+      },
+      "id": "way/374693892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/380437934",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3089603,
+          42.4634992
+        ]
+      },
+      "id": "way/380437934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/382134929",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0225625,
+          42.6279937
+        ]
+      },
+      "id": "way/382134929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/388622439",
+        "access": "private",
+        "landuse": "farmland",
+        "name": "Sweet Autumn Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3325608,
+          42.5063308
+        ]
+      },
+      "id": "way/388622439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/412561978",
+        "barrier": "fence",
+        "landuse": "farmland",
+        "name": "Gaining Ground Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3127932,
+          42.4702725
+        ]
+      },
+      "id": "way/412561978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/438042495",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3252867,
+          42.4708903
+        ]
+      },
+      "id": "way/438042495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/439180142",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3555663,
+          42.4514106
+        ]
+      },
+      "id": "way/439180142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/443685644",
+        "addr:city": "Peabody",
+        "addr:housenumber": "189",
+        "addr:postcode": "01960",
+        "addr:state": "MA",
+        "addr:street": "Lynn Street",
+        "crop": "Pumpkins",
+        "landuse": "farmland",
+        "name": "Tillie's Farm",
+        "website": "https://tilliesfarm.org/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9542157,
+          42.5038996
+        ]
+      },
+      "id": "way/443685644"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/444157825",
+        "landuse": "farmyard",
+        "name": "Hornstra Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8464821,
+          42.17312
+        ]
+      },
+      "id": "way/444157825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/445236838",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3757308,
+          42.4400724
+        ]
+      },
+      "id": "way/445236838"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/446417193",
+        "landuse": "farmyard",
+        "name": "Jacobs Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8439767,
+          42.1588986
+        ]
+      },
+      "id": "way/446417193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/446417255",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8436746,
+          42.160273
+        ]
+      },
+      "id": "way/446417255"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/446417257",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8436559,
+          42.1587038
+        ]
+      },
+      "id": "way/446417257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/456282719",
+        "landuse": "farmland",
+        "operator": "Siena Farms",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.412335,
+          42.4118649
+        ]
+      },
+      "id": "way/456282719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/461770809",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.215425,
+          42.1265755
+        ]
+      },
+      "id": "way/461770809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/486698792",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3284554,
+          42.4159966
+        ]
+      },
+      "id": "way/486698792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/489449033",
+        "landuse": "farmland",
+        "name": "Clark Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3528714,
+          42.522579
+        ]
+      },
+      "id": "way/489449033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/511384576",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8228159,
+          42.1579162
+        ]
+      },
+      "id": "way/511384576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/513002241",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8705476,
+          42.1565182
+        ]
+      },
+      "id": "way/513002241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/513002243",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8691043,
+          42.1567409
+        ]
+      },
+      "id": "way/513002243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/513002246",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8671424,
+          42.1563489
+        ]
+      },
+      "id": "way/513002246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/513002248",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8714924,
+          42.1559704
+        ]
+      },
+      "id": "way/513002248"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/513002250",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8713867,
+          42.1571686
+        ]
+      },
+      "id": "way/513002250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/539237315",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3153002,
+          42.5147599
+        ]
+      },
+      "id": "way/539237315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/543537808",
+        "ele": "61",
+        "gnis:feature_id": "1974660",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3078926,
+          42.3340935
+        ]
+      },
+      "id": "way/543537808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/547118732",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2384231,
+          42.1662683
+        ]
+      },
+      "id": "way/547118732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/547118733",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2391247,
+          42.1670714
+        ]
+      },
+      "id": "way/547118733"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/552248575",
+        "addr:housenumber": "220",
+        "addr:street": "Wood Road",
+        "building": "industrial",
+        "craft": "brewery",
+        "name": "Widowmaker Brewing",
+        "source": "Bing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0369456,
+          42.220665
+        ]
+      },
+      "id": "way/552248575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/555035832",
+        "craft": "winery",
+        "crop": "grape",
+        "ele": "39",
+        "landuse": "farmland",
+        "name": "Alfalfa Farm",
+        "operator": "Alfalfa Farm Winery",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9656656,
+          42.6029291
+        ]
+      },
+      "id": "way/555035832"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/557444292",
+        "landuse": "farmland",
+        "name": "Harmony Hill Farm",
+        "source": "Bing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0700521,
+          42.1929423
+        ]
+      },
+      "id": "way/557444292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/750466338",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3357379,
+          42.4694433
+        ]
+      },
+      "id": "way/750466338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/761304840",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3696036,
+          42.4783926
+        ]
+      },
+      "id": "way/761304840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/780629075",
+        "landuse": "farmland",
+        "name": "Endicott comunity farming",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.161502,
+          42.2401135
+        ]
+      },
+      "id": "way/780629075"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/790522602",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3337797,
+          42.4019271
+        ]
+      },
+      "id": "way/790522602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/791400482",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3120107,
+          42.3794762
+        ]
+      },
+      "id": "way/791400482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/791415408",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3805041,
+          42.3984514
+        ]
+      },
+      "id": "way/791415408"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/808230175",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2871838,
+          42.4452491
+        ]
+      },
+      "id": "way/808230175"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/808230178",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.286692,
+          42.447171
+        ]
+      },
+      "id": "way/808230178"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/808230179",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2869977,
+          42.4482922
+        ]
+      },
+      "id": "way/808230179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/808230180",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2856687,
+          42.4478974
+        ]
+      },
+      "id": "way/808230180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/815480575",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9646983,
+          42.321015
+        ]
+      },
+      "id": "way/815480575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/815791377",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3620631,
+          42.4195289
+        ]
+      },
+      "id": "way/815791377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/826605406",
+        "landuse": "farmland",
+        "name": "Noah Brooks Tavern Farmland",
+        "operator": "Town of Concord/Lincoln and National Park Service",
+        "produce": "live_animal",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3085636,
+          42.4522516
+        ]
+      },
+      "id": "way/826605406"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/826605407",
+        "landuse": "farmland",
+        "name": "Noah Brooks Tavern Farmland",
+        "operator": "Town of Concord/Lincoln and National Park Service",
+        "produce": "live_animal",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3061126,
+          42.4521432
+        ]
+      },
+      "id": "way/826605407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/882528361",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3690319,
+          42.4199195
+        ]
+      },
+      "id": "way/882528361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/888213071",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3285622,
+          42.4551297
+        ]
+      },
+      "id": "way/888213071"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/891396025",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.377465,
+          42.4720593
+        ]
+      },
+      "id": "way/891396025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/891396026",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3817325,
+          42.4712575
+        ]
+      },
+      "id": "way/891396026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/891396027",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3818209,
+          42.4724011
+        ]
+      },
+      "id": "way/891396027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901698950",
+        "landuse": "farmland",
+        "name": "Allandale Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1415358,
+          42.3057094
+        ]
+      },
+      "id": "way/901698950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/903074343",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3210633,
+          42.4635813
+        ]
+      },
+      "id": "way/903074343"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/903081186",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3814452,
+          42.3963191
+        ]
+      },
+      "id": "way/903081186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/968250234",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8345166,
+          42.1464905
+        ]
+      },
+      "id": "way/968250234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/969800004",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9961917,
+          42.6231315
+        ]
+      },
+      "id": "way/969800004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/969800006",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9981246,
+          42.6226567
+        ]
+      },
+      "id": "way/969800006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/975827558",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2003646,
+          42.2977195
+        ]
+      },
+      "id": "way/975827558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/986831870",
+        "landuse": "farmland",
+        "name": "Needham Community Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2732346,
+          42.2739423
+        ]
+      },
+      "id": "way/986831870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/995468512",
+        "landuse": "farmyard",
+        "name": "Belmont Acres Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1592298,
+          42.3878603
+        ]
+      },
+      "id": "way/995468512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/995468513",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1589126,
+          42.3881012
+        ]
+      },
+      "id": "way/995468513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/995468514",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.159216,
+          42.3884686
+        ]
+      },
+      "id": "way/995468514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/997077692",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3627006,
+          42.4185332
+        ]
+      },
+      "id": "way/997077692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/998609051",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1895046,
+          42.4329308
+        ]
+      },
+      "id": "way/998609051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/998609052",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1889473,
+          42.4332876
+        ]
+      },
+      "id": "way/998609052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/998609053",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1885128,
+          42.4320266
+        ]
+      },
+      "id": "way/998609053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/998609054",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1897312,
+          42.4317405
+        ]
+      },
+      "id": "way/998609054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1001528479",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3051536,
+          42.3330958
+        ]
+      },
+      "id": "way/1001528479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1001529677",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3060536,
+          42.3331652
+        ]
+      },
+      "id": "way/1001529677"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1014906470",
+        "crop": "corn",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8627203,
+          42.2422815
+        ]
+      },
+      "id": "way/1014906470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1015110585",
+        "landuse": "farmland",
+        "name": "Schultz's Field",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8701715,
+          42.2265382
+        ]
+      },
+      "id": "way/1015110585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1019869542",
+        "access": "yes",
+        "agricultural": "yes",
+        "landuse": "farmyard",
+        "massgis:ARTICLE97": "9",
+        "massgis:ASSESS_ACR": "0.00000000",
+        "massgis:ASSESS_BLK": "3",
+        "massgis:ASSESS_LOT": "1",
+        "massgis:ASSESS_MAP": "53",
+        "massgis:ATT_DATE": "1995/08/23",
+        "massgis:BASE_MAP": "308-5",
+        "massgis:DCAM_ID": "0",
+        "massgis:DEED_ACRES": "0.00000000",
+        "massgis:EOEAINVOLV": "0",
+        "massgis:FEESYM": "COM",
+        "massgis:FEE_OWNER": "Commonwealth of Massachusetts",
+        "massgis:FY_FUNDING": "0",
+        "massgis:LEV_PROT": "P",
+        "massgis:OS_DEED_BO": "0",
+        "massgis:OS_DEED_PA": "0",
+        "massgis:OS_ID": "308-5072",
+        "massgis:OWNER_ABRV": "COM",
+        "massgis:OWNER_TYPE": "S",
+        "massgis:POLY_ID": "5072",
+        "massgis:PRIM_PURP": "A",
+        "massgis:PUB_ACCESS": "Y",
+        "massgis:SITE_NAME": "WALTHAM FIELD STATION",
+        "massgis:SOURCE_MAP": "1",
+        "massgis:TOWN_ID": "308",
+        "name": "Waltham Field Station",
+        "owner": "Commonwealth Of Massachusetts",
+        "ownership": "state",
+        "protected": "perpetuity",
+        "source": "MassGIS OpenSpace (http://www.mass.gov/mgis/osp.htm)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.213512,
+          42.384276
+        ]
+      },
+      "id": "way/1019869542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318531",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3173952,
+          42.4587492
+        ]
+      },
+      "id": "way/1021318531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318532",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3174572,
+          42.4578659
+        ]
+      },
+      "id": "way/1021318532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318533",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3154873,
+          42.4577359
+        ]
+      },
+      "id": "way/1021318533"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318534",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3148047,
+          42.4588584
+        ]
+      },
+      "id": "way/1021318534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318535",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3126946,
+          42.4593902
+        ]
+      },
+      "id": "way/1021318535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318536",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3135274,
+          42.4601965
+        ]
+      },
+      "id": "way/1021318536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318537",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3163064,
+          42.4611595
+        ]
+      },
+      "id": "way/1021318537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318538",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.316118,
+          42.4617252
+        ]
+      },
+      "id": "way/1021318538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318539",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3146545,
+          42.4605259
+        ]
+      },
+      "id": "way/1021318539"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318540",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3129789,
+          42.4616853
+        ]
+      },
+      "id": "way/1021318540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318541",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3126285,
+          42.4610827
+        ]
+      },
+      "id": "way/1021318541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318542",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3124283,
+          42.4629451
+        ]
+      },
+      "id": "way/1021318542"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318547",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3077459,
+          42.4575833
+        ]
+      },
+      "id": "way/1021318547"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021318548",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3082778,
+          42.4574444
+        ]
+      },
+      "id": "way/1021318548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021405711",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.30597,
+          42.4566617
+        ]
+      },
+      "id": "way/1021405711"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021405721",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3207364,
+          42.4588173
+        ]
+      },
+      "id": "way/1021405721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1021405722",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3198192,
+          42.4604853
+        ]
+      },
+      "id": "way/1021405722"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950720",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3098528,
+          42.4607795
+        ]
+      },
+      "id": "way/1025950720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950721",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3099614,
+          42.4580857
+        ]
+      },
+      "id": "way/1025950721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950722",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3235844,
+          42.458383
+        ]
+      },
+      "id": "way/1025950722"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950723",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3228586,
+          42.4583454
+        ]
+      },
+      "id": "way/1025950723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950724",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3221086,
+          42.4580836
+        ]
+      },
+      "id": "way/1025950724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950725",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3219399,
+          42.4574522
+        ]
+      },
+      "id": "way/1025950725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950726",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3228103,
+          42.4573366
+        ]
+      },
+      "id": "way/1025950726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950727",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3233541,
+          42.4574789
+        ]
+      },
+      "id": "way/1025950727"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950728",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3234707,
+          42.4564693
+        ]
+      },
+      "id": "way/1025950728"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1025950729",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3227572,
+          42.4562576
+        ]
+      },
+      "id": "way/1025950729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1054067179",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1795294,
+          42.5982269
+        ]
+      },
+      "id": "way/1054067179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1054067180",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1725402,
+          42.5890201
+        ]
+      },
+      "id": "way/1054067180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1089123204",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3131311,
+          42.458415
+        ]
+      },
+      "id": "way/1089123204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1105937089",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2002347,
+          42.2139566
+        ]
+      },
+      "id": "way/1105937089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1113201310",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3851047,
+          42.4282458
+        ]
+      },
+      "id": "way/1113201310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1113201311",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3866952,
+          42.4302919
+        ]
+      },
+      "id": "way/1113201311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1117678202",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1988668,
+          42.2150522
+        ]
+      },
+      "id": "way/1117678202"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1160252614",
+        "landuse": "farmland",
+        "name": "Brigham Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3689086,
+          42.4223848
+        ]
+      },
+      "id": "way/1160252614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1271122010",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1199166,
+          42.2001456
+        ]
+      },
+      "id": "way/1271122010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1271122011",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1216313,
+          42.2005057
+        ]
+      },
+      "id": "way/1271122011"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274090557",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8914267,
+          42.5992724
+        ]
+      },
+      "id": "way/1274090557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274090558",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8898207,
+          42.5996308
+        ]
+      },
+      "id": "way/1274090558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1274090560",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8919758,
+          42.6005913
+        ]
+      },
+      "id": "way/1274090560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1301366249",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0764317,
+          42.2436345
+        ]
+      },
+      "id": "way/1301366249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1314288611",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3299406,
+          42.4159536
+        ]
+      },
+      "id": "way/1314288611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1314288612",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3300446,
+          42.4164529
+        ]
+      },
+      "id": "way/1314288612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1320058276",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1374603,
+          42.2014828
+        ]
+      },
+      "id": "way/1320058276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326164416",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.140619,
+          42.1989844
+        ]
+      },
+      "id": "way/1326164416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326164420",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1374791,
+          42.1990507
+        ]
+      },
+      "id": "way/1326164420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326164422",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1402773,
+          42.1965625
+        ]
+      },
+      "id": "way/1326164422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326164423",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1407619,
+          42.1971703
+        ]
+      },
+      "id": "way/1326164423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326179597",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1725465,
+          42.1749325
+        ]
+      },
+      "id": "way/1326179597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1326179598",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1720183,
+          42.1742672
+        ]
+      },
+      "id": "way/1326179598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1329706065",
+        "landuse": "farmland",
+        "name": "Lawrence Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1355389,
+          42.3040382
+        ]
+      },
+      "id": "way/1329706065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1340657609",
+        "landuse": "farmland",
+        "operator": "Essex North Shore Agricultural & Technical School District",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9776849,
+          42.5951546
+        ]
+      },
+      "id": "way/1340657609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1357857427",
+        "addr:city": "Salem",
+        "addr:housenumber": "31",
+        "addr:postcode": "01970",
+        "addr:state": "MA",
+        "addr:street": "Grove Street",
+        "landuse": "farmland",
+        "name": "Mack Park Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9095296,
+          42.5249135
+        ]
+      },
+      "id": "way/1357857427"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1362460155",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.188754,
+          42.4328682
+        ]
+      },
+      "id": "way/1362460155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277708",
+        "barrier": "fence",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2933951,
+          42.5264264
+        ]
+      },
+      "id": "way/1364277708"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277709",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2956431,
+          42.5247764
+        ]
+      },
+      "id": "way/1364277709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277710",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29549,
+          42.5241456
+        ]
+      },
+      "id": "way/1364277710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277711",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2960679,
+          42.5240105
+        ]
+      },
+      "id": "way/1364277711"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277712",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2964835,
+          42.5238229
+        ]
+      },
+      "id": "way/1364277712"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1364277713",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2956464,
+          42.5231974
+        ]
+      },
+      "id": "way/1364277713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1408163321",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2807949,
+          42.1973557
+        ]
+      },
+      "id": "way/1408163321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1408163322",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2791567,
+          42.1995967
+        ]
+      },
+      "id": "way/1408163322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1408163323",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2774086,
+          42.2029442
+        ]
+      },
+      "id": "way/1408163323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1434463972",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4225044,
+          42.3865071
+        ]
+      },
+      "id": "way/1434463972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1447625209",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4011257,
+          42.4122507
+        ]
+      },
+      "id": "way/1447625209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1449675641",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4107431,
+          42.4085074
+        ]
+      },
+      "id": "way/1449675641"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1449675642",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4110419,
+          42.4081764
+        ]
+      },
+      "id": "way/1449675642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1464372804",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8259951,
+          42.185921
+        ]
+      },
+      "id": "way/1464372804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1464372805",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8268394,
+          42.185872
+        ]
+      },
+      "id": "way/1464372805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1464372806",
+        "landuse": "farmyard",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8273256,
+          42.1871308
+        ]
+      },
+      "id": "way/1464372806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1465455723",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9343802,
+          42.6093341
+        ]
+      },
+      "id": "way/1465455723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1465455724",
+        "crop": "corn",
+        "landuse": "farmland",
+        "operator": "Connors Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9382687,
+          42.6094024
+        ]
+      },
+      "id": "way/1465455724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1465455725",
+        "crop": "corn",
+        "landuse": "farmland",
+        "operator": "Connors Farm",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9339272,
+          42.6077972
+        ]
+      },
+      "id": "way/1465455725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1465455730",
+        "landuse": "farmland",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9344143,
+          42.6087261
+        ]
+      },
+      "id": "way/1465455730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2687238430",
+        "construction:amenity": "bar",
+        "craft": "brewery",
+        "level": "2",
+        "name": "Harpoon Tap Room"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0249366,
+          42.3641375
+        ]
+      },
+      "id": "node/2687238430"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2731249378",
+        "addr:city": "Boston",
+        "addr:housenumber": "306",
+        "addr:postcode": "02210",
+        "addr:street": "Northern Avenue",
+        "check_date": "2023-10-23",
+        "craft": "brewery",
+        "name": "Harpoon Brewery",
+        "website": "https://www.harpoonbrewery.com/boston-brewery/",
+        "wheelchair": "yes",
+        "wikidata": "Q5663611"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0339692,
+          42.3472714
+        ]
+      },
+      "id": "node/2731249378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3308510447",
+        "addr:city": "Somerville",
+        "addr:housenumber": "14",
+        "addr:postcode": "02143",
+        "addr:state": "MA",
+        "addr:street": "Tyler Street",
+        "air_conditioning": "yes",
+        "brand:facebook": "https://www.facebook.com/aeronautbrewing/",
+        "building": "brewery",
+        "check_date": "2024-04-15",
+        "contact:facebook": "https://www.facebook.com/aeronautbrewing/",
+        "contact:instagram": "https://www.instagram.com/aeronautbrewing/",
+        "contact:twitter": "https://twitter.com/aeronautbrewing/",
+        "contact:website": "https://www.aeronautbrewing.com/",
+        "craft": "brewery",
+        "email": "hi@aeronautbrewing.com",
+        "facebook": "https://www.facebook.com/aeronautbrewing/",
+        "min_age": "21",
+        "name": "Aeronaut Brewing Co.",
+        "opening_hours": "Mo 17:00-23:00; Tu-Th 17:00-24:00; Fr-Sa 12:00-24:30; Su 12:00-21:00",
+        "phone": "+1-617-987-4236",
+        "twitter": "https://twitter.com/aeronautbrewing/",
+        "website": "https://www.aeronautbrewing.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1062382,
+          42.3819757
+        ]
+      },
+      "id": "node/3308510447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3308602854",
+        "addr:city": "Boston",
+        "addr:floor": "1",
+        "addr:housenumber": "369",
+        "addr:postcode": "02210",
+        "addr:street": "Congress Street",
+        "contact:website": "http://www.trilliumbrewing.com/",
+        "craft": "brewery",
+        "name": "Trillium Brewing",
+        "website": "https://www.trilliumbrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0480519,
+          42.3498759
+        ]
+      },
+      "id": "node/3308602854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3993019449",
+        "addr:city": "Everett",
+        "addr:housenumber": "71",
+        "addr:postcode": "02149",
+        "addr:state": "MA",
+        "addr:street": "Kelvin Street",
+        "craft": "brewery",
+        "name": "Short Path Distillery",
+        "opening_hours": "Mo - Th off; Fr 17:00-22:00; Sa 12:00-22:00; Su 13:00 - 18:00",
+        "phone": "+1-857-417-2396",
+        "website": "https://shortpathdistillery.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0666089,
+          42.4053164
+        ]
+      },
+      "id": "node/3993019449"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4106727987",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "174",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Williams Street",
+        "craft": "brewery",
+        "name": "Mystc Brewery",
+        "note": "Mystic Brewery is a brewery specializing in farmhouse-style ales utilizing locally sourced yeast and other ingredients. Drawing on historical methods, our increased focus on fermentation allows us to impart a sense of unique New England terroir into all o",
+        "opening_hours": "We-Sa 11:00 - 21:00",
+        "operator": "Mystic Brewery",
+        "phone": "+1 - 617-466-207",
+        "website": "https://www.mystic-brewery.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0445104,
+          42.3915659
+        ]
+      },
+      "id": "node/4106727987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5652723459",
+        "amenity": "pub",
+        "craft": "brewery",
+        "level": "0",
+        "name": "Remnant Brewing Company",
+        "opening_hours": "Mo-Th 09:00-22:00; Fr,Sa 09:00-23:00; Su 09:00-21:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0979317,
+          42.3811613
+        ]
+      },
+      "id": "node/5652723459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6141534426",
+        "addr:city": "Salem",
+        "addr:housenumber": "75",
+        "addr:postcode": "01970",
+        "addr:state": "MA",
+        "addr:street": "Canal Street",
+        "craft": "brewery",
+        "name": "Deacon Giles Distillery",
+        "opening_hours": "Mo 06:00-22:00; Th 17:00-21:00; Fr 14:00-23:00; Sa 12:00-23:00; Su 12:00-20:00",
+        "phone": "+1 978-306-6675",
+        "website": "https://www.deacongiles.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8961532,
+          42.513299
+        ]
+      },
+      "id": "node/6141534426"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6141552724",
+        "addr:city": "Beverly",
+        "addr:housenumber": "59",
+        "addr:postcode": "01915",
+        "addr:state": "MA",
+        "addr:street": "Park Street",
+        "addr:unit": "1",
+        "craft": "brewery",
+        "name": "Gentile Brewing Company",
+        "opening_hours": "Th-Fr 16:00-22:00; Sa 12:00-22:00",
+        "phone": "+1 978-969-6496",
+        "website": "https://gentilebrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8843804,
+          42.549414
+        ]
+      },
+      "id": "node/6141552724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6294175970",
+        "addr:housenumber": "35",
+        "addr:street": "Temple Place",
+        "amenity": "restaurant",
+        "craft": "brewery",
+        "name": "Democracy Brewing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0620624,
+          42.3551144
+        ]
+      },
+      "id": "node/6294175970"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6340300452",
+        "craft": "brewery",
+        "name": "Mighty Squirrel",
+        "opening_hours": "Mo-Sa 11:00-23:00; Su 13:00-21:00",
+        "website": "https://www.mightysquirrel.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2010863,
+          42.3875002
+        ]
+      },
+      "id": "node/6340300452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6389127659",
+        "addr:city": "Salem",
+        "addr:housenumber": "283R",
+        "addr:postcode": "01970",
+        "addr:state": "MA",
+        "addr:street": "Derby Street",
+        "craft": "brewery",
+        "name": "Notch Brewery, Tap Room & Biergarten",
+        "operator": "Notch Brewing",
+        "phone": "+1-978-238-9060",
+        "product": "beer",
+        "website": "https://www.notchbrewing.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8907968,
+          42.5196686
+        ]
+      },
+      "id": "node/6389127659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6708586108",
+        "amenity": "bar",
+        "craft": "brewery",
+        "name": "Somerville Brewing Company",
+        "website": "https://www.slumbrew.com/brewery-hq-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0892453,
+          42.3748311
+        ]
+      },
+      "id": "node/6708586108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6818513835",
+        "craft": "brewery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.2050433,
+          42.5915916
+        ]
+      },
+      "id": "node/6818513835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6886748963",
+        "addr:city": "Boston",
+        "addr:housenumber": "50",
+        "addr:street": "Thomson Place",
+        "amenity": "restaurant",
+        "check_date": "2024-08-21",
+        "contact:website": "https://www.trilliumbrewing.com/",
+        "craft": "brewery",
+        "floor": "0",
+        "name": "Trillium Brewing",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "website": "https://www.trilliumbrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0474876,
+          42.3521489
+        ]
+      },
+      "id": "node/6886748963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7167369784",
+        "amenity": "bar",
+        "craft": "brewery",
+        "name": "Downeast Cider",
+        "opening_hours": "Th 17:00-20:00; Fr 17:00-21:00; Sa 11:00-20:00; Su 12:00-19:00",
+        "website": "https://www.downeastcider.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0327908,
+          42.3642404
+        ]
+      },
+      "id": "node/7167369784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7228956663",
+        "addr:city": "Beverly",
+        "addr:housenumber": "232",
+        "addr:postcode": "01915",
+        "addr:state": "MA",
+        "addr:street": "Rantoul Street",
+        "craft": "brewery",
+        "name": "Old Planters Brewing Co.",
+        "opening_hours": "Th-Fr 16:00-22:00; Sa 12:00-22:00; Su 12:00-18:00",
+        "website": "https://www.oldplanters.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8838613,
+          42.5493311
+        ]
+      },
+      "id": "node/7228956663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7627644898",
+        "amenity": "bar",
+        "craft": "brewery",
+        "name": "Dorchester Brewing Company"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0625839,
+          42.3221646
+        ]
+      },
+      "id": "node/7627644898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7680765483",
+        "addr:city": "Boston",
+        "addr:housenumber": "51",
+        "addr:postcode": "02210",
+        "addr:state": "MA",
+        "addr:street": "Sleeper Street",
+        "brewery": "yes",
+        "contact:facebook": "https://www.facebook.com/HopstersBrew/",
+        "contact:instagram": "https://www.instagram.com/hopstersbrew/",
+        "contact:twitter": "https://twitter.com/HopstersBrew",
+        "craft": "brewery",
+        "email": "info@hopstersbrew.com",
+        "min_age": "21",
+        "name": "Hopsters Brewing Co.",
+        "phone": "+1-857-239-9042",
+        "product": "beer",
+        "website": "https://www.hopstersbrew.com/reservations-seaport/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.048519,
+          42.3526443
+        ]
+      },
+      "id": "node/7680765483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7779238924",
+        "addr:city": "Everett",
+        "addr:housenumber": "87",
+        "addr:postcode": "02149",
+        "addr:state": "MA",
+        "addr:street": "Santilli Highway",
+        "air_conditioning": "yes",
+        "amenity": "bar",
+        "branch": "Everett Taproom",
+        "brand:facebook": "https://www.facebook.com/NightShiftBeer/",
+        "contact:email": "info@nightshiftbrewing.com",
+        "contact:facebook": "https://www.facebook.com/NightShiftBeer/",
+        "contact:instagram": "https://www.instagram.com/nightshiftbrewing/",
+        "contact:twitter": "https://twitter.com/NightShiftBeer",
+        "contact:website": "https://nightshiftbrewing.com/locations/everett-taproom/",
+        "craft": "brewery",
+        "email": "info@nightshiftbrewing.com",
+        "facebook": "https://www.facebook.com/NightShiftBeer/",
+        "min_age": "21",
+        "name": "Night Shift Brewing",
+        "opening_hours": "Mo 16:00-22:00; Th 14:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-20:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1-617-294-4233",
+        "toilets": "customers",
+        "toilets:wheelchair": "yes",
+        "twitter": "https://twitter.com/NightShiftBeer",
+        "website": "https://nightshiftbrewing.com/locations/everett-taproom/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0679931,
+          42.4059549
+        ]
+      },
+      "id": "node/7779238924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7799254906",
+        "addr:city": "Everett",
+        "addr:housenumber": "1934",
+        "addr:postcode": "02149",
+        "addr:state": "MA",
+        "addr:street": "Revere Beach Parkway",
+        "craft": "brewery",
+        "name": "BearMoose Brewing Company",
+        "product": "beer",
+        "website": "https://bearmoosebrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0516499,
+          42.4025369
+        ]
+      },
+      "id": "node/7799254906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7799343598",
+        "amenity": "pub",
+        "craft": "brewery",
+        "name": "Lamplighter Brewing Company",
+        "opening_hours": "Tu-Sa 11:00-24:00, Su,Mo 11:00-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0979339,
+          42.3679737
+        ]
+      },
+      "id": "node/7799343598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9694959717",
+        "addr:city": "Malden",
+        "addr:housenumber": "50",
+        "addr:postcode": "02148",
+        "addr:state": "MA",
+        "addr:street": "Pleasant Street",
+        "air_conditioning": "yes",
+        "bar": "yes",
+        "check_date": "2024-01-01",
+        "contact:facebook": "https://www.facebook.com/facesbrewing",
+        "contact:instagram": "https://www.instagram.com/facesbrewing",
+        "contact:twitter": "https://twitter.com/facesbrewing",
+        "craft": "brewery",
+        "email": "info@facesbrewing.com",
+        "facebook": "https://www.facebook.com/facesbrewing",
+        "name": "Faces Brewing Co.",
+        "opening_hours": "Mo-We 16:00-23:00; Th 16:00-24:00; Fr 12:00-01:00; Sa 11:00-01:00; Su 11:00-19:00",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1-781-851-4672",
+        "product": "beer",
+        "twitter": "https://twitter.com/facesbrewing",
+        "website": "https://www.facesbrewing.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0686213,
+          42.4265326
+        ]
+      },
+      "id": "node/9694959717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10717471860",
+        "check_date": "2025-06-10",
+        "craft": "brewery",
+        "name": "East Regiment Brewing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8950008,
+          42.5226391
+        ]
+      },
+      "id": "node/10717471860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10858944765",
+        "name": "Siena Farms South End",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0714108,
+          42.3437189
+        ]
+      },
+      "id": "node/10858944765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11064002367",
+        "amenity": "pub",
+        "craft": "brewery",
+        "microbrewery": "yes",
+        "name": "7th Wave Brewing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.328013,
+          42.1938539
+        ]
+      },
+      "id": "node/11064002367"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11064002368",
+        "craft": "brewery",
+        "name": "Farthest Star Sake",
+        "website": "https://www.fartheststarsake.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3281423,
+          42.1935118
+        ]
+      },
+      "id": "node/11064002368"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11448041527",
+        "addr:housenumber": "180",
+        "addr:street": "Commercial Street",
+        "craft": "brewery",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "name": "Bent Water Brewing Company",
+        "toilets": "yes",
+        "toilets:unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9569019,
+          42.4563858
+        ]
+      },
+      "id": "node/11448041527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11818680412",
+        "addr:city": "Malden",
+        "addr:housenumber": "89",
+        "addr:postcode": "02148",
+        "addr:state": "MA",
+        "addr:street": "Commercial Street",
+        "air_conditioning": "yes",
+        "brand:facebook": "https://www.facebook.com/IdleHandsCraftAles",
+        "check_date": "2024-04-15",
+        "contact:facebook": "https://www.facebook.com/IdleHandsCraftAles",
+        "contact:instagram": "https://www.instagram.com/idlehandsbeer/",
+        "contact:twitter": "https://twitter.com/idlehandsbeer",
+        "craft": "brewery",
+        "facebook": "https://www.facebook.com/IdleHandsCraftAles",
+        "name": "Idle Hands Craft Ales",
+        "opening_hours": "Tu 15:00-21:00; We-Th 15:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-19:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1-781-333-6070",
+        "toilets": "customers",
+        "toilets:wheelchair": "yes",
+        "twitter": "https://twitter.com/idlehandsbeer",
+        "website": "https://www.idlehandscraftales.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0746568,
+          42.4243208
+        ]
+      },
+      "id": "node/11818680412"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12068389268",
+        "addr:city": "Boston",
+        "addr:housenumber": "2",
+        "addr:postcode": "02131",
+        "addr:state": "MA",
+        "addr:street": "Belgrade Avenue",
+        "craft": "brewery",
+        "name": "Distraction Brewing Co.",
+        "website": "https://distractionbrewingco.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1301096,
+          42.286908
+        ]
+      },
+      "id": "node/12068389268"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12089631734",
+        "addr:city": "Melrose",
+        "addr:housenumber": "364",
+        "addr:postcode": "02176",
+        "addr:state": "MA",
+        "addr:street": "Main Street",
+        "air_conditioning": "yes",
+        "alt_name": "Hannah’s Brewing",
+        "check_date": "2024-08-02",
+        "contact:instagram": "http://instagram.com/hannahsbrewingco/",
+        "craft": "brewery",
+        "email": "hannahsbrewingco@gmail.com",
+        "name": "Hannah’s Brewing Co.",
+        "opening_hours": "We 16:00-21:00; Th 16:00-22:00; Fr 15:00-22:00; Sa 12:00-22:00; Su 12:00-20:00",
+        "website": "https://www.hannahsbrewingco.com/home"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0671151,
+          42.45253
+        ]
+      },
+      "id": "node/12089631734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12112755401",
+        "addr:housenumber": "190",
+        "addr:postcode": "02135",
+        "addr:street": "Glencoe",
+        "contact:facebook": "widowmakerbrew",
+        "contact:instagram": "widowmakerbrew",
+        "contact:twitter": "widowmakerbrew",
+        "craft": "brewery",
+        "name": "Widowmaker Taproom & Kitchen",
+        "opening_hours": "Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 11:00-20:00",
+        "phone": "+1-617-390-0660",
+        "website": "https://www.widowmakerbrewing.com/brighton-taproom-and-kitchen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.147939,
+          42.3557045
+        ]
+      },
+      "id": "node/12112755401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12327822895",
+        "addr:city": "Somerville",
+        "addr:housenumber": "101",
+        "addr:postcode": "02143",
+        "addr:state": "MA",
+        "addr:street": "South Street",
+        "craft": "brewery",
+        "name": "Portico Brewing",
+        "opening_hours": "Tu-We 15:00-21:00, Th-Sa 12:00-22:00, Su 12:00-18:00",
+        "product": "beer;food",
+        "website": "https://porticobrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.091198,
+          42.3747988
+        ]
+      },
+      "id": "node/12327822895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12864648930",
+        "name": "Lookout Farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.309137,
+          42.2630515
+        ]
+      },
+      "id": "node/12864648930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13042159574",
+        "addr:housenumber": "95",
+        "addr:street": "Rantoul Street",
+        "check_date": "2025-08-01",
+        "craft": "brewery",
+        "name": "Coastal Mass Brewing",
+        "opening_hours": "We-Fr 15:00-22:00; Sa 12:00-22:00; Su 12:00-18:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1-978-969-3071",
+        "product": "beer",
+        "website": "https://coastalmassbrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8846913,
+          42.5448195
+        ]
+      },
+      "id": "node/13042159574"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13256529802",
+        "addr:housenumber": "64",
+        "addr:postcode": "02151",
+        "addr:street": "Salt Street",
+        "craft": "brewery",
+        "level": "0",
+        "name": "Twisted Fate Brewing",
+        "opening_hours": "We 15:00-21:00; Th 16:00-21:00; Fr 15:00-22:00; Sa 12:00-22:00; Su 12:00-20:00",
+        "website": "https://twistedfatebrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9943542,
+          42.3970326
+        ]
+      },
+      "id": "node/13256529802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13440916848",
+        "addr:housenumber": "30",
+        "addr:street": "Valley Road",
+        "name": "Connors Farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9350568,
+          42.6080983
+        ]
+      },
+      "id": "node/13440916848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13477576801",
+        "addr:housenumber": "85;87 St #4",
+        "addr:postcode": "01923",
+        "addr:street": "Andover Street",
+        "craft": "brewery",
+        "name": "Beer and Wine Hobby",
+        "opening_hours": "Mo-Th 10:00-17:00; Fr-Sa 09:00-17:00; Su 10:00-14:00",
+        "phone": "+1-800-523-5423",
+        "website": "https://beer-wine.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.9613493,
+          42.5536742
+        ]
+      },
+      "id": "node/13477576801"
+    }
+  ]
+}

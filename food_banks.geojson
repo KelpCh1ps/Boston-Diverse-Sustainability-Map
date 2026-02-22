@@ -1,0 +1,374 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-02-22T07:55:29Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/170278739",
+        "addr:housenumber": "108",
+        "addr:street": "Summer Street",
+        "amenity": "social_facility",
+        "building": "yes",
+        "name": "Food Link",
+        "operator": "Food Link",
+        "social_facility": "food_bank",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1589774,
+          42.4192777
+        ]
+      },
+      "id": "way/170278739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7644223841",
+        "amenity": "social_facility",
+        "name": "Immaculate Conception Church Assistance Center",
+        "social_facility": "food_bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0966589,
+          42.1222706
+        ]
+      },
+      "id": "node/7644223841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10179135868",
+        "amenity": "social_facility",
+        "name": "Interfaith Social Services",
+        "social_facility": "food_bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0092771,
+          42.2563458
+        ]
+      },
+      "id": "node/10179135868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10869912008",
+        "addr:city": "Arlington",
+        "addr:housenumber": "117",
+        "addr:postcode": "02474",
+        "addr:state": "MA",
+        "addr:street": "Broadway",
+        "amenity": "social_facility",
+        "name": "Arlington EATS",
+        "social_facility": "food_bank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1405802,
+          42.410385
+        ]
+      },
+      "id": "node/10869912008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12105261753",
+        "addr:city": "Salem",
+        "addr:housenumber": "47",
+        "addr:postcode": "01970",
+        "addr:state": "MA",
+        "addr:street": "Leavitt Street",
+        "amenity": "social_facility",
+        "check_date": "2025-08-02",
+        "name": "Salem Pantry",
+        "opening_hours": "Tu,Th,Fr 10:00-12:00,13:00-16:30; We 16:00-20:00; Sa 10:00-14:00",
+        "social_facility": "food_bank",
+        "social_facility:for": "underprivileged"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8894934,
+          42.5150849
+        ]
+      },
+      "id": "node/12105261753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12106141111",
+        "addr:city": "Malden",
+        "addr:housenumber": "54",
+        "addr:postcode": "02148",
+        "addr:state": "MA",
+        "addr:street": "Eastern Avenue",
+        "air_conditioning": "yes",
+        "amenity": "social_facility",
+        "check_date": "2025-01-29",
+        "contact:facebook": "https://www.facebook.com/BreadofLifeMA",
+        "contact:instagram": "https://www.instagram.com/breadoflifemalden/",
+        "contact:linkedin": "https://www.linkedin.com/company/bread-of-life-malden",
+        "contact:phone": "+1-781-397-0404",
+        "contact:twitter": "https://twitter.com/breadmalden",
+        "contact:youtube": "https://www.youtube.com/channel/UC3y9ax87KPvYSK8gC4I994A",
+        "email": "info@breadoflifemalden.org",
+        "facebook": "https://www.facebook.com/BreadofLifeMA",
+        "name": "Bread of Life",
+        "opening_hours": "We,Fr 13:00-16:00",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "start_date": "2024-08-11",
+        "twitter": "https://twitter.com/breadmalden",
+        "website": "https://www.breadoflifemalden.org/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0660011,
+          42.4243732
+        ]
+      },
+      "id": "node/12106141111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13168033122",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "60",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Tudor Street",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Two wooden boxes on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Cary Square @ Temple Emmanuel",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0303885,
+          42.3982523
+        ]
+      },
+      "id": "node/13168033122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13265241934",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "738",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Broadway",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Iglesia La Luz de Cristo / SELAH Resource Center",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0276073,
+          42.3966371
+        ]
+      },
+      "id": "node/13265241934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13265241935",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "67",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Crescent Avenue",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: CAPIC Head Start",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0281504,
+          42.3951698
+        ]
+      },
+      "id": "node/13265241935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13265241936",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "99",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Hawthorn Street",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Early Learning Center",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0348491,
+          42.3897303
+        ]
+      },
+      "id": "node/13265241936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13265241937",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "30",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Willow Street",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Jordan Boys and Girls Club / Highland Park",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0272612,
+          42.3874758
+        ]
+      },
+      "id": "node/13265241937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13265241938",
+        "addr:city": "Chelsea",
+        "addr:housenumber": "100",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Bellingham Street",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Senior Living at Bellingham Hill",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.02927,
+          42.3915161
+        ]
+      },
+      "id": "node/13265241938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13279780781",
+        "addr:city": "Chelsea",
+        "addr:postcode": "02150",
+        "addr:state": "MA",
+        "addr:street": "Washington Avenue",
+        "alt_name": "Little Free Pantry",
+        "amenity": "social_facility",
+        "description": "Wooden box on poles to donate or take shelf stable food and/or hygiene products",
+        "name": "Micro Pantry: Washington Park",
+        "opening_hours": "24/7",
+        "operator": "Chelsea Hunger Network",
+        "operator:type": "community",
+        "social_facility": "food_bank",
+        "social_facility:for": "community",
+        "website": "https://healthychelsea.org/food-security/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0354382,
+          42.4058015
+        ]
+      },
+      "id": "node/13279780781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13530066941",
+        "addr:city": "Brighton",
+        "addr:housenumber": "404",
+        "addr:postcode": "02135",
+        "addr:state": "MA",
+        "addr:street": "Washington Street",
+        "amenity": "social_facility",
+        "name": "Allston-Brighton Food Pantry",
+        "social_facility": "food_bank",
+        "website": "https://abfoodpantry.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1551519,
+          42.3488309
+        ]
+      },
+      "id": "node/13530066941"
+    }
+  ]
+}
