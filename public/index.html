@@ -1,567 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Supply Map</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Supply Map</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="map.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="map.css" />
 </head>
 
 <body>
-
-<div style="display:flex; height:100vh;">
+  <div style="display:flex; height:100vh;">
     <!-- Sidebar -->
     <aside style="width:370px; min-width:300px; max-width:420px; background:#fff; border-right:1px solid #e0e0e0; display:flex; flex-direction:column;">
-        <div style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
-            <img src="https://assets.mapquest.com/img/logo.svg" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
-            <input class="search-input" id="searchBar" type="text" placeholder="Search places or paste a link">
+      <div style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
+        <img src="icons/BDSM_Logo.png" alt="BDSM Logo" style="height:48px; margin-bottom:1rem;" />
+        <input class="search-input" id="searchBar" type="text" placeholder="Search places" />
+
+        <!-- AI summary card (optional; only shows if present + you click a marker/list item) -->
+        <div id="ai-summary-card" style="display:none; margin-top:1rem; padding:0.9rem 1rem; border:1px solid #eee; border-radius:14px; background:#fafafa;">
+          <div id="ai-summary-content" style="font-size:0.95rem; line-height:1.3;"></div>
         </div>
-        <div style="flex:1;overflow-y:auto;padding:1.5rem;">
-            <h2 style="font-size:1.1rem;margin-bottom:1rem;">Food-Related Places</h2>
-            <div id="restaurantList"></div>
-        </div>
+      </div>
+
+      <div style="flex:1; overflow-y:auto; padding:1.5rem;">
+        <h2 style="font-size:1.1rem; margin-bottom:1rem;">Food-Related Places</h2>
+        <div id="restaurantList"></div>
+      </div>
     </aside>
 
     <!-- Main Map Area -->
-    <main style="flex:1;display:flex;flex-direction:column;position:relative;background:#f5f5f5;">
-        <!-- Horizontal Category Bar -->
-        <div style="display:flex;gap:1rem;position:absolute;top:2rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;">
-            <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🍽️</span> Food
-            </button>
-            <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <img src="icons/Market_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Grocery
-            </button>
-            <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🏬</span> Wholesale
-            </button>
-            <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <img src="icons/Food_Pantry_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Farms
-            </button>
-        </div>
+    <main style="flex:1; display:flex; flex-direction:column; position:relative; background:#f5f5f5;">
+      <!-- Horizontal Category Bar -->
+      <div style="display:flex; gap:1rem; position:absolute; top:2rem; left:50%; transform:translateX(-50%); z-index:10; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:0.5rem 1.5rem;">
+        <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
+          <span>🍽️</span> Food
+        </button>
+        <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
+          <img src="icons/Market_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;" /> Grocery
+        </button>
+        <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
+          <span>🏬</span> Wholesale
+        </button>
+        <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-weight:400;">
+          <img src="icons/Food_Pantry_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;" /> Farms
+        </button>
+      </div>
 
-        <div class="map-container" style="flex:1;width:100%;height:100%;">
-            <div id="map" style="height:100%;width:100%;"></div>
-        </div>
+      <div class="map-container" style="flex:1; width:100%; height:100%;">
+        <div id="map" style="height:100%; width:100%;"></div>
+      </div>
 
-        <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 2rem;display:flex;gap:1.5rem;align-items:center;z-index:10;">
-            <span>Sort by Price:</span>
-            <button onclick="sortPlaces('price','asc')">Low → High</button>
-            <button onclick="sortPlaces('price','desc')">High → Low</button>
-            <span>Sort by Rating:</span>
-            <button onclick="sortPlaces('rating','desc')">High → Low</button>
-            <button onclick="sortPlaces('rating','asc')">Low → High</button>
-        </div>
-        <div id="ai-summary-card" style="
-            display:none;
-            position:absolute;
-            bottom:2rem;
-            left:50%;
-            transform:translateX(-50%);
-            width:340px;
-            max-height:300px;
-            overflow-y:auto;
-            background:white;
-            padding:16px;
-            border-radius:16px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.25);
-            z-index:20;
-            pointer-events:none;
-        ">
-            <button id="close-ai-card" style="
-                position:absolute;
-                top:8px;
-                right:10px;
-                background:none;
-                border:none;
-                font-size:18px;
-                cursor:pointer;
-                pointer-events:auto;
-            ">✕</button>
-            <div id="ai-summary-content"></div>
-        </div>
+      <!-- Sort bar (kept) -->
+      <div style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:0.5rem 2rem; display:flex; gap:1.5rem; align-items:center; z-index:10;">
+        <span>Sort by Price:</span>
+        <button onclick="sortPlaces('price','asc')">Low → High</button>
+        <button onclick="sortPlaces('price','desc')">High → Low</button>
+        <span>Sort by Rating:</span>
+        <button onclick="sortPlaces('rating','desc')">High → Low</button>
+        <button onclick="sortPlaces('rating','asc')">Low → High</button>
+      </div>
     </main>
-</div>
+  </div>
 
-<script>
-(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
-});
-</script>
-
-<script type="module">
-import { Restaurants } from "./markers.js";
-
-let map;
-let placesService;
-let allPlaces = [];
-let filteredPlaces = [];
-let markers = [];          // Google Places AdvancedMarkerElement markers
-let infoWindow;
-
-// Boston dataset objects + google.maps.Marker instances
-let bostonRestaurants = [];
-let bostonRestaurantMarkers = [];
-let bostonFiltered = [];
-
-// Which dataset is currently driving the UI?
-// "food" = Boston dataset
-// "places" = Google Places dataset
-let mode = "food";
-
-const BOSTON_URL =
-  "https://data.boston.gov/api/3/action/datastore_search?resource_id=f1e13724-284d-478c-b8bc-ef042aa5b70b&limit=5000";
-
-function buildBostonAddress(place) {
-  return `${place.address ?? ""} ${place.city ?? ""}, ${place.state ?? ""} ${place.zip ?? ""}`.trim();
-}
-
-async function loadBostonRestaurants() {
-  const res = await fetch(BOSTON_URL);
-  const data = await res.json();
-  const records = data?.result?.records ?? [];
-
-  bostonRestaurants = records
-    .map((place) => {
-      const lat = Number(place.latitude);
-      const lng = Number(place.longitude);
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-
-      return new Restaurants({
-        name: place.businessname ?? "Restaurant",
-        lat,
-        lng,
-        address: buildBostonAddress(place),
-        number: place.dayphn_cleaned ?? "N/A",
-        rating: 0,
-        review: place.descript ?? "No description",
-        hours: "Hours not listed",
-        meta: {
-          licstatus: place.licstatus,
-          licensecat: place.licensecat,
-          property_id: place.property_id,
-        },
-      });
-    })
-    .filter(Boolean);
-
-  bostonFiltered = [...bostonRestaurants];
-}
-
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-  await google.maps.importLibrary("places");
-  await google.maps.importLibrary("marker"); // AdvancedMarkerElement
-
-  infoWindow = new google.maps.InfoWindow();
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const userLocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      map = new Map(document.getElementById("map"), {
-        zoom: 13,
-        center: userLocation,
-        mapId: "1907e1268c94d0034153c21a",
-      });
-
-      // Keep your "You are here" marker (Google marker system)
-      const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-      new AdvancedMarkerElement({
-        map: map,
-        position: userLocation,
-        title: "You are here"
-      });
-
-      placesService = new google.maps.places.PlacesService(map);
-
-      // Load Boston first (so it can display first)
-      await loadBostonRestaurants();
-
-      // Also fetch Google Places (but do NOT render by default)
-      fetchFoodPlaces(userLocation);
-
-      // ✅ Default view: Boston restaurants first
-      mode = "food";
-      document.getElementById("searchBar").value = "";
-      renderBostonRestaurants(bostonFiltered);
-
-      // Enable search bar
-      setupSearchBar();
-
-    }, () => {
-      alert("Location permission denied.");
+  <!-- Google Maps loader -->
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyAurJ0-EQCqpMkspkluFiOviU8vDXuQlOk",
     });
-  }
-}
+  </script>
 
-function fetchFoodPlaces(location) {
-  const types = [
-    "restaurant",
-    "cafe",
-    "bakery",
-    "meal_takeaway",
-    "meal_delivery",
-    "supermarket",
-    "grocery_or_supermarket",
-    "convenience_store",
-    "liquor_store"
-  ];
+  <script type="module">
+    import * as MapData from "./mapdata.js";
 
-  const keywords = [
-    "farm",
-    "food factory",
-    "food distributor",
-    "wholesale food"
-  ];
+    let map;
+    let infoWindow;
 
-  allPlaces = [];
-
-  types.forEach(type => {
-    placesService.nearbySearch({ location, radius: 3000, type }, handleResults);
-  });
-
-  keywords.forEach(keyword => {
-    placesService.nearbySearch({ location, radius: 3000, keyword }, handleResults);
-  });
-}
-
-function handleResults(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    results.forEach(place => {
-      if (!allPlaces.some(p => p.place_id === place.place_id)) {
-        allPlaces.push(place);
-      }
-    });
-    // Do not auto-render here. Only render when user switches modes.
-  }
-}
-
-/* ---------------- SEARCH BAR ---------------- */
-function setupSearchBar() {
-  const input = document.getElementById("searchBar");
-  if (!input) return;
-
-  input.addEventListener("input", () => {
-    const q = input.value.trim().toLowerCase();
-
-    if (mode === "food") {
-      bostonFiltered = filterBoston(q);
-      renderBostonRestaurants(bostonFiltered);
-    } else {
-      filteredPlaces = filterPlaces(q);
-      renderAll();
+    function setupSearchBar() {
+      const input = document.getElementById("searchBar");
+      if (!input) return;
+      input.addEventListener("input", async () => {
+        await MapData.applySearch(input.value.trim());
+      });
     }
-  });
-}
 
-function filterBoston(q) {
-  if (!q) return [...bostonRestaurants];
-
-  return bostonRestaurants.filter(r => {
-    const hay = `${r.name} ${r.address} ${r.number}`.toLowerCase();
-    return hay.includes(q);
-  });
-}
-
-function filterPlaces(q) {
-  if (!q) return [...allPlaces];
-
-  return allPlaces.filter(p => {
-    const name = (p.name ?? "").toLowerCase();
-    const types = (p.types ?? []).join(" ").toLowerCase();
-    return name.includes(q) || types.includes(q);
-  });
-}
-
-/* ---------------- CATEGORY SWITCHING ---------------- */
-window.filterCategory = function filterCategory(category) {
-  const input = document.getElementById("searchBar");
-  if (input) input.value = "";
-
-  if (category === "food") {
-    mode = "food";
-    clearGooglePlaceMarkers();
-    bostonFiltered = [...bostonRestaurants];
-    renderBostonRestaurants(bostonFiltered);
-    return;
-  }
-
-  // Everything else uses Google Places
-  mode = "places";
-  clearBostonRestaurantMarkers();
-
-  if (category === "retail") {
-    filteredPlaces = allPlaces.filter(p =>
-      p.types.includes("supermarket") ||
-      p.types.includes("grocery_or_supermarket") ||
-      p.types.includes("convenience_store") ||
-      p.types.includes("liquor_store")
-    );
-  } else if (category === "wholesale") {
-    filteredPlaces = allPlaces.filter(p =>
-      (p.name ?? "").toLowerCase().includes("distributor") ||
-      (p.name ?? "").toLowerCase().includes("wholesale") ||
-      (p.name ?? "").toLowerCase().includes("factory")
-    );
-  } else if (category === "farm") {
-    filteredPlaces = allPlaces.filter(p =>
-      (p.name ?? "").toLowerCase().includes("farm")
-    );
-  } else {
-    filteredPlaces = [...allPlaces];
-  }
-
-  renderAll();
-};
-
-/* ---------------- GOOGLE PLACES RENDER ---------------- */
-function renderAll() {
-  renderMarkers(filteredPlaces);
-  renderList(filteredPlaces);
-}
-
-function buildPlaceInfoContent(place) {
-  const rating = place.rating ?? "N/A";
-  const priceLevel = place.price_level;
-  const priceDisplay = typeof priceLevel === "number" ? "$".repeat(priceLevel) : "N/A";
-  return `
-    <div style="min-width:180px;">
-      <strong>${place.name}</strong><br>
-      Price: ${priceDisplay}<br>
-      Rating: ${rating}
-    </div>
-  `;
-}
-
-function createFoodPinContent(place) {
-  const pin = document.createElement("button");
-  pin.type = "button";
-  pin.className = "food-pin";
-  pin.setAttribute("aria-label", place.name);
-
-  const bubble = document.createElement("span");
-  bubble.className = "food-pin__bubble";
-
-  const image = document.createElement("img");
-  image.className = "food-pin__image";
-  image.src = "icons/restaurant_logo.png";
-  image.alt = "";
-  image.setAttribute("aria-hidden", "true");
-
-  const pulse = document.createElement("span");
-  pulse.className = "food-pin__pulse";
-  pulse.setAttribute("aria-hidden", "true");
-
-  bubble.appendChild(image);
-  pin.appendChild(bubble);
-  pin.appendChild(pulse);
-  return pin;
-}
-
-function clearGooglePlaceMarkers() {
-  markers.forEach(marker => marker.map = null);
-  markers = [];
-  if (infoWindow) infoWindow.close();
-}
-
-function renderMarkers(data) {
-  const { AdvancedMarkerElement } = google.maps.marker;
-
-  clearGooglePlaceMarkers();
-
-  data.forEach(place => {
-    const pinContent = createFoodPinContent(place);
-
-    const marker = new AdvancedMarkerElement({
-      map: map,
-      position: place.geometry.location,
-      title: place.name,
-      gmpClickable: true,
-      content: pinContent
-    });
-
-    const openInfoWindow = () => {
-      infoWindow.setContent(buildPlaceInfoContent(place));
-      infoWindow.open({ map, anchor: marker });
+    window.filterCategory = async function filterCategory(category) {
+      const input = document.getElementById("searchBar");
+      if (input) input.value = "";
+      await MapData.setCategory(category);
     };
-    const closeInfoWindow = () => infoWindow.close();
 
-marker.addListener('click', async () => {
+    window.sortPlaces = async function sortPlaces(type, order) {
+      await MapData.sortCurrent(type, order);
+    };
 
-            const card = document.getElementById("ai-summary-card");
-            const content = document.getElementById("ai-summary-content");
+    async function initMap() {
+      // Wait until the Google loader attaches importLibrary
+      const start = Date.now();
+      while (!(window.google && google.maps && typeof google.maps.importLibrary === "function")) {
+        if (Date.now() - start > 10000) {
+          alert("Google Maps failed to load.");
+          return;
+        }
+        await new Promise((r) => setTimeout(r, 50));
+      }
 
-            card.style.display = "block";
-            content.innerHTML = `<strong>${place.name}</strong><br><br>Loading AI summary...`;
+      const { Map } = await google.maps.importLibrary("maps");
+      await google.maps.importLibrary("marker");
 
-            try {
-                const res = await fetch('/analyze', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        restaurantName: place.name,
-                        address: place.vicinity || place.formatted_address || ''
-                    })
-                });
+      infoWindow = new google.maps.InfoWindow();
 
-                const result = await res.json();
+      const fallback = { lat: 42.3601, lng: -71.0589 };
 
-                content.innerHTML = `
-                    <strong>${place.name}</strong><br><br>
-                    ${result.analysis}
-                `;
-            } catch (err) {
-                console.error(err);
-                content.innerHTML = 'Error: Could not fetch AI summary.';
-            }
+      const create = async (center) => {
+        map = new Map(document.getElementById("map"), {
+          zoom: 13,
+          center,
+          mapId: "1907e1268c94d0034153c21a",
         });
 
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+        new AdvancedMarkerElement({ map, position: center, title: "Center" });
 
-    markers.push(marker);
-  });
-}
+        MapData.attachMap(map, infoWindow);
+        await MapData.setCategory("food");
+        setupSearchBar();
+      };
 
-function renderList(data) {
-  const list = document.getElementById("restaurantList");
-  list.innerHTML = "";
+      if (!navigator.geolocation) {
+        await create(fallback);
+        return;
+      }
 
-  data.forEach(place => {
-    const div = document.createElement("div");
-    div.className = "restaurant-item";
-
-    const priceLevel = place.price_level ?? "N/A";
-    const priceDisplay = typeof priceLevel === "number" ? "$".repeat(priceLevel) : "N/A";
-    const rating = place.rating ?? "N/A";
-
-    div.innerHTML = `
-      <strong>${place.name}</strong><br>
-      Price: ${priceDisplay}<br>
-      Rating: ${rating}
-    `;
-
-    list.appendChild(div);
-  });
-}
-
-/* ---------------- BOSTON RESTAURANT RENDER ---------------- */
-function buildBostonInfoContent(r) {
-  return `
-    <div style="min-width:220px;">
-      <strong>${r.name}</strong><br>
-      ${r.address}<br>
-      Phone: ${r.number}<br>
-      <small>${r.review ?? ""}</small>
-    </div>
-  `;
-}
-
-function clearBostonRestaurantMarkers() {
-  bostonRestaurantMarkers.forEach(m => m.setMap(null));
-  bostonRestaurantMarkers = [];
-  if (infoWindow) infoWindow.close();
-}
-
-function renderBostonRestaurants(list) {
-  clearBostonRestaurantMarkers();
-
-  list.forEach((r) => {
-    const gm = r.toGoogleMarker(map);
-
-    gm.addListener("mouseover", () => {
-      infoWindow.setContent(buildBostonInfoContent(r));
-      infoWindow.open(map, gm);
-    });
-    gm.addListener("mouseout", () => infoWindow.close());
-gm.addListener("click", async () => {
-
-  // Keep your normal info window
-  infoWindow.setContent(buildBostonInfoContent(r));
-  infoWindow.open(map, gm);
-
-  // Show AI card
-  const card = document.getElementById("ai-summary-card");
-  const content = document.getElementById("ai-summary-content");
-
-  card.style.display = "block";
-  content.innerHTML = `<strong>${r.name}</strong><br><br>Loading AI summary...`;
-
-  try {
-    const res = await fetch("/analyze", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        source: "boston",
-        restaurantName: r.name,
-        address: r.address || ""
-      })
-    });
-
-    const result = await res.json();
-
-    content.innerHTML = `
-      <strong>${r.name}</strong><br><br>
-      ${result.analysis}
-    `;
-  } catch (err) {
-    console.error(err);
-    content.innerHTML = "Error: Could not fetch AI summary.";
-  }
-});
-
-    bostonRestaurantMarkers.push(gm);
-  });
-
-  const sidebar = document.getElementById("restaurantList");
-  sidebar.innerHTML = "";
-  list.forEach((r) => {
-    const div = document.createElement("div");
-    div.className = "restaurant-item";
-    div.innerHTML = `
-      <strong>${r.name}</strong><br>
-      ${r.address}<br>
-      Phone: ${r.number}
-    `;
-    sidebar.appendChild(div);
-  });
-}
-
-/* ---------------- SORTING ---------------- */
-window.sortPlaces = function sortPlaces(type, order) {
-  if (mode === "food") {
-    bostonFiltered.sort((a, b) =>
-      order === "asc"
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
-    );
-    renderBostonRestaurants(bostonFiltered);
-    return;
-  }
-
-  filteredPlaces.sort((a, b) => {
-    let valA, valB;
-    if (type === "price") {
-      valA = a.price_level ?? 0;
-      valB = b.price_level ?? 0;
-    } else if (type === "rating") {
-      valA = a.rating ?? 0;
-      valB = b.rating ?? 0;
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          await create({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        },
+        async () => {
+          await create(fallback);
+        },
+        { enableHighAccuracy: true, timeout: 7000, maximumAge: 300000 }
+      );
     }
-    return order === "asc" ? valA - valB : valB - valA;
-  });
 
-  renderAll();
-};
-
-initMap();
-</script>
-
+    initMap();
+  </script>
 </body>
 </html>

@@ -1,0 +1,1681 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-02-22T09:10:14Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29634260",
+        "addr:city": "Boston",
+        "addr:housenumber": "413",
+        "addr:postcode": "02130",
+        "addr:state": "MA",
+        "addr:street": "Centre Street",
+        "branch": "Jamaica Plain",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "building": "yes",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Whole Foods",
+        "phone": "+1 617-553-5400",
+        "ref": "jamaicaplain",
+        "shop": "supermarket",
+        "website": "https://www.wholefoodsmarket.com/stores/jamaicaplain",
+        "wheelchair": "limited",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1108816,
+          42.3215134
+        ]
+      },
+      "id": "way/29634260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29660101",
+        "addr:city": "Boston",
+        "addr:housenumber": "44",
+        "addr:postcode": "02210",
+        "addr:state": "MA",
+        "addr:street": "Thomson Place",
+        "branch": "Fort Point Seaport",
+        "brand": "Trader Joe's",
+        "brand:wikidata": "Q688825",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2024-08-20",
+        "name": "Trader Joe's",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1 617-941-3714",
+        "ref": "566",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses",
+        "website": "https://locations.traderjoes.com/ma/boston/566/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.047342,
+          42.3517979
+        ]
+      },
+      "id": "way/29660101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29661558",
+        "addr:city": "East Boston",
+        "addr:housenumber": "246",
+        "addr:postcode": "02128",
+        "addr:state": "MA",
+        "addr:street": "Border Street",
+        "brand": "Shaw's",
+        "brand:wikidata": "Q578387",
+        "building": "yes",
+        "name": "Shaw's",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses",
+        "website": "https://local.shaws.com/ma/east-boston/246-border-st.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0404584,
+          42.3766308
+        ]
+      },
+      "id": "way/29661558"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29680682",
+        "addr:city": "Boston",
+        "addr:country": "US",
+        "addr:housenumber": "1065",
+        "addr:postcode": "02215",
+        "addr:state": "MA",
+        "addr:street": "Commonwealth Avenue",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "retail",
+        "building:levels": "1",
+        "check_date:opening_hours": "2025-10-31",
+        "name": "Star Market",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+1 617-783-5878",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/boston/1065-commonwealth-ave.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1235575,
+          42.3527026
+        ]
+      },
+      "id": "way/29680682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29722599",
+        "addr:city": "Dorchester",
+        "addr:country": "US",
+        "addr:housenumber": "45",
+        "addr:postcode": "02125",
+        "addr:state": "MA",
+        "addr:street": "William T. Morrissey Boulevard",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "retail",
+        "building:levels": "2",
+        "check_date": "2025-07-09",
+        "name": "Star Market",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "phone": "+1 617-265-1776",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/dorchester/45-morrissey-blvd.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0506931,
+          42.3183971
+        ]
+      },
+      "id": "way/29722599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29775004",
+        "building": "yes",
+        "name": "Greek International Food Market",
+        "shop": "supermarket",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.157095,
+          42.2607539
+        ]
+      },
+      "id": "way/29775004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29789620",
+        "addr:city": "Boston",
+        "addr:housenumber": "606",
+        "addr:postcode": "02131",
+        "addr:state": "MA",
+        "addr:street": "American Legion Highway",
+        "building": "yes",
+        "name": "Brother’s Supermarket",
+        "payment:apple_pay": "yes",
+        "payment:cards": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1-617-524-9877",
+        "shop": "supermarket",
+        "website": "https://www.brotherssupermarkets.com",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1095754,
+          42.285663
+        ]
+      },
+      "id": "way/29789620"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29804360",
+        "addr:city": "Dorchester",
+        "addr:housenumber": "460",
+        "addr:postcode": "02121",
+        "addr:state": "MA",
+        "addr:street": "Blue Hill Avenue",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "building": "supermarket",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-427-6752",
+        "ref": "0459",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/dorchester/460-blue-hill-avenue",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.081013,
+          42.3091506
+        ]
+      },
+      "id": "way/29804360"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29827052",
+        "addr:city": "Brighton",
+        "addr:country": "US",
+        "addr:housenumber": "370",
+        "addr:postcode": "02135",
+        "addr:state": "MA",
+        "addr:street": "Western Avenue",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "yes",
+        "building:levels": "1",
+        "name": "Star Market",
+        "phone": "+1 617-787-5266",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/brighton/370-western-ave.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1375763,
+          42.3609151
+        ]
+      },
+      "id": "way/29827052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29854780",
+        "addr:city": "West Roxbury",
+        "addr:country": "US",
+        "addr:housenumber": "75",
+        "addr:postcode": "02132",
+        "addr:state": "MA",
+        "addr:street": "Spring Street",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "yes",
+        "name": "Star Market",
+        "phone": "+1 617-327-0564",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/west-roxbury/75-spring-st.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1632596,
+          42.2787389
+        ]
+      },
+      "id": "way/29854780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29868710",
+        "addr:city": "Dorchester",
+        "addr:country": "US",
+        "addr:housenumber": "4",
+        "addr:postcode": "02124",
+        "addr:state": "MA",
+        "addr:street": "River Street",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "yes",
+        "check_date": "2024-10-27",
+        "check_date:opening_hours": "2024-10-27",
+        "name": "Star Market",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+1 617-298-1462",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/dorchester/4-river-st.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0697014,
+          42.2718817
+        ]
+      },
+      "id": "way/29868710"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29871730",
+        "addr:housenumber": "230",
+        "addr:street": "West Broadway",
+        "building": "yes",
+        "check_date": "2024-08-18",
+        "name": "Foodie's Market",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 08:00-19:00",
+        "operator": "Foodie's Markets",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1 617-269-4700",
+        "shop": "supermarket",
+        "website": "https://www.foodiesmarkets.com",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0518744,
+          42.3398293
+        ]
+      },
+      "id": "way/29871730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29887211",
+        "addr:city": "Brighton",
+        "addr:housenumber": "15",
+        "addr:postcode": "02135",
+        "addr:state": "MA",
+        "addr:street": "Washington Street",
+        "branch": "Brighton",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "building": "supermarket",
+        "check_date": "2025-10-28",
+        "check_date:opening_hours": "2025-10-28",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "phone": "+1-617-738-8187",
+        "shop": "supermarket",
+        "website": "https://www.wholefoodsmarket.com/stores/brighton",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1403759,
+          42.3428057
+        ]
+      },
+      "id": "way/29887211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29887895",
+        "addr:city": "Jamaica Plain",
+        "addr:housenumber": "301",
+        "addr:postcode": "02130",
+        "addr:state": "MA",
+        "addr:street": "Centre Street",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "building": "supermarket",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-522-4300",
+        "ref": "0075",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/jamaica-plain/301-centre-street",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1030627,
+          42.3241052
+        ]
+      },
+      "id": "way/29887895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29905550",
+        "addr:city": "Hyde Park",
+        "addr:housenumber": "1377",
+        "addr:postcode": "02136",
+        "addr:state": "MA",
+        "addr:street": "Hyde Park Avenue",
+        "brand": "Shaw's",
+        "brand:wikidata": "Q578387",
+        "building": "retail",
+        "check_date": "2023-08-18",
+        "internet_access": "no",
+        "name": "Shaw's",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "supermarket",
+        "website": "https://local.shaws.com/ma/hyde-park/1377-hyde-park-ave.html",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1260724,
+          42.2518047
+        ]
+      },
+      "id": "way/29905550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29938170",
+        "addr:city": "Boston",
+        "addr:country": "US",
+        "addr:housename": "Star Market",
+        "addr:housenumber": "33",
+        "addr:postcode": "02215",
+        "addr:state": "MA",
+        "addr:street": "Kilmarnock Street",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building": "supermarket",
+        "building:levels": "1",
+        "check_date": "2024-10-27",
+        "check_date:opening_hours": "2024-10-27",
+        "height": "8.3",
+        "name": "Star Market",
+        "old_name": "Shaw's Supermarket",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "phone": "+1 617-267-4684",
+        "shop": "supermarket",
+        "website": "https://local.starmarket.com/ma/boston/33-kilmarnock-st.html",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1004646,
+          42.3435294
+        ]
+      },
+      "id": "way/29938170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/29953057",
+        "addr:city": "East Boston",
+        "addr:housenumber": "121;123",
+        "addr:postcode": "02128",
+        "addr:state": "MA",
+        "addr:street": "Bennington Street",
+        "building": "yes",
+        "building:levels": "1",
+        "building:material": "cement_block",
+        "name": "El Valle de la Sultana Market",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0343663,
+          42.3764524
+        ]
+      },
+      "id": "way/29953057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/136689867",
+        "addr:housenumber": "870",
+        "addr:street": "River Street",
+        "brand": "Price Rite",
+        "brand:wikidata": "Q7242560",
+        "building": "yes",
+        "check_date": "2023-08-19",
+        "name": "Price Rite",
+        "shop": "supermarket",
+        "source": "Bing",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1076171,
+          42.2620377
+        ]
+      },
+      "id": "way/136689867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/245744071",
+        "addr:city": "Roslindale",
+        "addr:housename": "Stop & Shop",
+        "addr:housenumber": "950",
+        "addr:postcode": "02131",
+        "addr:state": "MA",
+        "addr:street": "American Legion Highway",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "building": "yes",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-327-2160",
+        "ref": "0004",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/roslindale/950-american-legion-highway",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1142057,
+          42.2756758
+        ]
+      },
+      "id": "way/245744071"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/314092543",
+        "addr:city": "Dorchester",
+        "addr:housenumber": "1100",
+        "addr:postcode": "02125",
+        "addr:state": "MA",
+        "addr:street": "Massachusetts Avenue",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "note": "store new since 2006 aerial imagery",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "phone": "+1 617-541-4700",
+        "ref": "0429",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/dorchester/1100-massachusetts-avenue"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0648216,
+          42.3264573
+        ]
+      },
+      "id": "node/314092543"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/408045321",
+        "addr:city": "Allston",
+        "addr:housenumber": "1",
+        "addr:postcode": "02134",
+        "addr:state": "MA",
+        "addr:street": "Brighton Avenue",
+        "alt_name": "Super 88;Super 88 Market",
+        "building": "supermarket",
+        "building:levels": "1",
+        "check_date": "2025-08-02",
+        "name": "Hong Kong Supermarket",
+        "note": "The building says Super 88 Market on the outside but the business inside calls itself Honk Kong Supermarket. The website listed on the building (super88market.com) is defunct so I think the business name should be used.",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+16177872288",
+        "shop": "supermarket",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1252829,
+          42.3530265
+        ]
+      },
+      "id": "way/408045321"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/510687518",
+        "addr:housenumber": "450",
+        "addr:street": "Melnea Cass Boulevard",
+        "building": "yes",
+        "name": "Tropical Foods",
+        "shop": "supermarket",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0823224,
+          42.3332549
+        ]
+      },
+      "id": "way/510687518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/663625859",
+        "addr:city": "Boston",
+        "addr:housenumber": "1025",
+        "addr:postcode": "02136",
+        "addr:state": "MA",
+        "addr:street": "Truman Parkway",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "building": "supermarket",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1 617-333-0273",
+        "ref": "0413",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/hyde-park/1025-truman-parkway",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1274006,
+          42.2422657
+        ]
+      },
+      "id": "way/663625859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/816585252",
+        "addr:city": "Dorchester",
+        "addr:housenumber": "535-555",
+        "addr:postcode": "02122",
+        "addr:state": "MA",
+        "addr:street": "Freeport Street",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "building": "yes",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-265-2766",
+        "ref": "0018",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses",
+        "website": "https://stores.stopandshop.com/ma/dorchester/545-freeport-street",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0490288,
+          42.2926925
+        ]
+      },
+      "id": "way/816585252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/821230817",
+        "addr:city": "Dorchester",
+        "addr:housenumber": "1188",
+        "addr:postcode": "02125",
+        "addr:state": "MA",
+        "addr:street": "Dorchester Avenue",
+        "building": "retail",
+        "building:levels": "2",
+        "name": "Phu Cuong",
+        "roof:shape": "flat",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0573668,
+          42.3100908
+        ]
+      },
+      "id": "way/821230817"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1294793293",
+        "addr:city": "Dorchester",
+        "addr:country": "US",
+        "addr:housenumber": "195",
+        "addr:postcode": "02122",
+        "addr:state": "MA",
+        "addr:street": "Bowdoin Street",
+        "building": "yes",
+        "check_date:opening_hours": "2024-06-21",
+        "contact:phone": "+1 617-297-5913",
+        "name": "Dorchester Food Co-op",
+        "opening_hours": "Su-Sa,PH 08:00-20:00; Nov Th[4] off; Dec 25 off; Jan 01 off",
+        "operator:type": "cooperative",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:ebt": "yes",
+        "payment:snap": "yes",
+        "payment:wic": "no",
+        "shop": "supermarket",
+        "source:opening_hours": "https://docs.google.com/document/d/1bg-gTGGqL9HHUbwaMFJu8d6E7wJKdq8f/edit",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0683804,
+          42.3046961
+        ]
+      },
+      "id": "way/1294793293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1326984417",
+        "addr:city": "Boston",
+        "addr:country": "US",
+        "addr:housenumber": "53",
+        "addr:postcode": "02116",
+        "addr:state": "MA",
+        "addr:street": "Huntington Avenue",
+        "air_conditioning": "yes",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "check_date": "2024-10-27",
+        "check_date:opening_hours": "2024-10-27",
+        "currency:USD": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "STAR_FREE_WIFI",
+        "name": "Star Market",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "operator": "Albertsons Companies, Inc.",
+        "organic": "yes",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1 617-262-4688",
+        "shop": "supermarket",
+        "stroller": "yes",
+        "takeaway": "yes",
+        "website": "https://local.starmarket.com/ma/boston/53-huntington-ave.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0796721,
+          42.3474434
+        ]
+      },
+      "id": "node/1326984417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1341663470",
+        "addr:city": "Dorchester",
+        "addr:housenumber": "450",
+        "addr:postcode": "02124",
+        "addr:state": "MA",
+        "addr:street": "Washington Street",
+        "building": "yes",
+        "name": "Daily Table",
+        "opening_hours": "Mo-Sa 09:00-20:00, Su 11:00-18:00",
+        "phone": "+1 617-506-0219",
+        "shop": "supermarket",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0718406,
+          42.2957153
+        ]
+      },
+      "id": "way/1341663470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1356795823",
+        "addr:city": "Boston",
+        "addr:housenumber": "899",
+        "addr:postcode": "02115",
+        "addr:state": "MA",
+        "addr:street": "Boylston Street",
+        "air_conditioning": "yes",
+        "branch": "Boston - Back Bay",
+        "brand": "Trader Joe's",
+        "brand:wikidata": "Q688825",
+        "level": "-1",
+        "name": "Trader Joe's",
+        "opening_hours": "Mo-Su 10:00-21:00",
+        "phone": "+1 617-262-6505",
+        "ref": "510",
+        "shop": "supermarket",
+        "toilets:wheelchair": "no",
+        "website": "https://locations.traderjoes.com/ma/boston/510/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0841008,
+          42.3484447
+        ]
+      },
+      "id": "node/1356795823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1978494795",
+        "designation": "Food and Study spot ",
+        "name": "Buick Street Market ",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1156835,
+          42.3522328
+        ]
+      },
+      "id": "node/1978494795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2298256073",
+        "addr:city": "Jamaica Plain",
+        "addr:housenumber": "672",
+        "addr:postcode": "02130",
+        "addr:state": "MA",
+        "addr:street": "Centre Street",
+        "contact:facebook": "https://www.facebook.com/cityfeedandsupply",
+        "name": "City Feed and Supply",
+        "opening_hours": "Mo-Sa 07:00-20:00; Su 08:00-20:00",
+        "payment:discover_card": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1-617-524-5539",
+        "shop": "supermarket",
+        "website": "https://cityfeedandsupply.com/centre-street-store/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1139621,
+          42.3123528
+        ]
+      },
+      "id": "node/2298256073"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2458221142",
+        "addr:city": "Boston",
+        "addr:housenumber": "369",
+        "addr:postcode": "02115",
+        "addr:state": "MA",
+        "addr:street": "Huntington Avenue",
+        "name": "Wollaston's Market",
+        "opening_hours": "Mo-Su 07:00-01:00",
+        "phone": "+16172470011",
+        "shop": "supermarket",
+        "short_name": "Wally's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0906607,
+          42.3403456
+        ]
+      },
+      "id": "node/2458221142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2458221145",
+        "name": "Wollaston's Market",
+        "opening_hours": "Mo-Su 07:00-24:00",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0921514,
+          42.3373523
+        ]
+      },
+      "id": "node/2458221145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2700809532",
+        "addr:city": "Boston",
+        "addr:housenumber": "181",
+        "addr:postcode": "02114",
+        "addr:state": "MA",
+        "addr:street": "Cambridge Street",
+        "branch": "Charles River Plaza",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "phone": "+1 617-723-0004",
+        "ref": "charlesriver",
+        "shop": "supermarket",
+        "website": "https://www.wholefoodsmarket.com/stores/charlesriver"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0653418,
+          42.3620025
+        ]
+      },
+      "id": "node/2700809532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3321751720",
+        "addr:city": "South Boston",
+        "addr:housenumber": "715",
+        "addr:postcode": "02127",
+        "addr:state": "MA",
+        "addr:street": "East Broadway",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-269-7989",
+        "ref": "0053",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/south-boston/713-east-broadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.036595,
+          42.3354785
+        ]
+      },
+      "id": "node/3321751720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3665257626",
+        "addr:housenumber": "692",
+        "addr:postcode": "02111",
+        "addr:street": "Washington Street",
+        "name": "Jia Ho Supermarket",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "phone": "+1 617 338 9788",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0627836,
+          42.3512504
+        ]
+      },
+      "id": "node/3665257626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3900847074",
+        "addr:housenumber": "562",
+        "addr:postcode": "02134",
+        "addr:street": "Cambridge Street",
+        "name": "Cheema's Super Market",
+        "note": "Sign says: \"Pak, Ind. & Middle East groceries & fresh halal meat\"",
+        "opening_hours": "Mo-Su 11:00-20:00",
+        "phone": "+1-617-783-9800",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1403616,
+          42.3523825
+        ]
+      },
+      "id": "node/3900847074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3938334840",
+        "addr:city": "Charlestown",
+        "addr:housenumber": "27",
+        "addr:postcode": "02129",
+        "addr:state": "MA",
+        "addr:street": "Austin Street",
+        "branch": "Charlestown",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "phone": "+1 617-337-9700",
+        "ref": "charlestown",
+        "shop": "supermarket",
+        "website": "https://www.wholefoodsmarket.com/stores/charlestown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0662711,
+          42.375626
+        ]
+      },
+      "id": "node/3938334840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3965479473",
+        "addr:city": "Boston",
+        "addr:housenumber": "348",
+        "addr:postcode": "02118",
+        "addr:state": "MA",
+        "addr:street": "Harrison Avenue",
+        "air_conditioning": "yes",
+        "branch": "South End",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "currency:USD": "yes",
+        "level": "0",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "operator": "Amazon",
+        "organic": "yes",
+        "phone": "+1 617-904-1000",
+        "ref": "southend",
+        "shop": "supermarket",
+        "stroller": "yes",
+        "website": "https://www.wholefoodsmarket.com/stores/southend",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0628246,
+          42.3454666
+        ]
+      },
+      "id": "node/3965479473"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4123617193",
+        "addr:housenumber": "243",
+        "addr:street": "Faneuil Street",
+        "name": "Faneuil Street Market",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.160164,
+          42.352908
+        ]
+      },
+      "id": "node/4123617193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4396174691",
+        "addr:city": "Boston",
+        "addr:housenumber": "1102",
+        "addr:postcode": "02118",
+        "addr:state": "MA",
+        "addr:street": "Washington Street",
+        "alt_name": "New York Marts",
+        "level": "0",
+        "name": "Ming's Supermarket",
+        "name:en": "Ming's Supermarket",
+        "opening_hours": "Mo-Sa 08:00-20:00",
+        "operator": "New York Mart Group Inc.",
+        "phone": "+1-617-338-1588",
+        "shop": "supermarket",
+        "stroller": "yes",
+        "website": "https://www.newyorkmart.com/en/stores/boston1-store/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0655817,
+          42.3441831
+        ]
+      },
+      "id": "node/4396174691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4396181789",
+        "name": "C-Mart",
+        "name:en": "C-Mart",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0649971,
+          42.3462438
+        ]
+      },
+      "id": "node/4396181789"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4467144190",
+        "addr:housenumber": "4",
+        "addr:place": "South Market",
+        "addr:postcode": "02109",
+        "addr:street": "South Market Street",
+        "addr:unit": "S-1155",
+        "name": "Pepper Palace",
+        "name:fr": "Pepper Palace",
+        "phone": "+1-865-234-1121",
+        "shop": "supermarket",
+        "website": "https://pepperpalace.com/pages/boston-ma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0550683,
+          42.359706
+        ]
+      },
+      "id": "node/4467144190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4983448186",
+        "addr:city": "Boston",
+        "addr:housenumber": "1620",
+        "addr:postcode": "02120",
+        "addr:state": "MA",
+        "addr:street": "Tremont Street",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "phone": "+1 617-232-3572",
+        "ref": "0412",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/boston/1620-tremont-street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1041121,
+          42.3333732
+        ]
+      },
+      "id": "node/4983448186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5197251845",
+        "addr:city": "Boston",
+        "addr:housenumber": "15",
+        "addr:postcode": "02115",
+        "addr:state": "MA",
+        "addr:street": "Westland Avenue",
+        "branch": "Symphony",
+        "brand": "Whole Foods Market",
+        "brand:wikidata": "Q1809448",
+        "check_date": "2024-10-03",
+        "check_date:opening_hours": "2024-10-03",
+        "level": "0",
+        "name": "Whole Foods Market",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "phone": "+1 617-375-1010",
+        "ref": "symphony",
+        "shop": "supermarket",
+        "website": "https://www.wholefoodsmarket.com/stores/symphony"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0872674,
+          42.3438923
+        ]
+      },
+      "id": "node/5197251845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5429674015",
+        "addr:city": "Allston",
+        "addr:housenumber": "199",
+        "addr:postcode": "02134",
+        "addr:state": "MA",
+        "addr:street": "North Harvard Street",
+        "branch": "Allston",
+        "brand": "Trader Joe's",
+        "brand:wikidata": "Q688825",
+        "name": "Trader Joe's",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+1 617-787-1238",
+        "ref": "561",
+        "shop": "supermarket",
+        "website": "https://locations.traderjoes.com/ma/allston/561/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.130034,
+          42.3634369
+        ]
+      },
+      "id": "node/5429674015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6185104847",
+        "addr:city": "Boston",
+        "addr:country": "US",
+        "addr:housenumber": "90",
+        "addr:postcode": "02114",
+        "addr:state": "MA",
+        "addr:street": "Causeway Street",
+        "brand": "Star Market",
+        "brand:wikidata": "Q7600795",
+        "building:levels:underground": "1",
+        "layer": "0",
+        "level": "0;-1",
+        "name": "Star Market",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "organic": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+1-857-409-3403",
+        "shop": "supermarket",
+        "stroller": "yes",
+        "website": "https://local.starmarket.com/ma/boston/90-causeway-st.html",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0616706,
+          42.3657266
+        ]
+      },
+      "id": "node/6185104847"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7830837817",
+        "access": "yes",
+        "addr:city": "Boston",
+        "addr:housenumber": "20",
+        "addr:postcode": "02114",
+        "addr:state": "MA",
+        "addr:street": "Charles Street",
+        "air_conditioning": "yes",
+        "contact:facebook": "https://www.facebook.com/delucasmarket/",
+        "level": "0",
+        "location": "indoor",
+        "name": "DeLuca's Market",
+        "opening_hours": "Mo-Su 09:00-19:00",
+        "organic": "yes",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "phone": "+1-617-523-4343",
+        "shop": "supermarket",
+        "stroller": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0694213,
+          42.3565533
+        ]
+      },
+      "id": "node/7830837817"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9301471862",
+        "addr:city": "West Roxbury",
+        "addr:housenumber": "1800",
+        "addr:postcode": "02132",
+        "addr:state": "MA",
+        "addr:street": "Centre Street",
+        "brand": "Roche Bros.",
+        "brand:wikidata": "Q7353834",
+        "name": "Roche Bros.",
+        "opening_hours": "Mo-Sa 07:00-21:00; Su 08:00-20:00",
+        "phone": "+1 617 469 5747",
+        "ref": "115",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.152022,
+          42.2863786
+        ]
+      },
+      "id": "node/9301471862"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9301761639",
+        "addr:city": "Boston",
+        "addr:housenumber": "8",
+        "addr:postcode": "02110",
+        "addr:state": "MA",
+        "addr:street": "Summer Street",
+        "brand": "Roche Bros.",
+        "brand:wikidata": "Q7353834",
+        "name": "Roche Bros.",
+        "opening_hours": "Mo-Sa 07:00-21:00; Su 08:00-20:00",
+        "phone": "+1 617 456 5111",
+        "ref": "121",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0600046,
+          42.3554512
+        ]
+      },
+      "id": "node/9301761639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9321166474",
+        "addr:city": "East Boston",
+        "addr:housenumber": "150",
+        "addr:postcode": "02128",
+        "addr:state": "MA",
+        "addr:street": "Bennington Street",
+        "name": "Sava's Market",
+        "shop": "supermarket",
+        "source": "esri/Boston_MA_Addresses"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0336372,
+          42.3769629
+        ]
+      },
+      "id": "node/9321166474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10839024984",
+        "addr:city": "Boston",
+        "addr:housenumber": "179",
+        "addr:postcode": "02109",
+        "addr:state": "MA",
+        "addr:street": "Commercial Street",
+        "name": "Golden Goose Market",
+        "operator": "Golden Goose Market",
+        "phone": "+1-617-367-3134",
+        "shop": "supermarket",
+        "website": "https://www.goldengoosemarket.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0518833,
+          42.3625673
+        ]
+      },
+      "id": "node/10839024984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11166040805",
+        "addr:postcode": "02119",
+        "name": "Daily Table",
+        "opening_hours": "Mo-Sa 09:00-20:00; Su 11:00-19:00",
+        "shop": "supermarket",
+        "website": "https://www.dailytable.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.083191,
+          42.3311489
+        ]
+      },
+      "id": "node/11166040805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11956591210",
+        "addr:city": "Boston",
+        "addr:housenumber": "305",
+        "addr:postcode": "02135",
+        "addr:state": "MA",
+        "addr:street": "Guest Street",
+        "brand": "Stop & Shop",
+        "brand:wikidata": "Q3658429",
+        "check_date:opening_hours": "2024-10-03",
+        "name": "Stop & Shop",
+        "opening_hours": "Mo-Sa 07:00-22:00; Su 07:00-21:00",
+        "phone": "+1 617-779-9116",
+        "shop": "supermarket",
+        "website": "https://stores.stopandshop.com/ma/allston/305-guest-street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1400571,
+          42.3558002
+        ]
+      },
+      "id": "node/11956591210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12069985166",
+        "addr:city": "Roslindale",
+        "addr:housenumber": "30",
+        "addr:postcode": "02131",
+        "addr:state": "MA",
+        "addr:street": "Corinth Street",
+        "name": "Village Market",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "shop": "supermarket"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1295848,
+          42.2861788
+        ]
+      },
+      "id": "node/12069985166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12072443190",
+        "addr:city": "Boston",
+        "addr:housenumber": "500",
+        "addr:postcode": "02116",
+        "addr:state": "MA",
+        "addr:street": "Boylston Street",
+        "air_conditioning": "yes",
+        "brand": "Trader Joe's",
+        "brand:wikidata": "Q688825",
+        "level": "0",
+        "name": "Trader Joe's",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+1 617-693-6302",
+        "shop": "supermarket",
+        "source": "survey",
+        "toilets:wheelchair": "no",
+        "website": "https://locations.traderjoes.com/MA/Boston/500/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0733464,
+          42.3509954
+        ]
+      },
+      "id": "node/12072443190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12073829466",
+        "addr:city": "Boston",
+        "addr:housenumber": "650",
+        "addr:postcode": "02131",
+        "addr:state": "MA",
+        "addr:street": "American Legion Highway",
+        "brand": "Price Rite",
+        "brand:wikidata": "Q7242560",
+        "name": "Price Rite",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "phone": "+1-617-522-0066",
+        "shop": "supermarket",
+        "website": "http://priceritemarketplace.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1109121,
+          42.2842126
+        ]
+      },
+      "id": "node/12073829466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12987715413",
+        "addr:housenumber": "102-110",
+        "addr:street": "Savin Hill Avenue",
+        "air_conditioning": "yes",
+        "check_date": "2025-09-13",
+        "name": "The Daily",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0537604,
+          42.3117751
+        ]
+      },
+      "id": "node/12987715413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13323953077",
+        "addr:housenumber": "1421",
+        "addr:street": "Washington Street",
+        "name": "Foodie's Urban Market",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 08:00-19:00",
+        "shop": "supermarket",
+        "website": "https://foodiesmarkets.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0707855,
+          42.3411293
+        ]
+      },
+      "id": "node/13323953077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13484620701",
+        "addr:housenumber": "1999",
+        "addr:postcode": "02132",
+        "addr:street": "Centre Street",
+        "brand": "Trader Joe's",
+        "brand:wikidata": "Q688825",
+        "name": "Trader Joe's",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+1-617-682-7600",
+        "shop": "supermarket",
+        "website": "https://locations.traderjoes.com/ma/boston/588/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1584789,
+          42.2818453
+        ]
+      },
+      "id": "node/13484620701"
+    }
+  ]
+}
