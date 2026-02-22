@@ -23,11 +23,11 @@
         </button>
         <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
             <img src="https://assets.mapquest.com/img/logo.svg" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
-            <input class="search-input" id="searchBar" type="text" placeholder="Search places or paste a link">
+            <input class="search-input" id="searchBar" type="text" placeholder="Search places or paste a link" list="searchSuggestions" autocomplete="off">
+            <datalist id="searchSuggestions"></datalist>
         </div>
         <div class="sidebar-content" style="flex:1;overflow-y:auto;padding:1.5rem;">
-            <h2 style="font-size:1.1rem;margin-bottom:1rem;">Food-Related Places</h2>
-            <div id="restaurantList"></div>
+            <div id="placeDetailsPanel" class="place-details-panel"></div>
         </div>
     </aside>
 
@@ -73,8 +73,9 @@ let placesService;
 let allPlaces = [];
 let filteredPlaces = [];
 let markers = [];
-let infoWindow;
 let isSidebarCollapsed = false;
+let activeCategory = "food";
+let activeSearchQuery = "";
 
 function toggleSidebar() {
     isSidebarCollapsed = !isSidebarCollapsed;
@@ -96,6 +97,47 @@ function toggleSidebar() {
     }
 }
 
+function setupSearchBar() {
+    const searchInput = document.getElementById("searchBar");
+    if (!searchInput) return;
+
+    searchInput.addEventListener("input", (event) => {
+        activeSearchQuery = event.target.value.trim().toLowerCase();
+        applyFiltersAndRender();
+    });
+}
+
+function updateSearchSuggestions() {
+    const suggestions = document.getElementById("searchSuggestions");
+    if (!suggestions) return;
+
+    const source = applyCategoryFilter(allPlaces);
+    const names = [...new Set(
+        source
+            .map(place => (place.name || "").trim())
+            .filter(Boolean)
+    )];
+
+    let rankedNames = names;
+    if (activeSearchQuery) {
+        const startsWithQuery = names.filter(name =>
+            name.toLowerCase().startsWith(activeSearchQuery)
+        );
+        const includesQuery = names.filter(name => {
+            const lowered = name.toLowerCase();
+            return !lowered.startsWith(activeSearchQuery) && lowered.includes(activeSearchQuery);
+        });
+        rankedNames = [...startsWithQuery, ...includesQuery];
+    }
+
+    suggestions.innerHTML = "";
+    rankedNames.slice(0, 10).forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        suggestions.appendChild(option);
+    });
+}
+
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -115,6 +157,8 @@ async function initMap() {
                 mapId: "1907e1268c94d0034153c21a",
                 mapTypeId: "terrain",
                 mapTypeControl: false,
+                draggableCursor: "crosshair",
+                draggingCursor: "grabbing",
                 styles: [
                     { elementType: "labels", stylers: [{ visibility: "off" }] }
                 ]
@@ -127,7 +171,6 @@ async function initMap() {
             });
 
             placesService = new google.maps.places.PlacesService(map);
-            infoWindow = new google.maps.InfoWindow();
             fetchFoodPlaces(userLocation);
 
         }, () => {
@@ -185,80 +228,79 @@ function handleResults(results, status) {
             }
         });
 
-        filteredPlaces = allPlaces.filter(isFoodPlace);
-        renderAll();
+        applyFiltersAndRender();
     }
 }
 
 function isFoodPlace(place) {
-    return place.types.includes("restaurant") ||
-        place.types.includes("cafe") ||
-        place.types.includes("bakery") ||
-        place.types.includes("meal_takeaway") ||
-        place.types.includes("meal_delivery") ||
-        place.types.includes("bar") ||
-        place.types.includes("night_club") ||
-        place.types.includes("pub");
+    const types = place.types || [];
+    return types.includes("restaurant") ||
+        types.includes("cafe") ||
+        types.includes("bakery") ||
+        types.includes("meal_takeaway") ||
+        types.includes("meal_delivery") ||
+        types.includes("bar") ||
+        types.includes("night_club") ||
+        types.includes("pub");
 }
 
 // 🔹 Filter by category
 function filterCategory(category) {
+    activeCategory = category;
+    applyFiltersAndRender();
+}
 
-    if (category === "all") {
-        filteredPlaces = [...allPlaces];
+function applyCategoryFilter(data) {
+    if (activeCategory === "all") {
+        return [...data];
     }
 
-
-    else if (category === "food") {
-        filteredPlaces = allPlaces.filter(isFoodPlace);
+    if (activeCategory === "food") {
+        return data.filter(isFoodPlace);
     }
 
-    else if (category === "retail") {
-        filteredPlaces = allPlaces.filter(p =>
-            p.types.includes("supermarket") ||
-            p.types.includes("grocery_or_supermarket") ||
-            p.types.includes("convenience_store") ||
-            p.types.includes("liquor_store")
+    if (activeCategory === "retail") {
+        return data.filter(p =>
+            (p.types || []).includes("supermarket") ||
+            (p.types || []).includes("grocery_or_supermarket") ||
+            (p.types || []).includes("convenience_store") ||
+            (p.types || []).includes("liquor_store")
         );
     }
 
-    else if (category === "wholesale") {
-        filteredPlaces = allPlaces.filter(p =>
-            p.name.toLowerCase().includes("distributor") ||
-            p.name.toLowerCase().includes("wholesale") ||
-            p.name.toLowerCase().includes("factory")
+    if (activeCategory === "wholesale") {
+        return data.filter(p =>
+            (p.name || "").toLowerCase().includes("distributor") ||
+            (p.name || "").toLowerCase().includes("wholesale") ||
+            (p.name || "").toLowerCase().includes("factory")
         );
     }
 
-    else if (category === "farm") {
-        filteredPlaces = allPlaces.filter(p =>
-            p.name.toLowerCase().includes("farm")
-        );
+    if (activeCategory === "farm") {
+        return data.filter(p => (p.name || "").toLowerCase().includes("farm"));
     }
 
+    return [...data];
+}
+
+function applySearchFilter(data) {
+    if (!activeSearchQuery) {
+        return data;
+    }
+
+    return data.filter(place => (place.name || "").toLowerCase().includes(activeSearchQuery));
+}
+
+function applyFiltersAndRender() {
+    const categoryFiltered = applyCategoryFilter(allPlaces);
+    filteredPlaces = applySearchFilter(categoryFiltered);
+    updateSearchSuggestions();
     renderAll();
 }
 
 // 🔹 General render
 function renderAll() {
     renderMarkers(filteredPlaces);
-    renderList(filteredPlaces);
-}
-
-function buildPlaceInfoContent(place) {
-    const rating = place.rating ?? "N/A";
-    const priceLevel = place.price_level;
-    const priceDisplay = typeof priceLevel === "number"
-        ? "$".repeat(priceLevel)
-        : "N/A";
-
-    return `
-        <div style="min-width:180px;">
-            <strong>${place.name}</strong><br>
-            Price: ${priceDisplay}<br>
-            Rating: ${rating}
-        </div>
-    `;
 }
 
 function createFoodPinContent(place) {
@@ -292,7 +334,7 @@ function renderMarkers(data) {
 
     markers.forEach(marker => marker.map = null);
     markers = [];
-    infoWindow.close();
+    clearSidebarDetails();
 
     data.forEach(place => {
         const pinContent = createFoodPinContent(place);
@@ -305,50 +347,50 @@ function renderMarkers(data) {
             content: pinContent
         });
 
-        const openInfoWindow = () => {
-            infoWindow.setContent(buildPlaceInfoContent(place));
-            infoWindow.open({
-                map,
-                anchor: marker
-            });
-        };
+        const showDetails = () => showSidebarDetails(place);
+        const hideDetails = () => clearSidebarDetails();
 
-        const closeInfoWindow = () => infoWindow.close();
-
-        pinContent.addEventListener("mouseenter", openInfoWindow);
-        pinContent.addEventListener("mouseleave", closeInfoWindow);
-        pinContent.addEventListener("focus", openInfoWindow);
-        pinContent.addEventListener("blur", closeInfoWindow);
+        pinContent.addEventListener("mouseenter", showDetails);
+        pinContent.addEventListener("mouseleave", hideDetails);
+        pinContent.addEventListener("focus", showDetails);
+        pinContent.addEventListener("blur", hideDetails);
 
         markers.push(marker);
     });
 }
 
-// 🔹 Render list
-function renderList(data) {
-    const list = document.getElementById("restaurantList");
-    list.innerHTML = "";
-
-    data.forEach(place => {
-        const div = document.createElement("div");
-        div.className = "restaurant-item";
-
-        const priceLevel = place.price_level ?? "N/A";
-        const priceDisplay = typeof priceLevel === "number"
-            ? "$".repeat(priceLevel)
-            : "N/A";
-
-        const rating = place.rating ?? "N/A";
-
-        div.innerHTML = `
-            <strong>${place.name}</strong><br>
-            Price: ${priceDisplay}<br>
-            Rating: ${rating}
-        `;
-
-        list.appendChild(div);
-    });
+function getPlacePhotoUrl(place) {
+    if (place.photos && place.photos.length > 0) {
+        return place.photos[0].getUrl({ maxWidth: 640, maxHeight: 380 });
+    }
+    return "";
 }
+
+function clearSidebarDetails() {
+    const panel = document.getElementById("placeDetailsPanel");
+    if (!panel) return;
+    panel.innerHTML = "";
+}
+
+function showSidebarDetails(place) {
+    const panel = document.getElementById("placeDetailsPanel");
+    if (!panel) return;
+
+    const priceLevel = place.price_level;
+    const priceDisplay = typeof priceLevel === "number" ? "$".repeat(priceLevel) : "N/A";
+    const rating = place.rating ?? "N/A";
+    const address = place.vicinity ?? "Address unavailable";
+    const photoUrl = getPlacePhotoUrl(place);
+
+    panel.innerHTML = `
+        ${photoUrl ? `<img class="place-details-photo" src="${photoUrl}" alt="${place.name}">` : ""}
+        <h3 class="place-details-title">${place.name}</h3>
+        <div class="place-details-meta"><strong>Price:</strong> ${priceDisplay}</div>
+        <div class="place-details-meta"><strong>Rating:</strong> ${rating}</div>
+        <div class="place-details-meta"><strong>Address:</strong> ${address}</div>
+    `;
+}
+
 
 // 🔹 General sorting: type = 'price' or 'rating'
 function sortPlaces(type, order) {
@@ -370,6 +412,7 @@ function sortPlaces(type, order) {
 }
 
 initMap();
+setupSearchBar();
 </script>
 
 </body>

@@ -29,6 +29,33 @@ body {
     transition: opacity 0.2s ease;
 }
 
+.place-details-panel {
+    min-height: 180px;
+}
+
+.place-details-photo {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 0.9rem;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    border: 1px solid #ececec;
+}
+
+.place-details-title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 0.65rem;
+    color: #111827;
+}
+
+.place-details-meta {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
 .sidebar-toggle {
     position: absolute;
     top: 22px;
