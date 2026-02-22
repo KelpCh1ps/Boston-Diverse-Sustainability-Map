@@ -224,7 +224,7 @@ function renderMarkers(data) {
             infoWindow.setContent('Loading AI summary...');
 
             try {
-                const res = await fetch('http://localhost:3001/analyze', {
+                const res = await fetch('/analyze', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
