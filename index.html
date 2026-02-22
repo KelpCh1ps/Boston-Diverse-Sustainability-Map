@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Food Supply Map</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="map.css">
 </head>
 
@@ -30,17 +33,17 @@
         <!-- Horizontal Category Bar -->
         <div style="display:flex;gap:1rem;position:absolute;top:2rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;">
             
-            <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
+            <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
                 <span>🍽️</span> Food
             </button>
-            <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
-                <span>🛒</span> Grocery
+            <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+                <img src="icons/Market_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Grocery
             </button>
-            <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
+            <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
                 <span>🏬</span> Wholesale
             </button>
-            <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;">
-                <span>🌱</span> Farms
+            <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
+                <img src="icons/Food_Pantry_Logo.png" alt="" aria-hidden="true" style="width:18px;height:18px;object-fit:contain;"> Farms
             </button>
         </div>
         <div class="map-container" style="flex:1;width:100%;height:100%;">
@@ -211,40 +214,80 @@ function renderAll() {
     renderList(filteredPlaces);
 }
 
+function buildPlaceInfoContent(place) {
+    const rating = place.rating ?? "N/A";
+    const priceLevel = place.price_level;
+    const priceDisplay = typeof priceLevel === "number"
+        ? "$".repeat(priceLevel)
+        : "N/A";
+
+    return `
+        <div style="min-width:180px;">
+            <strong>${place.name}</strong><br>
+            Price: ${priceDisplay}<br>
+            Rating: ${rating}
+        </div>
+    `;
+}
+
+function createFoodPinContent(place) {
+    const pin = document.createElement("button");
+    pin.type = "button";
+    pin.className = "food-pin";
+    pin.setAttribute("aria-label", place.name);
+
+    const bubble = document.createElement("span");
+    bubble.className = "food-pin__bubble";
+
+    const image = document.createElement("img");
+    image.className = "food-pin__image";
+    image.src = "icons/restaurant_logo.png";
+    image.alt = "";
+    image.setAttribute("aria-hidden", "true");
+
+    const pulse = document.createElement("span");
+    pulse.className = "food-pin__pulse";
+    pulse.setAttribute("aria-hidden", "true");
+
+    bubble.appendChild(image);
+    pin.appendChild(bubble);
+    pin.appendChild(pulse);
+    return pin;
+}
+
 // 🔹 Render map markers
 function renderMarkers(data) {
     const { AdvancedMarkerElement } = google.maps.marker;
 
     markers.forEach(marker => marker.map = null);
     markers = [];
+    infoWindow.close();
 
     data.forEach(place => {
+        const pinContent = createFoodPinContent(place);
+
         const marker = new AdvancedMarkerElement({
             map: map,
             position: place.geometry.location,
             title: place.name,
-            gmpClickable: true
+            gmpClickable: true,
+            content: pinContent
         });
 
-        marker.addListener("click", () => {
-            const rating = place.rating ?? "N/A";
-            const priceLevel = place.price_level;
-            const priceDisplay = typeof priceLevel === "number"
-                ? "$".repeat(priceLevel)
-                : "N/A";
-
-            infoWindow.setContent(`
-                <div style="min-width:180px;">
-                    <strong>${place.name}</strong><br>
-                    Price: ${priceDisplay}<br>
-                    Rating: ${rating}
-                </div>
-            `);
+        const openInfoWindow = () => {
+            infoWindow.setContent(buildPlaceInfoContent(place));
             infoWindow.open({
                 map,
                 anchor: marker
             });
-        });
+        };
+
+        const closeInfoWindow = () => infoWindow.close();
+
+        pinContent.addEventListener("mouseenter", openInfoWindow);
+        pinContent.addEventListener("mouseleave", closeInfoWindow);
+        pinContent.addEventListener("focus", openInfoWindow);
+        pinContent.addEventListener("blur", closeInfoWindow);
 
         markers.push(marker);
     });
