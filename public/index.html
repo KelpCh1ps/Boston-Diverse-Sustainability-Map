@@ -47,6 +47,14 @@
       </div>
     </div>
 
+    <div id="radiusControl" class="radius-control" aria-label="Restaurant radius control">
+      <div class="radius-control__labels">
+        <span class="radius-control__title">Radius from your location</span>
+        <span id="radiusValue" class="radius-control__value"></span>
+      </div>
+      <input id="radiusSlider" class="radius-control__slider" type="range" min="1000" max="30000" step="500" value="12000" aria-label="Radius in meters">
+    </div>
+
     <div class="map-container" style="flex:1;width:100%;height:100%;">
       <div id="map" style="height:100%;width:100%;"></div>
     </div>
@@ -92,6 +100,8 @@
 
   const BOSTON_CENTER = { lat: 42.3601, lng: -71.0589 };
   const BOSTON_RADIUS_METERS = 12000;
+  let activeRadiusMeters = BOSTON_RADIUS_METERS;
+  let bostonRestaurantsSource = [];
 
   // SNAP lookup by ZIP -> normalized names
   const snapNameByZip = new Map();
@@ -161,7 +171,8 @@
   }
 
   function isInBostonRadius(lat, lng) {
-    return getDistanceMeters(lat, lng, BOSTON_CENTER.lat, BOSTON_CENTER.lng) <= BOSTON_RADIUS_METERS;
+    const ref = getReferenceLocation();
+    return getDistanceMeters(lat, lng, ref.lat, ref.lng) <= activeRadiusMeters;
   }
 
   function extractLatLng(location) {
@@ -270,7 +281,7 @@
 
         const lat = latIdx === -1 ? NaN : Number(cols[latIdx]);
         const lng = lngIdx === -1 ? NaN : Number(cols[lngIdx]);
-        if (Number.isFinite(lat) && Number.isFinite(lng) && isInBostonRadius(lat, lng)) {
+        if (Number.isFinite(lat) && Number.isFinite(lng)) {
           snapRecordsBoston.push({ nameNorm, lat, lng, zip });
         }
       }
@@ -288,12 +299,11 @@
     const data = await res.json();
     const records = data?.result?.records ?? [];
 
-    bostonRestaurants = records
+    bostonRestaurantsSource = records
       .map((place) => {
         const lat = Number(place.latitude);
         const lng = Number(place.longitude);
         if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-        if (!isInBostonRadius(lat, lng)) return null;
 
         return new Restaurants({
           name: place.businessname ?? "Restaurant",
@@ -313,7 +323,7 @@
       })
       .filter(Boolean);
 
-    bostonFiltered = [...bostonRestaurants];
+    applyRadiusFilter();
   }
 
   function fetchFoodPlaces(location) {
@@ -353,8 +363,6 @@
     if (status !== google.maps.places.PlacesServiceStatus.OK) return;
 
     results.forEach(place => {
-      const point = extractLatLng(place.geometry?.location);
-      if (!point || !isInBostonRadius(point.lat, point.lng)) return;
       if (!allPlaces.some(p => p.place_id === place.place_id)) {
         allPlaces.push(place);
       }
@@ -384,14 +392,20 @@
   }
 
   function categoryPlaces(category) {
-    if (category === "retail") return allPlaces.filter(isGrocerPlace);
-    if (category === "snap") return allPlaces.filter(p => isGrocerPlace(p) && hasEbtSupport(p));
-    if (category === "wholesale") return allPlaces.filter(isWholesalePlace);
+    const withinRadius = (place) => {
+      const point = extractLatLng(place.geometry?.location);
+      return point ? isInBostonRadius(point.lat, point.lng) : false;
+    };
+
+    if (category === "retail") return allPlaces.filter(p => withinRadius(p) && isGrocerPlace(p));
+    if (category === "snap") return allPlaces.filter(p => withinRadius(p) && isGrocerPlace(p) && hasEbtSupport(p));
+    if (category === "wholesale") return allPlaces.filter(p => withinRadius(p) && isWholesalePlace(p));
     if (category === "pantry") return allPlaces.filter(p => {
+      if (!withinRadius(p)) return false;
       const n = (p.name ?? "").toLowerCase();
       return n.includes("food bank") || n.includes("pantry");
     });
-    return [...allPlaces];
+    return allPlaces.filter(withinRadius);
   }
 
   function getReferenceLocation() {
@@ -402,6 +416,54 @@
       lat: typeof center.lat === "function" ? center.lat() : center.lat,
       lng: typeof center.lng === "function" ? center.lng() : center.lng
     };
+  }
+
+  function formatRadiusLabel(meters) {
+    const miles = meters / 1609.344;
+    const mileText = miles >= 10 ? miles.toFixed(0) : miles.toFixed(1);
+    return `${mileText} mi`;
+  }
+
+  function updateRadiusControlLabel() {
+    const valueEl = document.getElementById("radiusValue");
+    if (!valueEl) return;
+    valueEl.textContent = formatRadiusLabel(activeRadiusMeters);
+  }
+
+  function applyRadiusFilter() {
+    bostonRestaurants = bostonRestaurantsSource.filter((place) => isInBostonRadius(place.lat, place.lng));
+
+    const input = document.getElementById("searchBar");
+    const query = (input?.value || "").trim().toLowerCase();
+
+    if (mode === "food") {
+      bostonFiltered = filterBoston(query);
+      renderBostonRestaurants(bostonFiltered);
+      showNearestCategoryInSidebar("food");
+    } else {
+      filteredPlaces = filterPlacesByQuery(categoryPlaces(activeCategory), query);
+      renderAll();
+      showNearestCategoryInSidebar(activeCategory);
+    }
+
+    const searchInputFocused = document.activeElement === input;
+    updateSearchResults(query, { openDropdown: searchInputFocused });
+  }
+
+  function setupRadiusControl() {
+    const slider = document.getElementById("radiusSlider");
+    if (!slider) return;
+
+    slider.value = String(activeRadiusMeters);
+    updateRadiusControlLabel();
+
+    slider.addEventListener("input", () => {
+      const nextRadius = Number(slider.value);
+      if (!Number.isFinite(nextRadius)) return;
+      activeRadiusMeters = nextRadius;
+      updateRadiusControlLabel();
+      applyRadiusFilter();
+    });
   }
 
   function sidebarTitleForCategory(category) {
@@ -496,7 +558,8 @@
     });
   }
 
-  function updateSearchResults(query) {
+  function updateSearchResults(query, options = {}) {
+    const { openDropdown = true } = options;
     const q = query ?? "";
     let source = [];
     if (mode === "food") {
@@ -516,10 +579,10 @@
         payload: item
       }));
     }
-    renderSearchResults();
+    renderSearchResults(openDropdown);
   }
 
-  function renderSearchResults() {
+  function renderSearchResults(openDropdown = true) {
     const container = document.getElementById("searchResults");
     if (!container) return;
 
@@ -535,11 +598,12 @@
       </button>
     `).join("");
 
-    container.classList.add("is-open");
-
     container.querySelectorAll(".search-result-item").forEach(button => {
       button.addEventListener("click", () => selectSearchResult(Number(button.dataset.index)));
     });
+
+    if (openDropdown) container.classList.add("is-open");
+    else container.classList.remove("is-open");
   }
 
   function closeSearchResults() {
@@ -1070,6 +1134,7 @@
           title: "You are here",
           content: currentLocationPin.element
         });
+        applyRadiusFilter();
       });
     }
 
@@ -1084,6 +1149,7 @@
 
     mode = "food";
     document.getElementById("searchBar").value = "";
+    setupRadiusControl();
     renderBostonRestaurants(bostonFiltered);
     setActiveFilterTab("food");
     setupSearchBar();

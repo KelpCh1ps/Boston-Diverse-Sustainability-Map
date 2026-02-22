@@ -198,6 +198,46 @@ body.sidebar-collapsed .sidebar-toggle {
     isolation: isolate;
 }
 
+.radius-control {
+    position: absolute;
+    bottom: 1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: min(460px, calc(100% - 3rem));
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.12);
+    border: 1px solid rgba(213, 219, 229, 0.9);
+    padding: 0.65rem 0.95rem 0.7rem;
+}
+
+.radius-control__labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.radius-control__title {
+    font-size: 0.82rem;
+    color: #4b5563;
+    letter-spacing: 0.01em;
+}
+
+.radius-control__value {
+    font-size: 0.86rem;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.radius-control__slider {
+    width: 100%;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
 .filter-active-pill {
     position: absolute;
     top: 8px;
@@ -516,5 +556,19 @@ body.sidebar-collapsed .sidebar-toggle {
     .search-input {
         max-width: 100%;
         font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .radius-control {
+        bottom: 0.9rem;
+        width: min(560px, calc(100% - 2rem));
+        padding: 0.6rem 0.8rem 0.65rem;
+    }
+
+    .radius-control__title {
+        font-size: 0.76rem;
+    }
+
+    .radius-control__value {
+        font-size: 0.8rem;
     }
 }
