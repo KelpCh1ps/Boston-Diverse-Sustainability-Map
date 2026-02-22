@@ -37,13 +37,13 @@
         <div style="display:flex;gap:1rem;position:absolute;top:2rem;left:50%;transform:translateX(-50%);z-index:10;background:rgba(255,255,255,0.95);border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:0.5rem 1.5rem;">
             
             <button onclick="filterCategory('food')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🍽️</span> Food
+                Food
             </button>
             <button onclick="filterCategory('retail')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
                 Grocery
             </button>
             <button onclick="filterCategory('wholesale')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
-                <span>🏬</span> Wholesale
+                Wholesale
             </button>
             <button onclick="filterCategory('farm')" style="background:none;border:none;display:flex;align-items:center;gap:0.5rem;font-size:1rem;cursor:pointer;padding:0.5rem 1rem;border-radius:2rem;transition:background 0.2s;font-family:'DynaPuff',system-ui;font-optical-sizing:auto;font-weight:400;font-style:normal;font-variation-settings:'wdth' 100;">
                 Farms
@@ -314,7 +314,7 @@ function createFoodPinContent(place) {
 
     const image = document.createElement("img");
     image.className = "food-pin__image";
-    image.src = "icons/restaurant_logo.png";
+    image.src = getPinImageForPlace(place);
     image.alt = "";
     image.setAttribute("aria-hidden", "true");
 
@@ -326,6 +326,25 @@ function createFoodPinContent(place) {
     pin.appendChild(bubble);
     pin.appendChild(pulse);
     return pin;
+}
+
+function getPinImageForPlace(place) {
+    const types = place.types || [];
+    const loweredName = (place.name || "").toLowerCase();
+
+    if (loweredName.includes("farm")) {
+        return "icons/Food_Pantry_Logo.png";
+    }
+
+    if (
+        types.includes("supermarket") ||
+        types.includes("grocery_or_supermarket") ||
+        types.includes("convenience_store")
+    ) {
+        return "icons/Market_Logo.png";
+    }
+
+    return "icons/restaurant_logo.png";
 }
 
 // 🔹 Render map markers
