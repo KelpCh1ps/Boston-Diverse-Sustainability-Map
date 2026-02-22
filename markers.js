@@ -1,8 +1,8 @@
 export class Marker {
-  constructor(name, lat, lng) {
+  constructor({ name = "Marker", lat = 0, lng = 0 } = {}) {
     this.name = name;
-    this.lat = lat;
-    this.lng = lng;
+    this.lat = Number(lat);
+    this.lng = Number(lng);
   }
 
   // Default = Google red marker
@@ -15,20 +15,20 @@ export class Marker {
 
     return new google.maps.Marker({
       position: { lat: this.lat, lng: this.lng },
-      map: map,
+      map,
       title: this.name,
       ...(icon && {
         icon: {
           url: icon,
-          scaledSize: new google.maps.Size(35, 35)
-        }
-      })
+          scaledSize: new google.maps.Size(35, 35),
+        },
+      }),
     });
   }
 }
 
 export class Restaurants extends Marker {
-  constructor(
+  constructor({
     name = "Restaurant",
     lat = 0,
     lng = 0,
@@ -36,14 +36,16 @@ export class Restaurants extends Marker {
     number = "N/A",
     rating = 0,
     review = "No reviews",
-    hours = "Hours not listed"
-  ) {
-    super(name, lat, lng);
+    hours = "Hours not listed",
+    meta = {}, // optional: store extra Boston fields
+  } = {}) {
+    super({ name, lat, lng });
     this.address = address;
     this.number = number;
     this.rating = rating;
     this.review = review;
     this.hours = hours;
+    this.meta = meta;
   }
 
   getIcon() {
@@ -52,7 +54,7 @@ export class Restaurants extends Marker {
 }
 
 export class Market extends Marker {
-  constructor(
+  constructor({
     name = "Market",
     lat = 0,
     lng = 0,
@@ -61,15 +63,17 @@ export class Market extends Marker {
     rating = 0,
     review = "No reviews",
     hours = "Hours not listed",
-    takeEbt = false
-  ) {
-    super(name, lat, lng);
+    takeEbt = false,
+    meta = {},
+  } = {}) {
+    super({ name, lat, lng });
     this.address = address;
     this.number = number;
     this.rating = rating;
     this.review = review;
     this.hours = hours;
     this.takeEbt = takeEbt;
+    this.meta = meta;
   }
 
   getIcon() {
@@ -78,7 +82,7 @@ export class Market extends Marker {
 }
 
 export class Pantry extends Restaurants {
-  constructor(
+  constructor({
     name = "Pantry",
     lat = 0,
     lng = 0,
@@ -87,9 +91,10 @@ export class Pantry extends Restaurants {
     rating = 0,
     review = "No reviews",
     hours = "Hours not listed",
-    eligibility = "Eligibility not specified"
-  ) {
-    super(name, lat, lng, address, number, rating, review, hours);
+    eligibility = "Eligibility not specified",
+    meta = {},
+  } = {}) {
+    super({ name, lat, lng, address, number, rating, review, hours, meta });
     this.eligibility = eligibility;
   }
 
@@ -97,4 +102,3 @@ export class Pantry extends Restaurants {
     return "./icons/Food_Pantry_Logo.png";
   }
 }
-
