@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Supply Map</title>
+  <link rel="icon" href="/icons/restaurant_logo.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="public/map.css">
+  <link rel="stylesheet" href="/map.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
       ◀
     </button>
     <div class="sidebar-content" style="padding:2rem 1.5rem 1rem 1.5rem; border-bottom:1px solid #eee;">
-      <img src="https://assets.mapquest.com/img/logo.svg" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
+      <img src="/icons/BDSM_Logo.png" alt="Logo" style="height:32px; margin-bottom:1.5rem;">
     </div>
     <div class="sidebar-content" style="flex:1;overflow-y:auto;padding:1.5rem;">
       <div id="restaurantList"></div>
@@ -63,7 +64,7 @@
 </script>
 
 <script type="module">
-  import { Restaurants } from "./public/markers.js";
+  import { Restaurants } from "/markers.js";
 
   let map;
   let placesService;
@@ -624,11 +625,11 @@
     image.className = "food-pin__image";
     const name = (place.name ?? "").toLowerCase();
     if (name.includes("food bank") || name.includes("pantry")) {
-      image.src = "public/icons/Food_Pantry_Logo.png";
+      image.src = "/icons/Food_Pantry_Logo.png";
     } else if (isGrocerPlace(place)) {
-      image.src = "public/icons/Market_Logo.png";
+      image.src = "/icons/Market_Logo.png";
     } else {
-      image.src = "public/icons/restaurant_logo.png";
+      image.src = "/icons/restaurant_logo.png";
     }
     image.alt = "";
     image.setAttribute("aria-hidden", "true");
