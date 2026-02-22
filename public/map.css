@@ -44,6 +44,21 @@ body {
     min-height: 180px;
 }
 
+.nearest-location-panel {
+    padding: 0.9rem;
+    border-radius: 14px;
+}
+
+.animated-outline-panel {
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        linear-gradient(115deg, #7fc8ff 0%, #8fa7ff 35%, #b38bff 65%, #7fc8ff 100%) border-box;
+    background-size: 100% 100%, 220% 100%;
+    background-position: center center, 0% 50%;
+    animation: search-outline-flow 4.4s ease-in-out infinite;
+}
+
 .place-details-photo {
     width: 100%;
     border-radius: 12px;

@@ -522,20 +522,26 @@
       .slice(0, 5);
 
     if (!nearest.length) {
-      setSidebarDetailsHtml(`<div class="place-details-meta">${nearestEmptyMessageForCategory(category)}</div>`);
+      setSidebarDetailsHtml(`
+        <div class="nearest-location-panel animated-outline-panel">
+          <div class="place-details-meta">${nearestEmptyMessageForCategory(category)}</div>
+        </div>
+      `);
       return;
     }
 
     const html = `
-      <div class="place-details-title">${sidebarTitleForCategory(category)}</div>
-      <div class="place-details-meta">Based on your location.</div>
-      ${nearest.map((entry, index) => `
-        <button type="button" class="search-result-item nearest-category-item" data-index="${index}" style="width:100%;margin-top:0.6rem;text-align:left;">
-          <span class="search-result-title">${entry.item.title}</span>
-          <span class="search-result-subtitle">${entry.item.subtitle}</span>
-          <span class="search-result-subtitle">${(entry.distanceMeters / 1609.344).toFixed(1)} mi away</span>
-        </button>
-      `).join("")}
+      <div class="nearest-location-panel animated-outline-panel">
+        <div class="place-details-title">${sidebarTitleForCategory(category)}</div>
+        <div class="place-details-meta">Based on your location.</div>
+        ${nearest.map((entry, index) => `
+          <button type="button" class="search-result-item nearest-category-item" data-index="${index}" style="width:100%;margin-top:0.6rem;text-align:left;">
+            <span class="search-result-title">${entry.item.title}</span>
+            <span class="search-result-subtitle">${entry.item.subtitle}</span>
+            <span class="search-result-subtitle">${(entry.distanceMeters / 1609.344).toFixed(1)} mi away</span>
+          </button>
+        `).join("")}
+      </div>
     `;
     setSidebarDetailsHtml(html);
 
