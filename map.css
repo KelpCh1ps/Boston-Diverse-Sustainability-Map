@@ -20,6 +20,55 @@ body {
     overflow: hidden;
 }
 
+.sidebar-pane {
+    position: relative;
+    transition: width 0.28s ease, min-width 0.28s ease, border-color 0.28s ease;
+}
+
+.sidebar-content {
+    transition: opacity 0.2s ease;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 22px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #1f2937;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #111827;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    z-index: 50;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    background: #f9fafb;
+}
+
+body.sidebar-collapsed .sidebar-pane {
+    width: 0 !important;
+    min-width: 0 !important;
+    border-right-color: transparent !important;
+    overflow: visible;
+}
+
+body.sidebar-collapsed .sidebar-content {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+    right: -18px;
+}
+
 /* Container and Layout */
 .container {
     display: flex;
