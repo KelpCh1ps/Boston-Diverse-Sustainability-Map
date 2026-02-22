@@ -15,11 +15,12 @@ console.log("API key loaded?", !!process.env.GEMINI_API_KEY);
 app.post("/analyze", async (req, res) => {
   const { restaurantName, address } = req.body;
     const prompt = `
-You are an expert food critic. Gather reviews from various sites and analyze the restaurant "${restaurantName}" located at "${address}" and provide:
-1. Overall sentiment (Positive, Negative, Mixed, Neutral)
-2. Key themes or typical reviews
-3. Any important notes or events (like discounts)
-Give your response in short, clear sentences.
+You are an expert food critic. Gather reviews from various sites and analyze the restaurant "${restaurantName}" located at "${address}" and answer in this format:
+Restaurant Name - Address (newline):
+1. Overall sentiment (Positive, Negative, Mixed, Neutral) (newline)
+2. Key themes or typical reviews (newline)
+3. Any important notes or events (like discounts) (newline)
+Give your response in short, clear sentences. Do not use any formatting except for newline return br in < brackets
 `;
 
   try {
